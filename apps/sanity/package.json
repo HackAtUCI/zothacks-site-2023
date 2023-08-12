@@ -8,7 +8,9 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "format:write": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "sanity"
