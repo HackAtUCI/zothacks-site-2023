@@ -1,9 +1,8 @@
 {
-  "name": "zothacks-site-2023-sanity",
+  "name": "sanity",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
-  "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
