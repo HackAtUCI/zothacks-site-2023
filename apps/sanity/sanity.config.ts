@@ -5,9 +5,9 @@ import { schemaTypes } from "./schemas";
 
 export default defineConfig({
 	name: "default",
-	title: "zothacks-site-2023-sanity",
+	title: "zothacks-site-2023",
 
-	projectId: "37wc8wys",
+	projectId: "1smqaeyk",
 	dataset: "production",
 
 	plugins: [deskTool(), visionTool()],
