@@ -1,0 +1,10 @@
+@use "~@/lib/styles/variables.scss" as variables;
+
+body {
+	background-color: variables.$white;
+}
+
+h1 {
+	font-family: variables.$fuzzy-bubbles;
+	font-weight: bold;
+}
