@@ -1,3 +1,1 @@
-export default function Page() {
-	return <h1>Hello, Home page!</h1>;
-}
+export { Resources as default } from "@/views";
