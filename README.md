@@ -1,81 +1,72 @@
-# Turborepo starter
+# zothacks-site-2023
 
-This is an official starter Turborepo.
+## Overview
 
-## Using this example
+This monorepo uses [turborepo](https://turbo.build/repo) with [pnpm](https://pnpm.io) as a package manager. It contains the following:
 
-Run the following command:
+### `apps/site`
 
-```sh
-npx create-turbo@latest
+A [Next.js](https://nextjs.org/) 13 project that uses the new app router.
+
+This app contains the ZotHacks site.
+
+The development server runs at `https://localhost:3000`. If this port is taken, the next available port will be used.
+
+### `apps/studio`
+
+A [Sanity Studio](https://www.sanity.io/studio) project.
+
+This app contains the dashboard used to view and edit content stored in [Sanity](https://www.sanity.io/).
+
+The development server runs at `https://localhost:3333`. If this port is taken, the project will error.
+
+## Workspace Setup
+
+This repo used pnpm, a space efficient replacement to npm.
+You can learn more about it's advantages at <https://pnpm.io/>.
+
+Install pnpm with the following command, or use an [alternative instalation method](https://pnpm.io/installation).
+
+```bash
+npm install -g pnpm
 ```
 
-## What's inside?
+When running commands, use `pnpm` rather than `npm`.
 
-This Turborepo includes the following packages/apps:
+### Dependencies
 
-### Apps and Packages
+Running the following command will install dependencies for all apps and packages regardless of where it's executed.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+```bash
+pnpm install
+```
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+When installing a new dependency for an individual app or package, first navigate to the corresponding directory, then run the `pnpm add` command.
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+If you want to install a package shared by multiple apps or packages, run the command at the project root. You'll have to use the -w flag (or --workspace-root) to confirm your intention.
 
 ### Build
 
-To build all apps and packages, run the following command:
+To build all apps and packages, run the following command in the project root.
 
-```
-cd my-turborepo
+```bash
 pnpm build
 ```
 
+To build an individual app or package, first navigate to the corresponding directory and run the build command.
+
 ### Develop
 
-To develop all apps and packages, run the following command:
+To develop all apps and packages, run the following command in the project root.
 
-```
-cd my-turborepo
+```bash
 pnpm dev
 ```
 
-### Remote Caching
+To develop an individual app or package, first navigate to the corresponding directory and run the dev command.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## License
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+This repo is currently source available and not licensed under an open source license. This may be subject to change in the future.
 
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Copyright © 2023 Hack at UCI
