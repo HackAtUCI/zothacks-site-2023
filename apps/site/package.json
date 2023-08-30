@@ -24,5 +24,9 @@
 		"react-dom": "^18.2.0",
 		"sass": "^1.65.1",
 		"typescript": "5.1.6"
+	},
+	"devDependencies": {
+		"clsx": "^2.0.0",
+		"server-only": "^0.0.1"
 	}
 }

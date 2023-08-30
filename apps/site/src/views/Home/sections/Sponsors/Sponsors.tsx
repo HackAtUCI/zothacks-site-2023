@@ -1,10 +1,8 @@
-import Container from "react-bootstrap/Container";
-
 function Sponsors() {
 	return (
-		<Container as="section">
+		<div className="container">
 			<h2>Sponsors</h2>
-		</Container>
+		</div>
 	);
 }
 
