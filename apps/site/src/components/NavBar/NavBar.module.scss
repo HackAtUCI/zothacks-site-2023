@@ -2,45 +2,34 @@
 
 $red: #ff0000;
 
-.nav {
-	font-family: variables.$fuzzy-bubbles;
-	font-weight: 700;
-	background-image: url("../../assets/Lined\ Paper.svg");
-	background-position: center;
+.nav1 {
+	background-image: url("../../assets/images/lined_paper.svg");
+	background-size: cover;
+	background-position: left top;
+	background-repeat: no-repeat;
 }
 
-.home {
+.home,
+.resources,
+.schedule {
 	margin-left: 10px;
 	margin-right: 10px;
 	font-size: 36px;
-}
-
-.home:active {
-	color: variables.$green;
+	// font-family: variables.$fuzzy-bubbles;
+	font-weight: bold;
+	// font-style: normal;
+	color: #000000;
+	line-height: normal;
 }
 
 .home:hover {
 	color: variables.$green;
 }
 
-.resources {
-	margin-left: 10px;
-	margin-right: 10px;
-	font-size: 36px;
-}
-
 .resources:hover {
 	color: variables.$blue;
-}
-
-.schedule {
-	font-size: 36px;
-	margin-left: 10px;
-	margin-right: 20px;
 }
 
 .schedule:hover {
 	color: $red;
 }
-
-// @import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -7,12 +7,12 @@ import styles from "./NavBar.module.scss";
 
 export default function NavBar() {
 	return (
-		<Navbar expand="sm" className={`bg-body-tertiary ${styles.nav}`}>
+		<Navbar expand="sm" className={`bg-body-tertiary ${styles.nav1}`}>
 			<Container fluid>
 				<Navbar.Brand></Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ms-auto h5">
+					<Nav className="ms-auto">
 						<Nav.Link href="#home" className={styles.home}>
 							Home
 						</Nav.Link>
