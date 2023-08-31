@@ -1,4 +1,6 @@
 import { defineType, defineField, defineArrayMember } from "sanity";
+import { toPlainText } from "@portabletext/react";
+import { FileQuestion } from "lucide-react";
 
 export default defineType({
 	name: "faqs",
@@ -37,6 +39,13 @@ export default defineType({
 						select: {
 							title: "question",
 							subtitle: "answer",
+						},
+						prepare({ title, subtitle }) {
+							return {
+								title,
+								subtitle: subtitle ? toPlainText(subtitle) : undefined,
+								media: FileQuestion,
+							};
 						},
 					},
 				}),

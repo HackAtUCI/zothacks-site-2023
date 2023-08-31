@@ -3,7 +3,7 @@ import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { media } from "sanity-plugin-media";
 import { schemaTypes } from "./schemas";
-import { HelpCircle } from "lucide-react";
+import { BadgeHelp } from "lucide-react";
 
 export default defineConfig({
 	name: "default",
@@ -20,7 +20,7 @@ export default defineConfig({
 					.items([
 						S.listItem()
 							.title("FAQs")
-							.icon(HelpCircle)
+							.icon(BadgeHelp)
 							.child(
 								S.document().schemaType("faqs").documentId("faqs").title("FAQs")
 							),
