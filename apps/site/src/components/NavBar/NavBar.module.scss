@@ -2,11 +2,18 @@
 
 $red: #ff0000;
 
-.nav1 {
+.nav {
 	background-image: url("../../assets/images/lined_paper.svg");
 	background-size: cover;
 	background-position: left top;
 	background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 576px) {
+	.nav {
+		background-size: contain;
+		background-repeat: repeat-y;
+	}
 }
 
 .home,
@@ -15,9 +22,7 @@ $red: #ff0000;
 	margin-left: 10px;
 	margin-right: 10px;
 	font-size: 36px;
-	// font-family: variables.$fuzzy-bubbles;
 	font-weight: bold;
-	// font-style: normal;
 	color: #000000;
 	line-height: normal;
 }

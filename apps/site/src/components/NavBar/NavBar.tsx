@@ -7,7 +7,7 @@ import styles from "./NavBar.module.scss";
 
 export default function NavBar() {
 	return (
-		<Navbar expand="sm" className={`bg-body-tertiary ${styles.nav1}`}>
+		<Navbar expand="sm" className={`bg-body-tertiary ${styles.nav}`}>
 			<Container fluid>
 				<Navbar.Brand></Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
