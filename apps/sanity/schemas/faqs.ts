@@ -19,11 +19,17 @@ export default defineType({
 							title: "Question",
 							type: "text",
 						}),
-
 						defineField({
 							name: "answer",
 							title: "Answer",
-							type: "text",
+							type: "array",
+							of: [
+								{
+									type: "block",
+									styles: [{ title: "Normal", value: "normal" }],
+									lists: [],
+								},
+							],
 						}),
 					],
 
