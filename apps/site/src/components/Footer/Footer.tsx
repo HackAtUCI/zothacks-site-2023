@@ -7,7 +7,16 @@ import Facebook from "@/assets/icons/facebook.svg";
 import Instagram from "@/assets/icons/insta.svg";
 import Twitter from "@/assets/icons/twitter.svg";
 
-const SOCIALS = [
+type Social = {
+	icon: any;
+	link: string;
+	alt: string;
+	width: number;
+	height: number;
+	marginRight: string;
+};
+
+const SOCIALS: Social[] = [
 	{
 		icon: Mail,
 		link: "mailto:hack@uci.edu",
@@ -47,16 +56,18 @@ export default function Footer() {
 		<div className={styles.footer}>
 			<p className={styles.text}>Made with &lt;3 in Irvine, CA - Hack @ UCI</p>
 			<div className={styles.socials}>
-				{SOCIALS.map(({ icon, link, alt, width, height, marginRight }) => (
-					<a
-						key={link}
-						href={link}
-						target="_blank"
-						style={{ marginRight: marginRight }}
-					>
-						<Image src={icon.src} alt={alt} width={width} height={height} />
-					</a>
-				))}
+				{SOCIALS.map(
+					({ icon, link, alt, width, height, marginRight }: Social) => (
+						<a
+							key={link}
+							href={link}
+							target="_blank"
+							style={{ marginRight: marginRight }}
+						>
+							<Image src={icon.src} alt={alt} width={width} height={height} />
+						</a>
+					),
+				)}
 			</div>
 		</div>
 	);

@@ -1,6 +1,9 @@
+import NavBar from "@/components/NavBar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Fuzzy_Bubbles } from "next/font/google";
+import Footer from "@/components/Footer/Footer";
 
 const fuzzy = Fuzzy_Bubbles({ weight: "400", subsets: ["latin"] });
 
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={fuzzy.className}>{children}</body>
+			<body className={fuzzy.className}>
+				<NavBar />
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }

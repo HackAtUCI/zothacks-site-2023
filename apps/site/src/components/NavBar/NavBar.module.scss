@@ -1,7 +1,5 @@
 @use "@/lib/styles/variables.scss" as variables;
 
-$red: #ff0000;
-
 .nav {
 	background-image: url("../../assets/images/lined_paper.svg");
 	background-size: cover;
@@ -23,8 +21,8 @@ $red: #ff0000;
 	margin-right: 10px;
 	font-size: 36px;
 	font-weight: bold;
-	color: #000000;
-	line-height: normal;
+	color: black;
+	text-decoration: none;
 }
 
 .home:hover {
@@ -36,5 +34,5 @@ $red: #ff0000;
 }
 
 .schedule:hover {
-	color: $red;
+	color: variables.$navbar-red;
 }
