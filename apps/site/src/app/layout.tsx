@@ -1,8 +1,10 @@
-import NavBar from "@/components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.scss";
+
 import type { Metadata } from "next";
 import { Fuzzy_Bubbles } from "next/font/google";
+
+import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 
 const fuzzy = Fuzzy_Bubbles({ weight: "400", subsets: ["latin"] });

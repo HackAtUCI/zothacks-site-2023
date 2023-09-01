@@ -14,9 +14,9 @@
 	}
 }
 
-.home,
-.resources,
-.schedule {
+.homeNotActive,
+.resourcesNotActive,
+.scheduleNotActive {
 	margin-left: 10px;
 	margin-right: 10px;
 	font-size: 36px;
@@ -25,14 +25,35 @@
 	text-decoration: none;
 }
 
-.home:hover {
+.homeNotActive:hover,
+.homeActive {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 36px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
 	color: variables.$green;
 }
 
-.resources:hover {
+.resourcesNotActive:hover,
+.resourcesActive {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 36px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
 	color: variables.$blue;
 }
 
-.schedule:hover {
+.scheduleNotActive:hover,
+.scheduleActive {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 36px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
 	color: variables.$navbar-red;
 }
