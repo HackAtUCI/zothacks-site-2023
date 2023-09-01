@@ -1,7 +1,3 @@
-import stickers from "./stickers";
-import notes from "./notes";
-import clipboard from "./clipboard";
-import tags from "./tags";
-import paper from "./paper";
+import faqs from "./faqs";
 
-export const schemaTypes = [stickers, notes, clipboard, paper, tags];
+export const schemaTypes = [faqs];
