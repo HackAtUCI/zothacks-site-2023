@@ -7,11 +7,13 @@
 	background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 576px) {
-	.nav {
-		background-size: contain;
-		background-repeat: repeat-y;
-	}
+.logo {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 20vw;
+	height: 20vw;
+	text-align: center;
 }
 
 .homeNotActive,
@@ -19,7 +21,7 @@
 .scheduleNotActive {
 	margin-left: 10px;
 	margin-right: 10px;
-	font-size: 36px;
+	font-size: 2rem;
 	font-weight: bold;
 	color: black;
 	text-decoration: none;
@@ -29,7 +31,7 @@
 .homeActive {
 	margin-left: 10px;
 	margin-right: 10px;
-	font-size: 36px;
+	font-size: 2rem;
 	font-weight: bold;
 	color: black;
 	text-decoration: none;
@@ -40,7 +42,7 @@
 .resourcesActive {
 	margin-left: 10px;
 	margin-right: 10px;
-	font-size: 36px;
+	font-size: 2rem;
 	font-weight: bold;
 	color: black;
 	text-decoration: none;
@@ -51,9 +53,31 @@
 .scheduleActive {
 	margin-left: 10px;
 	margin-right: 10px;
-	font-size: 36px;
+	font-size: 2rem;
 	font-weight: bold;
 	color: black;
 	text-decoration: none;
 	color: variables.$navbar-red;
+}
+
+@include variables.media-breakpoint-down(md) {
+	.nav {
+		background-size: auto 64px;
+		background-repeat: repeat;
+	}
+	.logo {
+		left: 10px;
+		top: 10px;
+	}
+	.homeNotActive,
+	.resourcesNotActive,
+	.scheduleNotActive,
+	.homeNotActive:hover,
+	.homeActive,
+	.resourcesNotActive:hover,
+	.resourcesActive,
+	.scheduleNotActive:hover,
+	.scheduleActive {
+		font-size: 1.5rem;
+	}
 }

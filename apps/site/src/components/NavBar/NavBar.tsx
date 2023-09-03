@@ -2,10 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+
+import ZotHacksLogo from "@/assets/icons/zothacks-logo.svg";
 
 import styles from "./NavBar.module.scss";
 
@@ -13,12 +16,25 @@ export default function NavBar() {
 	const activeRoute = usePathname();
 
 	return (
-		<Navbar expand="sm" className={`bg-body-tertiary ${styles.nav}`}>
+		<Navbar expand="md" className={`bg-body-tertiary ${styles.nav}`}>
 			<Container fluid>
-				<Navbar.Brand></Navbar.Brand>
+				<Navbar.Brand>
+					<Link href="/">
+						<div className={styles.logo}>
+							<Image
+								src={ZotHacksLogo.src}
+								alt="ZotHacks Logo"
+								// width="300"
+								// height="300"
+								fill
+								// className={"img-fluid"}
+							/>
+						</div>
+					</Link>
+				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ms-auto">
+					<Nav className="ms-auto text-center">
 						<Link
 							href="/"
 							className={
