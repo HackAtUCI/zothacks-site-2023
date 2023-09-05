@@ -1,7 +1,7 @@
 @use "@/lib/styles/variables.scss" as variables;
 
 .nav {
-	background-image: url("../../assets/images/lined_paper.svg");
+	background-image: url("~@/assets/images/lined_paper.svg");
 	background-size: cover;
 	background-position: left top;
 	background-repeat: no-repeat;
