@@ -1,0 +1,21 @@
+@use "~@/lib/styles/variables.scss";
+
+.intro {
+    background-image: url("~@/assets/images/index-card.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 170px 130px;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        margin-bottom: 70px;
+    }
+}
