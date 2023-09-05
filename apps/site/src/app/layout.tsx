@@ -7,7 +7,7 @@ import { Fuzzy_Bubbles } from "next/font/google";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 
-const fuzzy = Fuzzy_Bubbles({ weight: "400", subsets: ["latin"] });
+const fuzzy = Fuzzy_Bubbles({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Create Next App",

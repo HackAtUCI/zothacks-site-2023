@@ -19,18 +19,17 @@
 .homeNotActive,
 .resourcesNotActive,
 .scheduleNotActive {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 1vw;
+	margin-right: 1vw;
 	font-size: 2rem;
 	font-weight: bold;
 	color: black;
 	text-decoration: none;
 }
 
-.homeNotActive:hover,
 .homeActive {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 1vw;
+	margin-right: 1vw;
 	font-size: 2rem;
 	font-weight: bold;
 	color: black;
@@ -38,10 +37,9 @@
 	color: variables.$green;
 }
 
-.resourcesNotActive:hover,
 .resourcesActive {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 1vw;
+	margin-right: 1vw;
 	font-size: 2rem;
 	font-weight: bold;
 	color: black;
@@ -49,10 +47,9 @@
 	color: variables.$blue;
 }
 
-.scheduleNotActive:hover,
 .scheduleActive {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 1vw;
+	margin-right: 1vw;
 	font-size: 2rem;
 	font-weight: bold;
 	color: black;
@@ -66,17 +63,14 @@
 		background-repeat: repeat;
 	}
 	.logo {
-		left: 10px;
-		top: 10px;
+		left: 1.8vw;
+		top: 1.8vw;
 	}
 	.homeNotActive,
 	.resourcesNotActive,
 	.scheduleNotActive,
-	.homeNotActive:hover,
 	.homeActive,
-	.resourcesNotActive:hover,
 	.resourcesActive,
-	.scheduleNotActive:hover,
 	.scheduleActive {
 		font-size: 1.5rem;
 	}

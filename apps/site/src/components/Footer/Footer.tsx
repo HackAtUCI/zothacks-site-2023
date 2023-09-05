@@ -13,7 +13,6 @@ type Social = {
 	alt: string;
 	width: number;
 	height: number;
-	marginRight: string;
 };
 
 const SOCIALS: Social[] = [
@@ -21,9 +20,8 @@ const SOCIALS: Social[] = [
 		icon: Mail,
 		link: "mailto:hack@uci.edu",
 		alt: "Mail",
-		width: 78,
-		height: 78,
-		marginRight: "25px",
+		width: 79,
+		height: 59,
 	},
 	{
 		icon: Facebook,
@@ -31,15 +29,13 @@ const SOCIALS: Social[] = [
 		alt: "Facebook",
 		width: 59,
 		height: 59,
-		marginRight: "16px",
 	},
 	{
 		icon: Instagram,
 		link: "https://www.instagram.com/hackatuci/",
 		alt: "Instagram",
-		width: 91,
-		height: 91,
-		marginRight: "16px",
+		width: 69,
+		height: 72,
 	},
 	{
 		icon: Twitter,
@@ -47,28 +43,20 @@ const SOCIALS: Social[] = [
 		alt: "Twitter",
 		width: 64,
 		height: 53,
-		marginRight: "0px",
 	},
 ];
 
 export default function Footer() {
 	return (
-		<div className={styles.footer}>
+		<footer className={styles.footer}>
 			<p className={styles.text}>Made with &lt;3 in Irvine, CA - Hack @ UCI</p>
 			<div className={styles.socials}>
-				{SOCIALS.map(
-					({ icon, link, alt, width, height, marginRight }: Social) => (
-						<a
-							key={link}
-							href={link}
-							target="_blank"
-							style={{ marginRight: marginRight }}
-						>
-							<Image src={icon.src} alt={alt} width={width} height={height} />
-						</a>
-					),
-				)}
+				{SOCIALS.map(({ icon, link, alt, width, height }: Social) => (
+					<a key={link} href={link} target="_blank">
+						<Image src={icon.src} alt={alt} width={width} height={height} />
+					</a>
+				))}
 			</div>
-		</div>
+		</footer>
 	);
 }

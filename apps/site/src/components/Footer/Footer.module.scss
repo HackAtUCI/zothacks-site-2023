@@ -1,17 +1,40 @@
 @use "@/lib/styles/variables.scss" as variables;
 
 .footer {
-	padding-bottom: 100px;
+	padding-bottom: 7vw;
 }
 
 .socials {
-	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(4, 7.5vw);
+	column-gap: 2vw;
+	place-items: center;
+	place-content: center;
 }
 
 .text {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: bold;
 	color: black;
 	text-align: center;
 	margin-bottom: 0;
+}
+
+@include variables.media-breakpoint-down(md) {
+	.socials {
+		grid-template-columns: repeat(4, 10vw);
+	}
+}
+
+@include variables.media-breakpoint-down(sm) {
+	.socials {
+		column-gap: 10vw;
+	}
+}
+
+@include variables.media-breakpoint-up(lg) {
+	.socials {
+		grid-template-columns: repeat(4, 80px);
+		column-gap: 20px;
+	}
 }
