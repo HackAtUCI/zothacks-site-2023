@@ -1,21 +1,52 @@
-@use "~@/lib/styles/variables.scss";
+@use "~@/lib/styles/bootstrap.scss" as bootstrap;
+@use "~@/lib/styles/variables.scss" as variables;
 
 .intro {
-    background-image: url("~@/assets/images/index-card.png");
+    background-image: url("~src/assets/images/index-card.png");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 8rem 4rem;
     position: relative;
-    padding: 170px 130px;
-
-    img {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    text-align: center;
 
     h1 {
         margin-bottom: 70px;
+    }
+
+    @include bootstrap.media-breakpoint-down(md) {
+        & {
+            padding: 4rem 3rem;
+            margin: 1rem;
+            
+            h1 {
+                margin-top: 70px;
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+
+}
+
+.pin {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+}
+
+.hackDoodle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-25%, 50%);
+    width: auto;
+
+    @include bootstrap.media-breakpoint-down(md) {
+        & {
+            display: none;
+        }
     }
 }
