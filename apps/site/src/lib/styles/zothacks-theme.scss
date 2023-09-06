@@ -1,4 +1,5 @@
 // Common variables for site theme consistency
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 // colors
 $white: #fafaff; // Paper Background color
@@ -17,3 +18,8 @@ $purple: #6600b6;
 
 // fonts
 $fuzzy-bubbles: "Fuzzy Bubbles", cursive;
+
+// bootstrap overrides
+$font-family-base: $fuzzy-bubbles;
+$font-size-base: 1.25rem;
+$headings-font-weight: 700;
