@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Fuzzy_Bubbles } from "next/font/google";
 
 import "@/lib/styles/bootstrap.scss";
+
+const fuzzy = Fuzzy_Bubbles({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -14,7 +17,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className={fuzzy.className}>{children}</body>
 		</html>
 	);
 }
