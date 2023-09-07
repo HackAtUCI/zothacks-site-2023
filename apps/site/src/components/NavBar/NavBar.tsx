@@ -16,56 +16,50 @@ export default function NavBar() {
 	const activeRoute = usePathname();
 
 	return (
-		<Navbar expand="md" className={`bg-body-tertiary ${styles.nav}`}>
-			<Container fluid>
-				<Navbar.Brand>
-					<Link href="/">
-						<div className={styles.logo}>
-							<Image
-								src={ZotHacksLogo.src}
-								alt="ZotHacks Logo"
-								// width="300"
-								// height="300"
-								fill
-								// className={"img-fluid"}
-							/>
-						</div>
-					</Link>
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ms-auto text-center">
-						<Link
-							href="/"
-							className={
-								activeRoute === "/" ? styles.homeActive : styles.homeNotActive
-							}
-						>
-							Home
-						</Link>
-						<Link
-							href="/resources"
-							className={
-								activeRoute === "/resources"
-									? styles.resourcesActive
-									: styles.resourcesNotActive
-							}
-						>
-							Resources
-						</Link>
-						<Link
-							href="/schedule"
-							className={
-								activeRoute === "/schedule"
-									? styles.scheduleActive
-									: styles.scheduleNotActive
-							}
-						>
-							Schedule
-						</Link>
-					</Nav>
-				</Navbar.Collapse>
-			</Container>
-		</Navbar>
+		<nav className={styles.nav}>
+			<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
+				<Container fluid>
+					<Navbar.Brand />
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="ms-auto text-center">
+							<Link
+								href="/"
+								className={
+									activeRoute === "/" ? styles.homeActive : styles.homeNotActive
+								}
+							>
+								Home
+							</Link>
+							<Link
+								href="/resources"
+								className={
+									activeRoute === "/resources"
+										? styles.resourcesActive
+										: styles.resourcesNotActive
+								}
+							>
+								Resources
+							</Link>
+							<Link
+								href="/schedule"
+								className={
+									activeRoute === "/schedule"
+										? styles.scheduleActive
+										: styles.scheduleNotActive
+								}
+							>
+								Schedule
+							</Link>
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
+			<Link href="/">
+				<div className={styles.logo}>
+					<Image src={ZotHacksLogo.src} alt="ZotHacks Logo" fill />
+				</div>
+			</Link>
+		</nav>
 	);
 }

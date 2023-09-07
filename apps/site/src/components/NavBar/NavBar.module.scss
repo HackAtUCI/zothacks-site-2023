@@ -1,19 +1,25 @@
 @use "@/lib/styles/variables.scss" as variables;
 
 .nav {
+	position: fixed;
+	width: 100%;
+}
+
+.navbar {
 	background-image: url("~@/assets/images/lined_paper.svg");
 	background-size: cover;
-	background-position: left top;
+	background-position: left bottom;
 	background-repeat: no-repeat;
+	filter: drop-shadow(0px 2.5px 2px rgba(0, 0, 0, 0.4));
 }
 
 .logo {
 	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 30px;
 	width: 20vw;
 	height: 20vw;
 	text-align: center;
+	transform: rotate(-16.81deg) translateY(-5vw);
 }
 
 .homeNotActive,
@@ -58,13 +64,9 @@
 }
 
 @include variables.media-breakpoint-down(md) {
-	.nav {
-		background-size: auto 64px;
-		background-repeat: repeat;
-	}
 	.logo {
-		left: 1.8vw;
-		top: 1.8vw;
+		left: 3vw;
+		transform: rotate(-16.81deg) translateY(-6vw);
 	}
 	.homeNotActive,
 	.resourcesNotActive,
@@ -73,5 +75,13 @@
 	.resourcesActive,
 	.scheduleActive {
 		font-size: 1.5rem;
+	}
+}
+
+@include variables.media-breakpoint-up(lg) {
+	.logo {
+		width: 180px;
+		height: 180px;
+		transform: rotate(-16.81deg) translateY(-50px);
 	}
 }
