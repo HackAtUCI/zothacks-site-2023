@@ -4,14 +4,10 @@ import Image from "next/image";
 
 import styles from "./Footer.module.scss";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
-import Mail from "@/assets/icons/mail.svg";
-import Facebook from "@/assets/icons/facebook.svg";
-import Instagram from "@/assets/icons/insta.svg";
-import Twitter from "@/assets/icons/twitter.svg";
+import Mail from "@/assets/icons/mail.png";
+import Facebook from "@/assets/icons/facebook.png";
+import Instagram from "@/assets/icons/insta.png";
+import Hack from "@/assets/icons/hack.png";
 
 type Social = {
 	icon: any;
@@ -44,11 +40,11 @@ const SOCIALS: Social[] = [
 		height: 72,
 	},
 	{
-		icon: Twitter,
-		link: "https://www.twitter.com/HackUCI",
-		alt: "Twitter",
-		width: 64,
-		height: 53,
+		icon: Hack,
+		link: "https://hack.ics.uci.edu/",
+		alt: "Hack at UCI",
+		width: 70,
+		height: 70,
 	},
 ];
 
@@ -56,25 +52,13 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<p className={styles.text}>Made with &lt;3 in Irvine, CA - Hack @ UCI</p>
-			<Container>
-				<Row
-					className="justify-content-center align-items-center"
-					xs="auto"
-					sm="auto"
-					md="auto"
-					lg="auto"
-					xl="auto"
-					xxl="auto"
-				>
-					{SOCIALS.map(({ icon, link, alt, width, height }: Social) => (
-						<Col>
-							<a key={link} href={link} target="_blank">
-								<Image src={icon.src} alt={alt} width={width} height={height} />
-							</a>
-						</Col>
-					))}
-				</Row>
-			</Container>
+			<div className="text-center">
+				{SOCIALS.map(({ icon, link, alt, width, height }) => (
+					<a key={link} href={link} target="_blank" className={styles.socials}>
+						<Image src={icon.src} alt={alt} width={width} height={height} />
+					</a>
+				))}
+			</div>
 		</footer>
 	);
 }

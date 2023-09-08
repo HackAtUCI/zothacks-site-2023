@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import ZotHacksLogo from "@/assets/icons/zothacks-logo.svg";
+import ZotHacksLogo from "@/assets/icons/zothacks-logo.png";
 
 import styles from "./NavBar.module.scss";
 
