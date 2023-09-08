@@ -19,6 +19,13 @@ type Social = {
 
 const SOCIALS: Social[] = [
 	{
+		icon: Hack,
+		link: "https://hack.ics.uci.edu/",
+		alt: "Hack at UCI",
+		width: 70,
+		height: 70,
+	},
+	{
 		icon: Mail,
 		link: "mailto:hack@uci.edu",
 		alt: "Mail",
@@ -38,13 +45,6 @@ const SOCIALS: Social[] = [
 		alt: "Instagram",
 		width: 69,
 		height: 72,
-	},
-	{
-		icon: Hack,
-		link: "https://hack.ics.uci.edu/",
-		alt: "Hack at UCI",
-		width: 70,
-		height: 70,
 	},
 ];
 
