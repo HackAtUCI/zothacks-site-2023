@@ -15,10 +15,7 @@ $light-blue: #81deeb;
 $blue: #3902fd;
 $purple: #6600b6;
 
-// fonts
-$fuzzy-bubbles: "Fuzzy Bubbles", cursive;
-
 // bootstrap overrides
-$font-family-base: $fuzzy-bubbles;
+$font-family-base: var(--next-font-fuzzy-bubbles);
 $font-size-base: 1.25rem;
 $headings-font-weight: 700;
