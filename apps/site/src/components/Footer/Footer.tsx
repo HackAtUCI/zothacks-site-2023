@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
 
 import styles from "./Footer.module.scss";
+
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import Mail from "@/assets/icons/mail.svg";
 import Facebook from "@/assets/icons/facebook.svg";
@@ -50,13 +55,23 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<p className={styles.text}>Made with &lt;3 in Irvine, CA - Hack @ UCI</p>
-			<div className={styles.socials}>
+			<Row
+				className="justify-content-center align-items-center"
+				xs="auto"
+				sm="auto"
+				md="auto"
+				lg="auto"
+				xl="auto"
+				xxl="auto"
+			>
 				{SOCIALS.map(({ icon, link, alt, width, height }: Social) => (
-					<a key={link} href={link} target="_blank">
-						<Image src={icon.src} alt={alt} width={width} height={height} />
-					</a>
+					<Col>
+						<a key={link} href={link} target="_blank">
+							<Image src={icon.src} alt={alt} width={width} height={height} />
+						</a>
+					</Col>
 				))}
-			</div>
+			</Row>
 		</footer>
 	);
 }

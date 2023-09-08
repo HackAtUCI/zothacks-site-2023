@@ -1,8 +1,9 @@
 @use "@/lib/styles/variables.scss" as variables;
 
 .nav {
-	position: fixed;
+	position: sticky;
 	width: 100%;
+	filter: drop-shadow(0px 2.5px 2px rgba(0, 0, 0, 0.4));
 }
 
 .navbar {
@@ -10,7 +11,6 @@
 	background-size: cover;
 	background-position: left bottom;
 	background-repeat: no-repeat;
-	filter: drop-shadow(0px 2.5px 2px rgba(0, 0, 0, 0.4));
 }
 
 .logo {
@@ -22,44 +22,31 @@
 	transform: rotate(-16.81deg) translateY(-5vw);
 }
 
-.homeNotActive,
-.resourcesNotActive,
-.scheduleNotActive {
+.text {
 	margin-left: 1vw;
 	margin-right: 1vw;
 	font-size: 2rem;
 	font-weight: bold;
-	color: black;
 	text-decoration: none;
 }
 
-.homeActive {
-	margin-left: 1vw;
-	margin-right: 1vw;
-	font-size: 2rem;
-	font-weight: bold;
+.notActive {
+	@extend .text;
 	color: black;
-	text-decoration: none;
+}
+
+.homeActive {
+	@extend .text;
 	color: variables.$green;
 }
 
 .resourcesActive {
-	margin-left: 1vw;
-	margin-right: 1vw;
-	font-size: 2rem;
-	font-weight: bold;
-	color: black;
-	text-decoration: none;
+	@extend .text;
 	color: variables.$blue;
 }
 
 .scheduleActive {
-	margin-left: 1vw;
-	margin-right: 1vw;
-	font-size: 2rem;
-	font-weight: bold;
-	color: black;
-	text-decoration: none;
+	@extend .text;
 	color: variables.$navbar-red;
 }
 
@@ -68,12 +55,7 @@
 		left: 3vw;
 		transform: rotate(-16.81deg) translateY(-6vw);
 	}
-	.homeNotActive,
-	.resourcesNotActive,
-	.scheduleNotActive,
-	.homeActive,
-	.resourcesActive,
-	.scheduleActive {
+	.text {
 		font-size: 1.5rem;
 	}
 }

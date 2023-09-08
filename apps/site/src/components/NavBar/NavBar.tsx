@@ -26,7 +26,7 @@ export default function NavBar() {
 							<Link
 								href="/"
 								className={
-									activeRoute === "/" ? styles.homeActive : styles.homeNotActive
+									activeRoute === "/" ? styles.homeActive : styles.notActive
 								}
 							>
 								Home
@@ -36,7 +36,7 @@ export default function NavBar() {
 								className={
 									activeRoute === "/resources"
 										? styles.resourcesActive
-										: styles.resourcesNotActive
+										: styles.notActive
 								}
 							>
 								Resources
@@ -46,7 +46,7 @@ export default function NavBar() {
 								className={
 									activeRoute === "/schedule"
 										? styles.scheduleActive
-										: styles.scheduleNotActive
+										: styles.notActive
 								}
 							>
 								Schedule
