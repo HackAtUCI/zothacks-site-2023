@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import styles from "./Footer.module.scss";
 
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -55,23 +56,25 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<p className={styles.text}>Made with &lt;3 in Irvine, CA - Hack @ UCI</p>
-			<Row
-				className="justify-content-center align-items-center"
-				xs="auto"
-				sm="auto"
-				md="auto"
-				lg="auto"
-				xl="auto"
-				xxl="auto"
-			>
-				{SOCIALS.map(({ icon, link, alt, width, height }: Social) => (
-					<Col>
-						<a key={link} href={link} target="_blank">
-							<Image src={icon.src} alt={alt} width={width} height={height} />
-						</a>
-					</Col>
-				))}
-			</Row>
+			<Container>
+				<Row
+					className="justify-content-center align-items-center"
+					xs="auto"
+					sm="auto"
+					md="auto"
+					lg="auto"
+					xl="auto"
+					xxl="auto"
+				>
+					{SOCIALS.map(({ icon, link, alt, width, height }: Social) => (
+						<Col>
+							<a key={link} href={link} target="_blank">
+								<Image src={icon.src} alt={alt} width={width} height={height} />
+							</a>
+						</Col>
+					))}
+				</Row>
+			</Container>
 		</footer>
 	);
 }
