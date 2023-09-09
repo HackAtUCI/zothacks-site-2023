@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import FontProvider from "@/lib/FontProvider";
 
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 import "@/lib/styles/bootstrap.scss";
 
 export const metadata: Metadata = {
@@ -17,7 +19,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<FontProvider />
-			<body>{children}</body>
+			<body>
+				<NavBar />
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }
