@@ -1,0 +1,17 @@
+@use "@/lib/styles/variables.scss" as variables;
+
+.footer {
+	padding-bottom: 7vw;
+}
+
+.text {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.socials {
+	margin: 10px;
+}
