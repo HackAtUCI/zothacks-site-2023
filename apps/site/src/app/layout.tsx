@@ -21,12 +21,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={fuzzy.className}>
-				<div className="background">
+			<body className={fuzzy.className + " background"}>
 				<NavBar />
 				{children}
-				<Footer />
-				</div>
 			</body>
 		</html>
 	);

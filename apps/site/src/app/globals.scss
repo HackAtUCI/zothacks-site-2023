@@ -10,10 +10,9 @@ h1 {
 }
 
 .background {
-	background-image: url('../assets/background/anteater_background.svg');
-	background-repeat: 'no-repeat';
-	background-size: 'cover';
-	background-position: center center;
-	min-height: 100vh;
-	min-width: 100vw;
+	background-image: url("../assets/background/anteater_background.svg");
+	background-repeat: repeat;
+	background-size: "100% 100%";
+	background-position: 50% 25%;
+	background-attachment: fixed;
 }
