@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 // import ApplyButton from "@/assets/images/ApplyButton.svg";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -20,8 +19,7 @@ export default function Landing() {
 					<div className={styles.applyButtonContainer}>
 						<Button
 							as="a"
-							className={styles.applyButton + " m-5"}
-							variant="warning"
+							className={styles.applyButton}
 							href="https://hack.ics.uci.edu/" // TODO Change to application site link
 						>
 							<h2 className={styles.applyButtonText}>Apply!</h2>
