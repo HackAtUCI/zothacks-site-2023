@@ -1,4 +1,5 @@
-@use "@/lib/styles/variables.scss" as variables;
+@use "bootstrap-utils" as utils;
+@use "zothacks-theme" as theme;
 
 .nav {
 	position: sticky;
@@ -37,20 +38,20 @@
 
 .homeActive {
 	@extend .text;
-	color: variables.$green;
+	color: theme.$green;
 }
 
 .resourcesActive {
 	@extend .text;
-	color: variables.$blue;
+	color: theme.$blue;
 }
 
 .scheduleActive {
 	@extend .text;
-	color: variables.$navbar-red;
+	color: theme.$navbar-red;
 }
 
-@include variables.media-breakpoint-down(md) {
+@include utils.media-breakpoint-down(md) {
 	.logo {
 		left: 3vw;
 		transform: rotate(-16.81deg) translateY(-6vw);
@@ -60,7 +61,7 @@
 	}
 }
 
-@include variables.media-breakpoint-up(lg) {
+@include utils.media-breakpoint-up(lg) {
 	.logo {
 		width: 180px;
 		height: 180px;

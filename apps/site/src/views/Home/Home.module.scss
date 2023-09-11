@@ -1,0 +1,17 @@
+@use "bootstrap-utils" as bootstrap;
+
+$container-padding: 6rem;
+
+.home {
+	h2 {
+		text-align: center;
+	}
+
+	:global {
+		section.container {
+			// responsive padding
+			@include bootstrap.padding-top($container-padding);
+			@include bootstrap.padding-bottom($container-padding);
+		}
+	}
+}
