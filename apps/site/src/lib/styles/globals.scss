@@ -1,5 +1,15 @@
 .background {
-	background-image: url("~@/assets/background/anteater_background.svg");
-	background-position: 50% 25%;
-	background-attachment: fixed;
+    overflow-x: hidden;
+
+    &::before {
+        background-image: url("~@/assets/background/anteater_background.png");
+        background-size: 100px;
+        content: '';
+        position: absolute;
+        width: 500vh;
+        height: 500vh;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        z-index: -1;
+    }
+
 }
