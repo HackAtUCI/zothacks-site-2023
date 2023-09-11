@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 
 import Container from "react-bootstrap/Container";
