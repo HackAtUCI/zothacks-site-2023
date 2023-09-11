@@ -3,7 +3,11 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
+import AboutSection from "./AboutSection";
+import MentorSection from "./MentorSection";
+import SponsorSection from "./SponsorSection";
+import FAQSection from "./FAQSection";
 import styles from "./Landing.module.scss";
 
 export default function Landing() {
@@ -11,9 +15,7 @@ export default function Landing() {
 		<main>
 			<Container className="justify-content-center text-center">
 				<Row>
-					<Col>
-						<h1>ZotHacks 2023</h1>
-					</Col>
+					<h1>ZotHacks 2023</h1>
 				</Row>
 				<Row>
 					<div className={styles.applyButtonContainer}>
@@ -25,6 +27,18 @@ export default function Landing() {
 							<h2 className={styles.applyButtonText}>Apply!</h2>
 						</Button>
 					</div>
+				</Row>
+				<Row>
+					<AboutSection />
+				</Row>
+				<Row>
+					<MentorSection />
+				</Row>
+				<Row>
+					<SponsorSection />
+				</Row>
+				<Row>
+					<FAQSection />
 				</Row>
 			</Container>
 		</main>
