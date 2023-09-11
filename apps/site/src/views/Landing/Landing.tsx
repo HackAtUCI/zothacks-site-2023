@@ -1,13 +1,12 @@
 "use client";
-// import ApplyButton from "@/assets/images/ApplyButton.svg";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import AboutSection from "./AboutSection";
-import MentorSection from "./MentorSection";
-import SponsorSection from "./SponsorSection";
-import FAQSection from "./FAQSection";
+import ApplyButton from "./components/ApplyButton/ApplyButton";
+import AboutSection from "./components/AboutSection/AboutSection";
+import MentorSection from "./components/MentorSection/MentorSection";
+import SponsorSection from "./components/SponsorSection/SponsorSection";
+import FAQSection from "./components/FAQSection/FAQSection";
 import styles from "./Landing.module.scss";
 
 export default function Landing() {
@@ -18,14 +17,7 @@ export default function Landing() {
 					<h1>ZotHacks 2023</h1>
 				</Row>
 				<Row>
-					<div className={styles.applyButtonContainer}>
-						<Button
-							className={styles.applyButton}
-							href="https://hack.ics.uci.edu/" // TODO Change to application site link
-						>
-							<h2 className={styles.applyButtonText}>Apply!</h2>
-						</Button>
-					</div>
+					<ApplyButton />
 				</Row>
 				<Row>
 					<AboutSection />
