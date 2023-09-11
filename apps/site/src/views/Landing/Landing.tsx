@@ -20,7 +20,6 @@ export default function Landing() {
 				<Row>
 					<div className={styles.applyButtonContainer}>
 						<Button
-							as="a"
 							className={styles.applyButton}
 							href="https://hack.ics.uci.edu/" // TODO Change to application site link
 						>
