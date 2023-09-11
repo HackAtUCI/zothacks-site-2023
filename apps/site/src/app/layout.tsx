@@ -1,13 +1,10 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./globals.scss";
-
 import type { Metadata } from "next";
-import { Fuzzy_Bubbles } from "next/font/google";
+
+import FontProvider from "@/lib/FontProvider";
 
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
-
-const fuzzy = Fuzzy_Bubbles({ weight: ["400", "700"], subsets: ["latin"] });
+import "@/lib/styles/bootstrap.scss";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -21,7 +18,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={fuzzy.className}>
+			<FontProvider />
+			<body>
 				<NavBar />
 				{children}
 				<Footer />
