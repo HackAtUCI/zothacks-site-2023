@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 
+import Container from "react-bootstrap/Container";
+
 import FontProvider from "@/lib/FontProvider";
 
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import "@/lib/styles/bootstrap.scss";
+import "@/lib/styles/globals.scss";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -19,9 +22,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<FontProvider />
-			<body>
+			<body className="background">
 				<NavBar />
-				{children}
+				<Container>{children}</Container>
 				<Footer />
 			</body>
 		</html>
