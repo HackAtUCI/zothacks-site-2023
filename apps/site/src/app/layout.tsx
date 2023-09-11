@@ -1,8 +1,4 @@
-"use client";
-
 import type { Metadata } from "next";
-
-import Container from "react-bootstrap/Container";
 
 import FontProvider from "@/lib/FontProvider";
 
@@ -26,7 +22,7 @@ export default function RootLayout({
 			<FontProvider />
 			<body className="background">
 				<NavBar />
-				<Container>{children}</Container>
+				{children}
 				<Footer />
 			</body>
 		</html>
