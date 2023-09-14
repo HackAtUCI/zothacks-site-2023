@@ -13,9 +13,7 @@ export default function Landing() {
 	return (
 		<main>
 			<Container className="justify-content-center text-center">
-				<Row>
-					<h1>ZotHacks 2023</h1>
-				</Row>
+				<h1>ZotHacks 2023</h1>
 				<Row>
 					<ApplyButton />
 				</Row>
