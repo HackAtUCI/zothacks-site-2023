@@ -1,11 +1,13 @@
 import Container from "react-bootstrap/Container";
+import styles from "./FAQ.module.scss";
 
-function FAQ() {
+export default function FAQs() {
 	return (
 		<Container as="section">
-			<h2>FAQ</h2>
+			<div className={styles.faqs}>
+				<div className={styles.vertical_line} />
+				<h1 className={styles.title}>FAQ</h1>
+			</div>
 		</Container>
 	);
 }
-
-export default FAQ;

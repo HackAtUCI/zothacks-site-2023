@@ -1,0 +1,40 @@
+@use "../../lib/styles/zothacks-theme" as theme;
+@use "bootstrap-utils" as utils;
+
+.faqs {
+	position: relative;
+	display: grid;
+	justify-content: center;
+	margin-left: 40px;
+	margin-right: 40px;
+	background-color: theme.$beige;
+}
+
+.title {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.vertical_line {
+	position: absolute;
+	justify-self: flex-start;
+	height: 100%;
+	width: 10vw;
+	max-width: 116px;
+	min-width: 45px;
+	border-right: 4px solid theme.$red;
+	opacity: 0.45;
+	transition: border-right-width 0.3s linear;
+}
+
+@include utils.media-breakpoint-down(md) {
+	.vertical_line {
+		border-right: 3px solid theme.$red;
+	}
+}
+
+@include utils.media-breakpoint-down(sm) {
+	.vertical_line {
+		border-right: 2px solid theme.$red;
+	}
+}
