@@ -11,8 +11,10 @@
 
 	&:hover {
 		border: black solid 6px;
+		height: 90px;
+		width: 300px;
 
-		h1 {
+		span {
 			text-decoration: underline;
 		}
 	}
