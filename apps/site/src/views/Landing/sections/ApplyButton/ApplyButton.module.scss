@@ -1,24 +1,18 @@
 @use "bootstrap-utils" as utils;
 
-.applyButtonContainer {
-	position: relative;
-}
-
 .applyButton {
 	position: relative;
 	transform: skew(-30deg);
-	height: 80px;
+	height: 90px;
 	width: 250px;
-	margin: 0px;
 	border: none;
-	background-color: utils.$yellow;
-	transition: all 0.1s ease;
+	background-color: rgba(utils.$yellow, 0.7);
+	transition: border 0.1s ease;
 
 	&:hover {
 		border: black solid 6px;
-		background-color: utils.$yellow;
 
-		h1:nth-of-type(1) {
+		h1 {
 			text-decoration: underline;
 		}
 	}
