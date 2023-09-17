@@ -8,6 +8,7 @@
 	border: none;
 	background-color: rgba(theme.$yellow, 0.7);
 	transition: outline 0.08s ease-in-out;
+	display: inline-block;
 
 	&:hover {
 		outline: black solid 6px;
