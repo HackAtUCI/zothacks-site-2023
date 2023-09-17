@@ -6,9 +6,11 @@ import Mentors from "./sections/Mentors/Mentors";
 import Sponsors from "./sections/Sponsors/Sponsors";
 import FAQ from "./sections/FAQ/FAQ";
 
+import styles from "./Home.module.scss";
+
 function Home() {
 	return (
-		<div>
+		<div className={styles.home}>
 			<Landing />
 			<About />
 			<Mentors />

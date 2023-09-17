@@ -1,8 +1,10 @@
+import Container from "react-bootstrap/Container";
+
 function FAQ() {
 	return (
-		<section>
+		<Container as="section">
 			<h2>FAQ</h2>
-		</section>
+		</Container>
 	);
 }
 

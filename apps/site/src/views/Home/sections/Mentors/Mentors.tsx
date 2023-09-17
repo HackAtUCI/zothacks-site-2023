@@ -1,8 +1,10 @@
+import Container from "react-bootstrap/Container";
+
 function Mentors() {
 	return (
-		<section>
+		<Container as="section">
 			<h2>Mentors</h2>
-		</section>
+		</Container>
 	);
 }
 
