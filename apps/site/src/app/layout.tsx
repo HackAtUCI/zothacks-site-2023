@@ -21,7 +21,7 @@ export default function RootLayout({
 			<FontProvider />
 			<body>
 				<NavBar />
-				{children}
+				<main>{children}</main>
 				<Footer />
 			</body>
 		</html>
