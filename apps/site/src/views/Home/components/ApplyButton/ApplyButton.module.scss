@@ -23,8 +23,15 @@ $skew-amount: -30deg;
 		transform: skew(-$skew-amount);
 	}
 
+	box-shadow:
+		2px 3px 8px rgba(black, 0.2),
+		4px 6px 16px rgba(black, 0.2);
+
 	&:hover,
 	&:focus {
 		text-decoration: underline;
+		box-shadow:
+			2px 3px 16px rgba(black, 0.3),
+			4px 6px 32px rgba(black, 0.3);
 	}
 }
