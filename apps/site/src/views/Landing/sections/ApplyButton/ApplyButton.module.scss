@@ -7,12 +7,10 @@
 	width: 300px;
 	border: none;
 	background-color: rgba(theme.$yellow, 0.7);
-	transition: border 0.1s ease;
+	transition: outline 0.08s ease-in-out;
 
 	&:hover {
-		border: black solid 6px;
-		height: 90px;
-		width: 300px;
+		outline: black solid 6px;
 
 		span {
 			text-decoration: underline;
