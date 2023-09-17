@@ -1,28 +1,30 @@
+@use "bootstrap-utils" as bootstrap;
 @use "zothacks-theme" as theme;
 
+$highlighter: rgba(theme.$yellow, 0.7);
+$skew-amount: -30deg;
+
 .applyButton {
-	position: relative;
-	transform: skew(-30deg);
-	height: 90px;
-	width: 300px;
-	border: none;
-	background-color: rgba(theme.$yellow, 0.7);
-	transition: outline 0.08s ease-in-out;
-	display: inline-block;
+	@include bootstrap.button-variant(
+		$highlighter,
+		$highlighter,
+		$hover-border: theme.$black,
+		$active-border: theme.$black
+	);
+	@include bootstrap.rfs(6rem, --bs-btn-padding-x);
+	--bs-btn-font-weight: bold;
+	--bs-btn-border-width: 4px;
 
-	&:hover {
-		outline: black solid 6px;
+	@include bootstrap.font-size(bootstrap.$h2-font-size);
 
-		span {
-			text-decoration: underline;
-		}
+	transform: skew($skew-amount);
+	// unskew children
+	> * {
+		transform: skew(-$skew-amount);
 	}
-}
 
-.applyButtonText {
-	color: black;
-	position: absolute;
-	top: 50%;
-	left: 55%;
-	transform: skew(30deg) translate(-50%, -50%);
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
 }
