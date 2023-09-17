@@ -1,5 +1,4 @@
-@use "~@/lib/styles/bootstrap.scss" as bootstrap;
-@use "~@/lib/styles/variables.scss" as variables;
+@use "bootstrap-utils" as bootstrap;
 
 .intro {
     background-image: url("~src/assets/images/index-card.png");
@@ -10,7 +9,7 @@
     position: relative;
     text-align: center;
 
-    h1 {
+    h2 {
         margin-bottom: 70px;
     }
 

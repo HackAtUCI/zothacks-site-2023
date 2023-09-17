@@ -14,7 +14,7 @@ export default function Intro() {
 				height="100"
 				alt="Index card pin"
 			/>
-			<h1>What is ZotHacks?</h1>
+			<h2>What is ZotHacks?</h2>
 			<p>
 				ZotHacks is a beginner-friendly hackathon where students with minimal
 				computer science experience will learn to build their first CS project.

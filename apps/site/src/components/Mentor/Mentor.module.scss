@@ -1,0 +1,102 @@
+@use "bootstrap-utils" as bootstrap;
+
+.applySticky {
+    background-image: url("~@/assets/images/MentorStickyYellow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 8rem;
+    margin-left: 22%;
+    position: relative;
+    height: 325px;
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    a {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        transform: rotate(7.5deg);
+    }
+    
+
+    @include bootstrap.media-breakpoint-down(xxl) {
+        & {
+            margin-left: 17.5%;
+        }
+    }
+}
+
+.descSticky {
+    background-image: url("~@/assets/images/MentorStickyGreen.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 60%;
+    padding: 6rem;
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: 40%;
+    width: 41.667%;
+
+    p {
+        transform: rotate(-5deg);
+    }
+
+    @include bootstrap.media-breakpoint-down(xxl) {
+        & {
+            top: 10%;
+            left: 42%;
+        }
+    }
+
+    @include bootstrap.media-breakpoint-down(xl) {
+        & {
+            width: 50%;
+            padding: 5rem;
+        }
+    }
+}
+
+.applyStickyMobile {
+    background-image: url("~@/assets/images/YellowVertPost-it.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+.descStickyMobile {
+    background-image: url("~@/assets/images/MentorStickyGreen.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 0;
+    bottom: -15%;
+    z-index: 0;
+
+    a {
+        position: absolute;
+        bottom: 0;
+        z-index: 100;
+        transform: rotate(-5deg);
+    }
+
+    @include bootstrap.media-breakpoint-up(sm) {
+        & {
+            bottom: -25%;
+        }
+    }
+}
+
+.tape {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
