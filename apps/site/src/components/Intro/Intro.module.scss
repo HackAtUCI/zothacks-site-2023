@@ -6,7 +6,7 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 8rem 4rem;
+    padding: 5rem 1rem;
     position: relative;
     text-align: center;
 
@@ -14,26 +14,18 @@
         margin-bottom: 70px;
     }
 
-    @include bootstrap.media-breakpoint-down(md) {
+    @include bootstrap.media-breakpoint-up(sm) {
         & {
-            padding: 4rem 3rem;
-            margin: 1rem;
-            
-            h1 {
-                margin-top: 70px;
-                margin-bottom: 35px;
-            }
+            padding: 8rem 4rem;
         }
     }
-
-
 }
 
 .pin {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-75%, -50%);
     width: auto;
 }
 
@@ -44,7 +36,7 @@
     transform: translate(-25%, 50%);
     width: auto;
 
-    @include bootstrap.media-breakpoint-down(md) {
+    @include bootstrap.media-breakpoint-down(lg) {
         & {
             display: none;
         }
