@@ -1,4 +1,4 @@
-@use "bootstrap-utils" as utils;
+@use "zothacks-theme" as theme;
 
 .applyButton {
 	position: relative;
@@ -6,7 +6,7 @@
 	height: 90px;
 	width: 300px;
 	border: none;
-	background-color: rgba(utils.$yellow, 0.7);
+	background-color: rgba(theme.$yellow, 0.7);
 	transition: border 0.1s ease;
 
 	&:hover {
