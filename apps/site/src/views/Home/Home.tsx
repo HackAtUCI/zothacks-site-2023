@@ -6,7 +6,6 @@ import Mentors from "./sections/Mentors/Mentors";
 import Sponsors from "./sections/Sponsors/Sponsors";
 import FAQ from "./sections/FAQ/FAQ";
 
-import HackSticker from "@/components/Sticker/Stickers/HackSticker/HackSticker";
 import StickerLayout from "./components/StickerLayout/StickerLayout";
 
 import styles from "./Home.module.scss";
