@@ -16,8 +16,13 @@ export default function Sticker({
 		right: window.innerWidth,
 		bottom: window.innerHeight,
 	},
+	animate,
+	transition,
 }: StickerProps) {
-	// TODO add drag constraints
+	let transitionProps = { ...transition };
+
+	if (draggable)
+		transitionProps = { ...transition, type: "spring", stiffness: 100 };
 	const drag = draggable
 		? {
 				whileTap: {
@@ -36,12 +41,9 @@ export default function Sticker({
 				dragMomentum: false,
 				dragConstraints: dragConstraints,
 				dragElastic: 0.2,
+				transition: transitionProps,
 		  }
 		: {};
-
-	let transition = {};
-
-	if (draggable) transition = { ...transition, type: "spring", stiffness: 100 };
 
 	return (
 		<motion.div
@@ -50,7 +52,7 @@ export default function Sticker({
 				width,
 			}}
 			className={styles.stickerContainer}
-			transition={transition}
+			animate={animate}
 			{...drag}
 		>
 			<Image
@@ -72,4 +74,6 @@ interface StickerProps {
 	draggable: boolean;
 	dragConstraints: object | false | MutableRefObject<any> | undefined;
 	// dragConstraints prop can be an object, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
+	animate: object | undefined;
+	transition: object | undefined;
 }
