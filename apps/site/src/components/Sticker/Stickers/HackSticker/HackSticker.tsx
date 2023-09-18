@@ -1,20 +1,20 @@
-import { motion } from "framer-motion";
-
 import HackLogo from "@/assets/icons/hack.png";
 import BaseSticker from "../../BaseSticker";
 import styles from "./HackSticker.module.scss";
+import { lightShake } from "@/components/animation";
 
-export default function HackSticker() {
+export default function HackSticker({ style }: { style?: object | undefined }) {
 	return (
-		<motion.div className={styles.stickerContainer}>
+		<div className={styles.stickerContainer} style={{ ...style }}>
 			<BaseSticker
 				imageSrc={HackLogo.src}
 				alt="hack-at-uci-sticker"
 				draggable
 				dragConstraints={false}
-				height={100}
-				width={100}
+				height={500}
+				width={500}
+				{...lightShake}
 			/>
-		</motion.div>
+		</div>
 	);
 }
