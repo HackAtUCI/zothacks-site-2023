@@ -14,7 +14,7 @@ export default function Mentor() {
 	const width = useWindowWidth();
 
 	const mentorHeader = (
-		<h2 className="mb-3">Interested in becoming a mentor?</h2>
+		<h2 className="mb-3 text-start">Interested in becoming a mentor?</h2>
 	);
 	const mentorDescEl = (
 		<p>
