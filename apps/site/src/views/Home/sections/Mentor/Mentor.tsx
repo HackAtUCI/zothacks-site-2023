@@ -24,33 +24,27 @@ export default function Mentor() {
 		</p>
 	);
 	const applyLink = (
-		<BookmarkLink className="mb-4" href={MENTOR_APP_URL}>
+		<BookmarkLink className="mb-4 py-3" href={MENTOR_APP_URL}>
 			Apply to Mentor!
 		</BookmarkLink>
 	);
 
 	return (
-		<Container className="py-5">
-			{width >= 992 ? (
-				<Row className="position-relative">
-					<Col lg={4} className={styles.applySticky}>
-						{mentorHeader}
-						{applyLink}
-					</Col>
-					<Col className={styles.descSticky + " text-center"}>
-						{mentorDescEl}
-					</Col>
-				</Row>
-			) : (
-				<Row className="position-relative">
-					<Col className={styles.applyStickyMobile + " mx-3 p-5"}>
-						<Image src={tape} alt="post-it tape" className={styles.tape} />
+		<Container as="section">
+			<Row className="position-relative mx-2 my-5">
+				<Col lg={5} className={styles.applySticky}>
+					<Image src={tape} alt="post-it tape" className={styles.tape} />
+					<div className={styles.applyStickyContent}>
 						{mentorHeader}
 						{mentorDescEl}
-					</Col>
-					<Col className={styles.descStickyMobile}>{applyLink}</Col>
-				</Row>
-			)}
+					</div>
+					{applyLink}
+				</Col>
+				<Col className={styles.descSticky + " text-center"}>
+					{mentorDescEl}
+					{applyLink}
+				</Col>
+			</Row>
 		</Container>
 	);
 }

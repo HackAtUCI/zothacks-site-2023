@@ -1,43 +1,36 @@
 @use "bootstrap-utils" as bootstrap;
 
 .intro {
-    background-image: url("~src/assets/images/index-card.png");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 5rem 1rem;
-    position: relative;
-    text-align: center;
+	@include bootstrap.padding(8rem 4rem);
 
-    h2 {
-        margin-bottom: 70px;
-    }
+	background-image: url("~src/assets/images/index-card.png");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	text-align: center;
 
-    @include bootstrap.media-breakpoint-up(sm) {
-        & {
-            padding: 8rem 4rem;
-        }
-    }
+	h2 {
+		margin-bottom: 70px;
+	}
 }
 
 .pin {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-75%, -50%);
-    width: auto;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-75%, -50%);
+	width: auto;
 }
 
 .hackDoodle {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(-25%, 50%);
-    width: auto;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translate(-25%, 50%);
+	width: auto;
 
-    @include bootstrap.media-breakpoint-down(lg) {
-        & {
-            display: none;
-        }
-    }
+	@include bootstrap.media-breakpoint-down(lg) {
+		display: none;
+	}
 }
