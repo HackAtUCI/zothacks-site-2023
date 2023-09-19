@@ -1,5 +1,11 @@
-import "./Schedule.module.scss";
+"use client";
+import ClipboardSchedule from "./sections/ClipboardSchedule/ClipboardSchedule";
+import styles from "./Schedule.module.scss";
 
 export default function Schedule() {
-	return <h1>Schedule</h1>;
+	return (
+		<div className={styles.schedule}>
+			<ClipboardSchedule />
+		</div>
+	);
 }
