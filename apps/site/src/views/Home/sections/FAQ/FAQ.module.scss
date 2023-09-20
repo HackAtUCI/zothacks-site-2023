@@ -1,40 +1,75 @@
-@use "../../lib/styles/zothacks-theme" as theme;
+@use "zothacks-theme" as theme;
 @use "bootstrap-utils" as utils;
 
-.faqs {
+.faq {
 	position: relative;
-	display: grid;
-	justify-content: center;
+	display: flex;
+	flex-direction: column;
+
 	margin-left: 40px;
 	margin-right: 40px;
+	padding-bottom: 30px;
+
 	background-color: theme.$beige;
 }
 
 .title {
+	align-self: center;
 	margin-top: 24px;
 	margin-bottom: 24px;
 }
 
-.vertical_line {
+.vertical-line {
 	position: absolute;
 	justify-self: flex-start;
+
 	height: 100%;
-	width: 10vw;
-	max-width: 116px;
-	min-width: 45px;
+	width: 116px;
 	border-right: 4px solid theme.$red;
 	opacity: 0.45;
-	transition: border-right-width 0.3s linear;
+}
+
+.body {
+	margin-left: 110px;
+	font-size: 1rem;
+}
+
+.accordion {
+	--bs-accordion-bg: transparent;
+	--bs-accordion-active-bg: transparent;
+	--bs-accordion-border-color: transparent;
+	--bs-accordion-btn-focus-box-shadow: 0;
+	--bs-accordion-border-radius: 0;
+}
+
+.accordion-border {
+	border-bottom: 3px solid theme.$light-blue;
+	border-top: 3px solid theme.$light-blue;
 }
 
 @include utils.media-breakpoint-down(md) {
+	.body {
+		margin-left: 60px;
+	}
+
 	.vertical_line {
-		border-right: 3px solid theme.$red;
+		width: 70px;
 	}
 }
 
 @include utils.media-breakpoint-down(sm) {
-	.vertical_line {
-		border-right: 2px solid theme.$red;
+	.body {
+		margin-left: 40px;
+		font-size: 1rem;
+	}
+
+	.vertical-line {
+		border-right: 3px solid theme.$red;
+		width: 45px;
+	}
+
+	.accordion-border {
+		border-bottom: 2px solid theme.$light-blue;
+		border-top: 2px solid theme.$light-blue;
 	}
 }
