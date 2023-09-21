@@ -8,11 +8,11 @@ export default function HackSticker({ style }: { style?: object | undefined }) {
 		<div className={styles.stickerContainer} style={{ ...style }}>
 			<BaseSticker
 				imageSrc={HackLogo.src}
-				alt="hack-at-uci-sticker"
+				alt="Hack at UCI sticker"
 				draggable
 				dragConstraints={false}
-				height={500}
-				width={500}
+				height={502}
+				width={530}
 				{...lightShake}
 			/>
 		</div>

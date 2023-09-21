@@ -11,7 +11,7 @@ export default function HeartSticker({
 		<div style={{ ...style }}>
 			<BaseSticker
 				imageSrc={HeartEmoji.src}
-				alt="hack-at-uci-sticker"
+				alt="heart emoji sticker"
 				draggable
 				dragConstraints={false}
 				height={150}

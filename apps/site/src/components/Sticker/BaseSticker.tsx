@@ -1,7 +1,19 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./BaseSticker.module.scss";
-import { MutableRefObject } from "react";
+import { MutableRefObject, useRef } from "react";
+
+interface StickerProps {
+	imageSrc: string;
+	alt: string;
+	height?: number;
+	width?: number;
+	draggable: boolean;
+	dragConstraints: object | false | MutableRefObject<any> | undefined;
+	// dragConstraints prop can be an object containing coordinates, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
+	animate: object | undefined;
+	transition: object | undefined;
+}
 
 export default function Sticker({
 	imageSrc,
@@ -9,37 +21,40 @@ export default function Sticker({
 	height = 100,
 	width = 100,
 	draggable = false,
-	// TODO replace with useWindowDimensions hook
-	dragConstraints = {
-		top: 0,
-		left: 0,
-		right: window.innerWidth,
-		bottom: window.innerHeight,
-	},
+	dragConstraints = false,
 	animate,
 	transition,
 }: StickerProps) {
+	const pageRef = useRef(document.documentElement);
 	let transitionProps = { ...transition };
 
+	let animateProps = {
+		...animate,
+		filter: "drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.3))",
+	};
+
 	if (draggable)
-		transitionProps = { ...transition, type: "spring", stiffness: 100 };
+		transitionProps = {
+			...transition,
+			scale: { type: "spring", stiffness: 100 },
+		};
 	const drag = draggable
 		? {
 				whileTap: {
-					scale: 1.15,
-					filter: `drop-shadow(${0.15 * width}px ${0.17 * height}px ${
+					scale: 1.1,
+					filter: `drop-shadow(${0.08 * width}px ${0.1 * height}px ${
 						0.1 * height
-					}px rgba(0, 0, 0, 0.15)`,
+					}px rgba(0, 0, 0, 0.15))`,
 				},
 				whileHover: {
-					scale: 1.05,
-					filter: `drop-shadow(${0.07 * width}px ${0.09 * height}px ${
-						0.09 * height
-					}px rgba(0, 0, 0, 0.25)`,
+					scale: 1.025,
+					filter: `drop-shadow(${0.05 * width}px ${0.07 * height}px ${
+						0.05 * height
+					}px rgba(0, 0, 0, 0.2))`,
 				},
 				drag: true,
 				dragMomentum: false,
-				dragConstraints: dragConstraints,
+				dragConstraints: dragConstraints ? dragConstraints : pageRef,
 				dragElastic: 0.2,
 				transition: transitionProps,
 		  }
@@ -52,7 +67,7 @@ export default function Sticker({
 				width,
 			}}
 			className={styles.stickerContainer}
-			animate={animate}
+			animate={animateProps}
 			{...drag}
 		>
 			<Image
@@ -64,16 +79,4 @@ export default function Sticker({
 			/>
 		</motion.div>
 	);
-}
-
-interface StickerProps {
-	imageSrc: string;
-	alt: string;
-	height?: number | undefined;
-	width?: number | undefined;
-	draggable: boolean;
-	dragConstraints: object | false | MutableRefObject<any> | undefined;
-	// dragConstraints prop can be an object, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
-	animate: object | undefined;
-	transition: object | undefined;
 }
