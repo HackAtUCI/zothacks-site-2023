@@ -8,7 +8,7 @@ import styles from "./Intro.module.scss";
 export default function Intro() {
 	return (
 		<Container as="section">
-			<Row className={styles.intro}>
+			<Row className={styles.intro + " mx-2"}>
 				<Image
 					className={styles.pin}
 					src={pin}

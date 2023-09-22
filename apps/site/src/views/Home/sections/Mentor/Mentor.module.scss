@@ -1,3 +1,4 @@
+@use "zothacks-theme" as theme;
 @use "bootstrap-utils" as bootstrap;
 
 .applySticky {
@@ -32,11 +33,12 @@
 
 	@include bootstrap.media-breakpoint-down(lg) {
 		background-image: none;
-		background-color: #ffffa9;
+		background-color: theme.$sticky-yellow;
 		background-size: contain;
 		margin-left: 0;
 		height: auto;
 		padding: 0;
+		box-shadow: 0 3px 5px 3px lightgray;
 
 		.applyStickyContent {
 			@include bootstrap.padding(3rem);
