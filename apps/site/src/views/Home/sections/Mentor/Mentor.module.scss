@@ -24,7 +24,7 @@
 		position: absolute;
 		bottom: 10%;
 		left: 6%;
-		transform: rotate(7.5deg);
+		transform: rotate(7.5deg) translateZ(0);
 	}
 
 	p {
@@ -104,7 +104,7 @@
 			bottom: 2.5%;
 			left: 7.5%;
 			z-index: 2;
-			transform: rotate(-5deg);
+			transform: rotate(-5deg) translateZ(0);
 		}
 		p {
 			display: none;

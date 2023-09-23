@@ -16,7 +16,7 @@ export default function BookmarkLink({
 	return (
 		<Button
 			className={styles.bookmarkLink + " " + className}
-			variant="link"
+			variant=""
 			href={href}
 		>
 			{children}

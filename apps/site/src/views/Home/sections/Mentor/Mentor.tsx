@@ -24,7 +24,7 @@ export default function Mentor() {
 		</p>
 	);
 	const applyLink = (
-		<BookmarkLink className="mb-4 py-3" href={MENTOR_APP_URL}>
+		<BookmarkLink className="mb-4" href={MENTOR_APP_URL}>
 			Apply to Mentor!
 		</BookmarkLink>
 	);
