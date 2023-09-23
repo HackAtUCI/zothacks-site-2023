@@ -1,7 +1,10 @@
+import Image from "next/image";
 import Container from "react-bootstrap/Container";
 import Accordion from "react-bootstrap/Accordion";
 import styles from "./FAQ.module.scss";
 
+import star from "@/assets/images/star.svg";
+import eraser from "@/assets/images/eraser.svg";
 import { client } from "@/lib/sanity/client";
 
 interface sanityResponse {
@@ -23,6 +26,9 @@ export default async function FAQ() {
 		<Container as="section">
 			<div className={styles.faq}>
 				<div className={styles["vertical-line"]} />
+				<Image src={star} alt="star" className={styles["star-lg"]} />
+				<Image src={star} alt="star" className={styles["star-sm"]} />
+				<Image src={eraser} alt="eraser" className={styles["eraser"]} />
 				<h2 className={styles.title}>FAQ</h2>
 				<Accordion className={styles.accordion} alwaysOpen>
 					{faq.map((q, index) => (

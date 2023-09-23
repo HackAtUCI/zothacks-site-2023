@@ -48,6 +48,40 @@
 	border-top: 3px solid theme.$light-blue;
 }
 
+.star-lg {
+	position: absolute;
+	left: -60px;
+	top: -120px;
+	transform: rotate(-25deg);
+	filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+
+	width: 230px;
+	height: 230px;
+}
+
+.star-sm {
+	position: absolute;
+	right: -30px;
+	top: -60px;
+	transform: rotate(15deg);
+	filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+
+	width: 120px;
+	height: 120px;
+	visibility: hidden;
+}
+
+.eraser {
+	position: absolute;
+	left: -80px;
+	bottom: -110px;
+	filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+
+	width: 220px;
+	height: 220px;
+	visibility: hidden;
+}
+
 @include utils.media-breakpoint-down(md) {
 	.body {
 		margin-left: 60px;
@@ -71,5 +105,17 @@
 	.accordion-border {
 		border-bottom: 2px solid theme.$light-blue;
 		border-top: 2px solid theme.$light-blue;
+	}
+
+	.star-lg {
+		visibility: hidden;
+	}
+
+	.star-sm {
+		visibility: visible;
+	}
+
+	.eraser {
+		visibility: visible;
 	}
 }
