@@ -31,7 +31,7 @@
 
 .body {
 	margin-left: 110px;
-	font-size: 1rem;
+	margin-right: 10px;
 }
 
 .accordion {
@@ -61,7 +61,6 @@
 @include utils.media-breakpoint-down(sm) {
 	.body {
 		margin-left: 40px;
-		font-size: 1rem;
 	}
 
 	.vertical-line {

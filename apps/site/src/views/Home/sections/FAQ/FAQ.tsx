@@ -1,40 +1,23 @@
-import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Accordion from "react-bootstrap/Accordion";
 import styles from "./FAQ.module.scss";
 
-const sanityUrl: string =
-	"https://1smqaeyk.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22faqs%22%5D+&perspective=previewDrafts";
+import { client } from "@/lib/sanity/client";
 
 interface sanityResponse {
-	result: {
-		faqs: faqType[];
-	}[];
+	faqs: faqType[];
 }
+
 interface faqType {
+	_key: string;
+	_type: string;
 	question: string;
 	answer: string;
 }
 
-export default function FAQ() {
-	const [faq, setFAQ] = useState<faqType[] | []>([]);
-
-	useEffect(() => {
-		fetch(sanityUrl)
-			.then((response) => {
-				response
-					.json()
-					.then((data: sanityResponse) => {
-						setFAQ(data.result[0]["faqs"]);
-					})
-					.catch((e: Error) => {
-						console.log(e);
-					});
-			})
-			.catch((e: Error) => {
-				console.log(e);
-			});
-	}, []);
+export default async function FAQ() {
+	const data: sanityResponse[] = await client.fetch('*[_type == "faqs"]');
+	const faq: faqType[] = data[0]["faqs"];
 
 	return (
 		<Container as="section">
