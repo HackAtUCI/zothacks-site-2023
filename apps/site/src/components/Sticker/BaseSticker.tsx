@@ -20,7 +20,7 @@ export default function Sticker({
 	alt,
 	height = 100,
 	width = 100,
-	draggable = false,
+	draggable = true,
 	dragConstraints = false,
 	animate = {},
 	transition = {},
