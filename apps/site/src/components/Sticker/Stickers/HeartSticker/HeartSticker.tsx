@@ -12,8 +12,6 @@ export default function HeartSticker({
 			<BaseSticker
 				imageSrc={HeartEmoji.src}
 				alt="heart emoji sticker"
-				draggable
-				dragConstraints={false}
 				height={150}
 				width={150}
 				{...fastShake}

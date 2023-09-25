@@ -8,11 +8,11 @@ interface StickerProps {
 	alt: string;
 	height?: number;
 	width?: number;
-	draggable: boolean;
-	dragConstraints: object | false | MutableRefObject<any> | undefined;
+	draggable?: boolean;
+	dragConstraints?: object | false | MutableRefObject<any> | undefined;
 	// dragConstraints prop can be an object containing coordinates, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
-	animate: object | undefined;
-	transition: object | undefined;
+	animate?: object | undefined;
+	transition?: object | undefined;
 }
 
 export default function Sticker({
@@ -22,8 +22,8 @@ export default function Sticker({
 	width = 100,
 	draggable = false,
 	dragConstraints = false,
-	animate,
-	transition,
+	animate = {},
+	transition = {},
 }: StickerProps) {
 	const pageRef = useRef(document.documentElement);
 	let transitionProps = { ...transition };
