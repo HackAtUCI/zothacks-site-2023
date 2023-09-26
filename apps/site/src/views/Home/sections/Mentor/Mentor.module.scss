@@ -7,6 +7,7 @@
 	background-image: url("~@/assets/images/MentorStickyYellow.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
+	filter: drop-shadow(5px 5px 5px lightgray);
 	padding-top: 3rem;
 	padding-left: 5rem;
 	padding-right: 5rem;
@@ -63,6 +64,7 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: 60%;
+	filter: drop-shadow(5px 5px 5px lightgray);
 	padding: 6rem;
 	position: absolute;
 	z-index: 0;
