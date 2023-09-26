@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+
 import pin from "@/assets/images/index-card-pin.svg";
 import hackDoodle from "@/assets/images/hack-doodle.png";
+
 import styles from "./Intro.module.scss";
 
 export default function Intro() {
 	return (
 		<Container as="section">
-			<Row className={styles.intro + " mx-2"}>
+			<div className={styles.intro}>
 				<Image
 					className={styles.pin}
 					src={pin}
@@ -31,7 +32,7 @@ export default function Intro() {
 					height="250"
 					alt="Hack logo doodle"
 				/>
-			</Row>
+			</div>
 		</Container>
 	);
 }
