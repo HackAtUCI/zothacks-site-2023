@@ -49,7 +49,7 @@ const SOCIALS: Social[] = [
 	},
 	{
 		icon: TikTok,
-		link: "",
+		link: "https://www.tiktok.com/@hackatuci",
 		alt: "TikTok",
 		width: 59,
 		height: 59,
@@ -63,7 +63,13 @@ export default function Footer() {
 			<div className="text-center">
 				{SOCIALS.map(({ icon, link, alt, width, height }) => (
 					<a key={link} href={link} target="_blank" className={styles.socials}>
-						<Image src={icon.src} alt={alt} width={width} height={height} />
+						<Image
+							src={icon.src}
+							alt={alt}
+							width={width}
+							height={height}
+							className={styles.socials}
+						/>
 					</a>
 				))}
 			</div>
