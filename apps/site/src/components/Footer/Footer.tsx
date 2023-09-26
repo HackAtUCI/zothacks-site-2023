@@ -4,10 +4,11 @@ import Image from "next/image";
 
 import styles from "./Footer.module.scss";
 
-import Mail from "@/assets/icons/mail.png";
+import Mail from "@/assets/icons/email.svg";
 import Facebook from "@/assets/icons/facebook.png";
-import Instagram from "@/assets/icons/insta.png";
-import Hack from "@/assets/icons/hack.png";
+import Instagram from "@/assets/icons/instagram.png";
+import Hack from "@/assets/icons/hack-logo.svg";
+import TikTok from "@/assets/icons/tiktok.png";
 
 type Social = {
 	icon: any;
@@ -22,14 +23,14 @@ const SOCIALS: Social[] = [
 		icon: Hack,
 		link: "https://hack.ics.uci.edu/",
 		alt: "Hack at UCI",
-		width: 70,
-		height: 70,
+		width: 59,
+		height: 59,
 	},
 	{
 		icon: Mail,
 		link: "mailto:hack@uci.edu",
 		alt: "Mail",
-		width: 79,
+		width: 59,
 		height: 59,
 	},
 	{
@@ -43,8 +44,15 @@ const SOCIALS: Social[] = [
 		icon: Instagram,
 		link: "https://www.instagram.com/hackatuci/",
 		alt: "Instagram",
-		width: 69,
-		height: 72,
+		width: 59,
+		height: 59,
+	},
+	{
+		icon: TikTok,
+		link: "",
+		alt: "TikTok",
+		width: 59,
+		height: 59,
 	},
 ];
 
