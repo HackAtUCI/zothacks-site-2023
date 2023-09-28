@@ -1,5 +1,4 @@
 import ApplyButton from "@/views/Home/components/ApplyButton/ApplyButton";
-
 import styles from "./Landing.module.scss";
 
 function Landing() {
