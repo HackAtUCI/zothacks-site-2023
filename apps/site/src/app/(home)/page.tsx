@@ -4,7 +4,7 @@ import Mentors from "./sections/Mentors/Mentors";
 import Sponsors from "./sections/Sponsors/Sponsors";
 import FAQ from "./sections/FAQ/FAQ";
 
-import styles from "./Home.module.scss";
+import styles from "./page.module.scss";
 
 function Home() {
 	return (

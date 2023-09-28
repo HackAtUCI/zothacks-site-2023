@@ -1,4 +1,4 @@
-import ApplyButton from "@/views/Home/components/ApplyButton/ApplyButton";
+import ApplyButton from "../../ApplyButton/ApplyButton";
 
 import styles from "./Landing.module.scss";
 
