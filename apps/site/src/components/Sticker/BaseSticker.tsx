@@ -25,7 +25,11 @@ export default function Sticker({
 	animate = {},
 	transition = {},
 }: StickerProps) {
-	const pageRef = useRef(document.documentElement);
+	// prevent next from throwing error involving DOM API
+	const pageRef =
+		typeof document !== "undefined"
+			? useRef(document.documentElement)
+			: undefined;
 	let transitionProps = { ...transition };
 
 	let animateProps = {

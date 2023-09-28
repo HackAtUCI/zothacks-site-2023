@@ -12,7 +12,8 @@ import styles from "./Home.module.scss";
 
 function Home() {
 	return (
-		<StickerLayout>
+		<>
+			<StickerLayout />
 			<div className={styles.home}>
 				<Landing />
 				<About />
@@ -20,7 +21,7 @@ function Home() {
 				<Sponsors />
 				<FAQ />
 			</div>
-		</StickerLayout>
+		</>
 	);
 }
 

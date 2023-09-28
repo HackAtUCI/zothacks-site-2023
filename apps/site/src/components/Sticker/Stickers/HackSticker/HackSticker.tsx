@@ -9,8 +9,8 @@ export default function HackSticker({ style }: { style?: object | undefined }) {
 			<BaseSticker
 				imageSrc={HackLogo.src}
 				alt="Hack at UCI sticker"
-				height={502}
-				width={530}
+				height={200}
+				width={200}
 				{...lightShake}
 			/>
 		</div>

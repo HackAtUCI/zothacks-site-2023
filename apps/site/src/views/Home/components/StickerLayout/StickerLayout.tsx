@@ -1,12 +1,8 @@
 import { HackSticker, HeartSticker } from "@/components/Sticker/Stickers";
 
-export default function StickerLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function StickerLayout() {
 	return (
-		<div>
+		<div style={{ maxWidth: "100vw" }}>
 			<HackSticker
 				style={{
 					position: "absolute",
@@ -23,7 +19,6 @@ export default function StickerLayout({
 					zIndex: 100,
 				}}
 			/>
-			{children}
 		</div>
 	);
 }
