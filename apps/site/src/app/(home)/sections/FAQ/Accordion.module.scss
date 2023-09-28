@@ -1,0 +1,16 @@
+@use "zothacks-theme" as theme;
+@use "bootstrap-utils" as utils;
+
+.accordion {
+	--bs-accordion-bg: transparent;
+	--bs-accordion-active-bg: transparent;
+	--bs-accordion-border-color: transparent;
+	--bs-accordion-btn-focus-box-shadow: 0;
+	--bs-accordion-border-radius: 0;
+	--bs-accordion-btn-icon-width: 14px;
+}
+
+.accordion-border {
+	border-bottom: 3px solid theme.$light-blue;
+	border-top: 3px solid theme.$light-blue;
+}
