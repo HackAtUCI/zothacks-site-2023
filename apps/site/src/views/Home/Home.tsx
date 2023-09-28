@@ -1,5 +1,3 @@
-"use client";
-
 import Landing from "./sections/Landing/Landing";
 import About from "./sections/About/About";
 import Mentors from "./sections/Mentors/Mentors";

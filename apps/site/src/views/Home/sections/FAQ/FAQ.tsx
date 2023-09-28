@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Container from "react-bootstrap/Container";
-import Accordion from "react-bootstrap/Accordion";
 import styles from "./FAQ.module.scss";
 
 import star from "@/assets/images/star.svg";
 import eraser from "@/assets/images/eraser.svg";
 import { client } from "@/lib/sanity/client";
+import clsx from "clsx";
+import { getFAQs } from "./getFAQ";
 
 interface sanityResponse {
 	faqs: faqType[];
@@ -19,34 +19,40 @@ interface faqType {
 }
 
 export default async function FAQ() {
-	const data: sanityResponse[] = await client.fetch('*[_type == "faqs"]');
-	const faq: faqType[] = data[0]["faqs"];
+	const faqs = await getFAQs();
 
 	return (
-		<Container as="section">
+		<div className="container">
 			<div className={styles.faq}>
 				<div className={styles["vertical-line"]} />
 				<Image src={star} alt="star" className={styles["star-lg"]} />
 				<Image src={star} alt="star" className={styles["star-sm"]} />
 				<Image src={eraser} alt="eraser" className={styles["eraser"]} />
 				<h2 className={styles.title}>FAQ</h2>
-				<Accordion className={styles.accordion} alwaysOpen>
-					{faq.map((q, index) => (
-						<Accordion.Item
+				<div className={clsx(styles.accordion, "accordion")}>
+					{faqs.faqs.map((q, index) => (
+						<div
 							key={index}
-							className={styles["accordion-border"]}
-							eventKey={`${index}`}
+							className={clsx(styles["accordion-border"], "accordion-item")}
 						>
-							<Accordion.Header as="h3" className={styles.body}>
+							<h3 className={clsx(styles.body, "accordion-header")}>
 								{q["question"]}
-							</Accordion.Header>
-							<Accordion.Body as="p" className={styles.body}>
-								{q["answer"]}
-							</Accordion.Body>
-						</Accordion.Item>
+							</h3>
+							<div
+								id="collapseOne"
+								className={clsx(
+									styles.body,
+									"accordion-collapse",
+									"collapse",
+									"show",
+								)}
+							>
+								{/* <p className="accordion-body">{q["answer"]}</p> */}
+							</div>
+						</div>
 					))}
-				</Accordion>
+				</div>
 			</div>
-		</Container>
+		</div>
 	);
 }

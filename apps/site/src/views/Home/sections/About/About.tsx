@@ -1,10 +1,8 @@
-import Container from "react-bootstrap/Container";
-
 function About() {
 	return (
-		<Container as="section">
+		<div className="container">
 			<h2>About</h2>
-		</Container>
+		</div>
 	);
 }
 
