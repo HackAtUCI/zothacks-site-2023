@@ -1,0 +1,80 @@
+@use "sass:list";
+@use "bootstrap-utils" as bootstrap;
+
+.bookmarkLink {
+	@include bootstrap.button-variant(
+		white,
+		transparent,
+		$hover-border: bootstrap.$dark,
+		$active-border: bootstrap.$dark,
+		$active-color: bootstrap.$link-hover-color
+	);
+
+	$border-width: 2px;
+	--bs-btn-border-width: #{$border-width};
+	// disable active shadow since not so simple to extend shadow to ::after
+	--bs-btn-active-shadow: none;
+	--bs-btn-border-radius: 0;
+
+	padding-left: 1.5rem;
+	padding-right: 0;
+
+	filter: drop-shadow(2px 1px 4px rgba(black, 0.15));
+
+	transition: list.append(
+		list.append(bootstrap.$btn-transition, padding-left 0.15s ease-in-out),
+		font-weight 0.15s ease-in-out // non-variable but to synchronize delay
+	);
+
+	$height: calc(2.5rem + 2 * $border-width);
+	height: $height;
+	$chevron-size: calc($height / 2);
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: -$border-width;
+		left: 100%;
+		transition:
+			border-color 0.15s ease-in-out,
+			filter 0.15s ease-in-out;
+	}
+
+	&::before {
+		border-top: $chevron-size solid white;
+		border-right: $chevron-size solid transparent;
+		border-bottom: $chevron-size solid white;
+		border-left: $chevron-size solid white;
+		filter: drop-shadow(2px 1px 1px rgba(black, 0.1));
+	}
+
+	&::after {
+		border-top: $border-width solid white;
+		border-bottom: $border-width solid white;
+		border-right: $border-width solid transparent;
+		width: $height;
+		height: $height;
+	}
+
+	&:hover,
+	&:focus-visible {
+		padding-left: 2rem; // pulling effect
+		font-weight: bold;
+	}
+
+	&:hover,
+	&:focus-visible,
+	&:active {
+		border-right-color: transparent;
+
+		&::before {
+			filter: drop-shadow(5px 2px 4px rgba(black, 0.1));
+		}
+
+		&::after {
+			border-top-color: var(--bs-btn-active-border-color);
+			border-bottom-color: var(--bs-btn-active-border-color);
+		}
+	}
+}
