@@ -1,3 +1,5 @@
+"use client";
+
 import { HackSticker, HeartSticker } from "@/components/Sticker/Stickers";
 
 export default function StickerLayout() {

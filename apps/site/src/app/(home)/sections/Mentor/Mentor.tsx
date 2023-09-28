@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 
 import BookmarkLink from "@/components/BookmarkLink/BookmarkLink";
 import tape from "@/assets/images/tape.svg";
@@ -27,21 +25,21 @@ export default function Mentor() {
 	);
 
 	return (
-		<Container as="section">
+		<div className="container">
 			<div className="position-relative my-5">
-				<Col lg={5} className={styles.applySticky}>
+				<div className={styles.applySticky}>
 					<Image src={tape} alt="post-it tape" className={styles.tape} />
 					<div className={styles.applyStickyContent}>
 						{mentorHeader}
 						{mentorDescription}
 					</div>
 					{applyLink}
-				</Col>
-				<Col className={styles.descSticky + " text-center"}>
+				</div>
+				<div className={styles.descSticky + " text-center"}>
 					{mentorDescription}
 					{applyLink}
-				</Col>
+				</div>
 			</div>
-		</Container>
+		</div>
 	);
 }

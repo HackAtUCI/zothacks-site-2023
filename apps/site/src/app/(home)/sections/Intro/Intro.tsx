@@ -8,7 +8,7 @@ import styles from "./Intro.module.scss";
 
 export default function Intro() {
 	return (
-		<Container as="section">
+		<div className="container">
 			<div className={styles.intro}>
 				<Image
 					className={styles.pin}
@@ -33,6 +33,6 @@ export default function Intro() {
 					alt="Hack logo doodle"
 				/>
 			</div>
-		</Container>
+		</div>
 	);
 }

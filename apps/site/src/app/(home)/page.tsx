@@ -3,6 +3,7 @@ import Intro from "./sections/Intro/Intro";
 import Mentor from "./sections/Mentor/Mentor";
 import Sponsors from "./sections/Sponsors/Sponsors";
 import FAQ from "./sections/FAQ/FAQ";
+import StickerLayout from "./StickerLayout/StickerLayout";
 
 import styles from "./page.module.scss";
 
