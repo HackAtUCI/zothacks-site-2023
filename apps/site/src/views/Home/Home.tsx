@@ -16,8 +16,8 @@ function Home() {
 			<StickerLayout />
 			<div className={styles.home}>
 				<Landing />
-				<About />
-				<Mentors />
+				<Intro />
+				<Mentor />
 				<Sponsors />
 				<FAQ />
 			</div>
