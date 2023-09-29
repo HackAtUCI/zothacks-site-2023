@@ -8,7 +8,7 @@ $container-padding: 6rem;
 	}
 
 	:global {
-		section.container {
+		section {
 			// responsive padding
 			@include bootstrap.padding-top($container-padding);
 			@include bootstrap.padding-bottom($container-padding);

@@ -1,10 +1,8 @@
-import Container from "react-bootstrap/Container";
-
 function BackendResources() {
 	return (
-		<Container as="section">
+		<section className="container">
 			<h2>Backend Framework Resources</h2>
-		</Container>
+		</section>
 	);
 }
 

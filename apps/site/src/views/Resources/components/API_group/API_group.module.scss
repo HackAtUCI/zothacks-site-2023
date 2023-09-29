@@ -1,0 +1,33 @@
+.tape {
+	background-image: url("~@/assets/images/tape.png");
+	width: 238px;
+	height: 60px;
+	position: absolute;
+	top: 0;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	height: 450px;
+}
+
+.tag {
+	position: absolute;
+	left: -5%;
+	bottom: 5%;
+	transition: filter 0.13s ease;
+
+	&:hover {
+		filter: drop-shadow(0 0 2px black);
+	}
+}
+
+.text {
+	width: 90%;
+	text-align: center;
+}
