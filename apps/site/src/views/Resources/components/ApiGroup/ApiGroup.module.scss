@@ -20,10 +20,13 @@
 	position: absolute;
 	left: -5%;
 	bottom: 5%;
-	transition: filter 0.13s ease;
+	transition:
+		filter 0.13s ease,
+		transform 0.13s ease;
 
 	&:hover {
 		filter: drop-shadow(0 0 2px black);
+		transform: translateX(-5px);
 	}
 }
 

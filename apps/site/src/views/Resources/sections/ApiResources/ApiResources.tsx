@@ -4,20 +4,16 @@ import Col from "react-bootstrap/Col";
 
 import styles from "./ApiResources.module.scss";
 
-import google_cloud_sticker from "@/assets/icons/google-cloud-logo.png";
-import google_cloud_post_it from "@/assets/post_its/google-post-it.png";
-import twitter_sticker from "@/assets/icons/twitter-logo.png";
-import twitter_post_it from "@/assets/post_its/twitter-post-it.png";
-import spotify_sticker from "@/assets/icons/spotify-logo.png";
-import spotify_post_it from "@/assets/post_its/spotify-post-it.png";
-import api_tag from "@/assets/images/api-reference-tag.png";
-import API_group from "../../components/API_group/API_group";
+import API_group from "../../components/ApiGroup/ApiGroup";
+import ApiResourcesList from "./config";
+
+import { API_Group_Props } from "../../interfaces/interfaces";
 
 function ApiResources() {
 	return (
 		<Container>
-			{/* Card Component */}
 			<Row className={styles.row}>
+				{/* Card Component */}
 				<Col className={styles.column}>
 					<div className={styles.card}>
 						<h2 className={styles.title}>API Resources</h2>
@@ -30,37 +26,19 @@ function ApiResources() {
 						</p>
 					</div>
 				</Col>
-				<Col className={styles.column}>
-					<API_group
-						title="Google Cloud API"
-						description="API that allows users to access Google services such as storage access
-				and machine-learning"
-						sticker_src={google_cloud_sticker.src}
-						tag_src={api_tag.src}
-						tag_link="https://hack.ics.uci.edu/"
-						post_it_src={google_cloud_post_it.src}
-					/>
-				</Col>
-				<Col className={styles.column}>
-					<API_group
-						title="Twitter API"
-						description="API that retrieves data on tweets and trends"
-						sticker_src={twitter_sticker.src}
-						tag_src={api_tag.src}
-						tag_link="https://hack.ics.uci.edu/"
-						post_it_src={twitter_post_it.src}
-					/>
-				</Col>
-				<Col className={styles.column}>
-					<API_group
-						title="Spotify API"
-						description="API that retrieves data on Spotify music, playlists, artists, and users"
-						sticker_src={spotify_sticker.src}
-						tag_src={api_tag.src}
-						tag_link="https://hack.ics.uci.edu/"
-						post_it_src={spotify_post_it.src}
-					/>
-				</Col>
+				{/* Post Its */}
+				{ApiResourcesList.map((resource: API_Group_Props) => (
+					<Col className={styles.column} key={resource.postItSrc}>
+						<API_group
+							title={resource.title}
+							description={resource.description}
+							stickerSrc={resource.stickerSrc}
+							tagSrc={resource.tagSrc}
+							tagLink={resource.tagLink}
+							postItSrc={resource.postItSrc}
+						/>
+					</Col>
+				))}
 			</Row>
 		</Container>
 	);

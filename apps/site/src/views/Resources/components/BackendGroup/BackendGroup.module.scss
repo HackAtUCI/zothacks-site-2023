@@ -1,0 +1,69 @@
+@use "bootstrap-utils" as utils;
+
+.text_flexbox {
+	position: absolute;
+	top: 8%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.description {
+	width: 90%;
+	font-size: 23px;
+}
+
+.tag {
+	width: 100%;
+	transition:
+		filter 0.13s ease,
+		transform 0.13s ease;
+
+	&:hover {
+		transform: translateX(-5px);
+		filter: drop-shadow(0 0 2px black);
+	}
+}
+
+.tag_flexbox {
+	position: absolute;
+	bottom: 5%;
+	left: -3%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+
+.tape {
+	position: absolute;
+	width: 60%;
+}
+
+.left_tape {
+	@extend .tape;
+	top: -10%;
+	left: -10%;
+}
+
+.right_tape {
+	@extend .tape;
+	top: -10%;
+	right: -10%;
+}
+
+@include utils.media-breakpoint-down(md) {
+	.description {
+		font-size: 20px;
+	}
+
+	.left_tape {
+		top: -6%;
+	}
+	// adjustments to prevent right tape from extending beyond page in mobile view
+	.right_tape {
+		top: -6%;
+		right: -2%;
+	}
+}
