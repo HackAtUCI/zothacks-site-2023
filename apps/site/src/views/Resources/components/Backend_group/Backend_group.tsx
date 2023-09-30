@@ -1,5 +1,5 @@
 import styles from "./Backend_group.module.scss";
-import { Backend_Group_Props } from "../../interfaces/interfaces";
+import { Backend_Group_Props, tag } from "../../interfaces/interfaces";
 
 export default function Backend_Group({
 	card,
