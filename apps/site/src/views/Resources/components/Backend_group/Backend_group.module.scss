@@ -32,3 +32,15 @@
 	align-items: flex-start;
 	justify-content: flex-end;
 }
+
+.left_tape {
+	position: absolute;
+	top: -10%;
+	left: -10%;
+}
+
+.right_tape {
+	position: absolute;
+	top: -10%;
+	right: -10%;
+}

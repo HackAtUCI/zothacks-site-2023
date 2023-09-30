@@ -1,13 +1,30 @@
 import styles from "./Backend_group.module.scss";
 import { Backend_Group_Props, tag } from "../../interfaces/interfaces";
+import Clear_Tape_Left from "@/assets/images/clear_tape_left.svg";
+import Clear_Tape_Right from "@/assets/images/clear_tape_right.svg";
 
 export default function Backend_Group({
 	card,
 	title,
 	description,
 	tagList,
+	tapeOrientation,
 	className,
 }: Backend_Group_Props) {
+	let tapePosition;
+	switch (tapeOrientation) {
+		case "left":
+			tapePosition = (
+				<img className={styles.left_tape} src={Clear_Tape_Left.src} />
+			);
+			break;
+		case "right":
+			tapePosition = (
+				<img className={styles.right_tape} src={Clear_Tape_Right.src} />
+			);
+			break;
+	}
+
 	return (
 		<>
 			{/* height hardcoded for 3 tags */}
@@ -22,6 +39,7 @@ export default function Backend_Group({
 				}}
 				className={className}
 			>
+				{tapePosition}
 				<div className={styles.text_flexbox}>
 					<h2 className={styles.title}>{title}</h2>
 					<p className={styles.description}>{description}</p>
