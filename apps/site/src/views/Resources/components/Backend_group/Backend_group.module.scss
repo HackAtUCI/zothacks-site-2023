@@ -1,0 +1,34 @@
+.text_flexbox {
+	position: absolute;
+	top: 8%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.description {
+	width: 80%;
+	font-size: 23px;
+}
+
+.tag {
+	transition:
+		filter 0.13s ease,
+		transform 0.13s ease;
+
+	&:hover {
+		transform: translateX(-5px);
+		filter: drop-shadow(0 0 2px black);
+	}
+}
+
+.tag_flexbox {
+	position: absolute;
+	bottom: 5%;
+	left: -4%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
