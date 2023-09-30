@@ -1,19 +1,5 @@
 import styles from "./Backend_group.module.scss";
-
-interface tag {
-	link: string;
-	src: string;
-	alt: string;
-	className?: string;
-}
-
-interface Backend_Group_props {
-	card: string | undefined;
-	title: string | undefined;
-	description: string | undefined;
-	tagList: tag[] | undefined;
-	className?: string | undefined;
-}
+import { Backend_Group } from "../../interfaces/interfaces";
 
 export default function Backend_Group({
 	card,
@@ -21,7 +7,7 @@ export default function Backend_Group({
 	description,
 	tagList,
 	className,
-}: Backend_Group_props) {
+}: Backend_Group) {
 	return (
 		<>
 			{/* height hardcoded for 3 tags */}

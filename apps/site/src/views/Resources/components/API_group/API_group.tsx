@@ -1,14 +1,5 @@
 import styles from "./API_group.module.scss";
-
-interface API_group_props {
-	title: string;
-	description: string;
-	sticker_src: string;
-	tag_src: string;
-	tag_link: string;
-	post_it_src: string;
-}
-
+import { API_Group } from "../../interfaces/interfaces";
 export default function API_group({
 	title,
 	description,
@@ -16,7 +7,7 @@ export default function API_group({
 	tag_src,
 	tag_link,
 	post_it_src,
-}: API_group_props) {
+}: API_Group) {
 	return (
 		<div
 			style={{
