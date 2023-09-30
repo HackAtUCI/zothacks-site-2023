@@ -1,5 +1,5 @@
 import styles from "./API_group.module.scss";
-import { API_Group } from "../../interfaces/interfaces";
+import { API_Group_Props } from "../../interfaces/interfaces";
 export default function API_group({
 	title,
 	description,
@@ -7,7 +7,7 @@ export default function API_group({
 	tag_src,
 	tag_link,
 	post_it_src,
-}: API_Group) {
+}: API_Group_Props) {
 	return (
 		<div
 			style={{

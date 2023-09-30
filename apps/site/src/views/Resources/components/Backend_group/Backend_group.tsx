@@ -1,5 +1,5 @@
 import styles from "./Backend_group.module.scss";
-import { Backend_Group } from "../../interfaces/interfaces";
+import { Backend_Group_Props } from "../../interfaces/interfaces";
 
 export default function Backend_Group({
 	card,
@@ -7,7 +7,7 @@ export default function Backend_Group({
 	description,
 	tagList,
 	className,
-}: Backend_Group) {
+}: Backend_Group_Props) {
 	return (
 		<>
 			{/* height hardcoded for 3 tags */}
