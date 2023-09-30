@@ -28,8 +28,6 @@ function ApiResources() {
 						host the API and retrieve data.
 					</p>
 				</div>
-			</Row>
-			<Row className={styles.row}>
 				<Col className={styles.column}>
 					<API_group
 						title="Google Cloud API"
