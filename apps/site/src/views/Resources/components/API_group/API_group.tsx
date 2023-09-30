@@ -1,11 +1,4 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-
 import styles from "./API_group.module.scss";
-
-import Post_It from "@/assets/images/google_post_it.png";
-import Google_Cloud_Sticker from "@/assets/images/google_cloud_logo.png";
-import API_Reference_Tag from "@/assets/images/api_reference_tag.png";
 
 interface API_group_props {
 	title: string;

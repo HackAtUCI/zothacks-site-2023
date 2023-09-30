@@ -18,16 +18,18 @@ function ApiResources() {
 		<Container>
 			{/* Card Component */}
 			<Row className={styles.row}>
-				<div className={styles.card}>
-					<h2 className={styles.title}>API Resources</h2>
-					<p className={styles.text}>
-						Application Programming Interface (API) are interfaces or
-						communication protocol that simplifies implementation and
-						maintenance of software. In order to access most API's, many
-						languages use HTTP protocol to communicate with the servers that
-						host the API and retrieve data.
-					</p>
-				</div>
+				<Col className={styles.column}>
+					<div className={styles.card}>
+						<h2 className={styles.title}>API Resources</h2>
+						<p className={styles.text}>
+							Application Programming Interface (API) are interfaces or
+							communication protocol that simplifies implementation and
+							maintenance of software. In order to access most API's, many
+							languages use HTTP protocol to communicate with the servers that
+							host the API and retrieve data.
+						</p>
+					</div>
+				</Col>
 				<Col className={styles.column}>
 					<API_group
 						title="Google Cloud API"
