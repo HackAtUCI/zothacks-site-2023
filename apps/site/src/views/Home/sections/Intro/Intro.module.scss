@@ -12,6 +12,19 @@
 
 	h2 {
 		margin-bottom: 70px;
+		@include bootstrap.media-breakpoint-down(sm) {
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include bootstrap.media-breakpoint-down(sm) {
+		background-image: url("~@/assets/images/index-card-mobile.svg");
+		background-position: top;
+		background-size: cover;
+		box-shadow:
+			4px 4px 5px 4px rgba(0, 0, 0, 0.2),
+			-1px -1px 8px 4px rgba(0, 0, 0, 0.2);
 	}
 }
 
