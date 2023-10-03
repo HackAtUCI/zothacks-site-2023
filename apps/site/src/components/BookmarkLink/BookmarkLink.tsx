@@ -14,6 +14,7 @@ export default function BookmarkLink({
 	href,
 	target,
 	children,
+	...props
 }: PropsWithChildren<BookmarkLinkProps>) {
 	return (
 		<Button
