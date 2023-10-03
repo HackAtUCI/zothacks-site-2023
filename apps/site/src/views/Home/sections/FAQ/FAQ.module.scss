@@ -5,9 +5,17 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	width: 80%;
 
 	padding-bottom: 1.875rem;
 	background-color: theme.$beige;
+}
+
+.container {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	display: flex;
+	justify-content: center;
 }
 
 .title {
