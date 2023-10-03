@@ -7,11 +7,12 @@ export default function Schedule() {
 		<div
 			style={{
 				width: "100vw",
-				height: `${comingSoonImage.height}px`,
-				backgroundImage: `url(${comingSoonImage.src})`,
+				height: `${maintenanceImage.height}px`,
+				backgroundImage: `url(${maintenanceImage.src})`,
 				backgroundRepeat: "no-repeat",
 				backgroundPosition: "center",
 				backgroundSize: "center",
+				mixBlendMode: "multiply",
 			}}
 		></div>
 	);
