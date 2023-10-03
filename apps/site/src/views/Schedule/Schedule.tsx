@@ -6,14 +6,19 @@ export default function Schedule() {
 	return (
 		<div
 			style={{
-				width: "100vw",
-				height: `${maintenanceImage.height}px`,
-				backgroundImage: `url(${maintenanceImage.src})`,
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "center",
-				backgroundSize: "center",
-				mixBlendMode: "multiply",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
 			}}
-		></div>
+		>
+			<img
+				src={maintenanceImage.src}
+				style={{
+					width: "100vw",
+					height: `100vw`,
+					mixBlendMode: "multiply",
+				}}
+			></img>
+		</div>
 	);
 }
