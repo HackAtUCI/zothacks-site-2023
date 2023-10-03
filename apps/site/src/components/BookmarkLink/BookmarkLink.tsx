@@ -6,21 +6,21 @@ import styles from "./BookmarkLink.module.scss";
 interface BookmarkLinkProps {
 	className?: string;
 	href: string;
-	props: any;
+	target: string;
 }
 
 export default function BookmarkLink({
 	className,
 	href,
+	target,
 	children,
-	...props
 }: PropsWithChildren<BookmarkLinkProps>) {
 	return (
 		<Button
 			className={styles.bookmarkLink + " " + className}
 			variant=""
 			href={href}
-			{...props}
+			target={target}
 		>
 			{children}
 		</Button>
