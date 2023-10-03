@@ -1,3 +1,5 @@
+@use "bootstrap-utils" as utils;
+
 .text_flexbox {
 	position: absolute;
 	top: 8%;
@@ -8,11 +10,12 @@
 }
 
 .description {
-	width: 80%;
+	width: 90%;
 	font-size: 23px;
 }
 
 .tag {
+	width: 100%;
 	transition:
 		filter 0.13s ease,
 		transform 0.13s ease;
@@ -26,21 +29,41 @@
 .tag_flexbox {
 	position: absolute;
 	bottom: 5%;
-	left: -4%;
+	left: -3%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-end;
 }
 
-.left_tape {
+.tape {
 	position: absolute;
+	width: 60%;
+}
+
+.left_tape {
+	@extend .tape;
 	top: -10%;
 	left: -10%;
 }
 
 .right_tape {
-	position: absolute;
+	@extend .tape;
 	top: -10%;
 	right: -10%;
+}
+
+@include utils.media-breakpoint-down(md) {
+	.description {
+		font-size: 20px;
+	}
+
+	.left_tape {
+		top: -6%;
+	}
+	// adjustments to prevent right tape from extending beyond page in mobile view
+	.right_tape {
+		top: -6%;
+		right: -2%;
+	}
 }

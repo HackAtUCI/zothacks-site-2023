@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./Backend_group.module.scss";
 import { Backend_Group_Props, tag } from "../../interfaces/interfaces";
 import Clear_Tape_Left from "@/assets/images/clear_tape_left.svg";
@@ -33,11 +35,13 @@ export default function Backend_Group({
 					backgroundImage: `url(${card})`,
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
+					backgroundPosition: "center",
 					width: "495px",
 					height: "510px",
 					position: "relative",
+					marginTop: "50px",
 				}}
-				className={className}
+				className={`${className} ${styles.wrapper}`}
 			>
 				{tapePosition}
 				<div className={styles.text_flexbox}>
@@ -56,10 +60,10 @@ export default function Backend_Group({
 
 function Resource_Tag({ link, className, src, alt }: tag) {
 	return (
-		<div className={className}>
-			<a href={link}>
+		<div className={`${className} ${styles.tag_wrapper}`}>
+			<Link href={link}>
 				<img src={src} className={styles.tag} alt={alt} />
-			</a>
+			</Link>
 		</div>
 	);
 }
