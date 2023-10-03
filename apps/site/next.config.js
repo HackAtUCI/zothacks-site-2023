@@ -9,13 +9,13 @@ const nextConfig = {
 	async redirects() {
 		return [
 			{
-				source: "/",
-				destination: "/home",
+				source: "/apply",
+				destination: "https://forms.gle/nxRU44y9Gd5mrmXUA",
 				permanent: true,
 			},
 			{
-				source: "/apply",
-				destination: "https://forms.gle/nxRU44y9Gd5mrmXUA",
+				source: "/mentor",
+				destination: "https://forms.gle/fwWJtsQ3GXQFGjS47",
 				permanent: true,
 			},
 		];
