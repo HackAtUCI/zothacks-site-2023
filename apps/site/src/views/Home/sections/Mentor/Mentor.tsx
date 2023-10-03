@@ -7,7 +7,7 @@ import tape from "@/assets/images/tape.svg";
 
 import styles from "./Mentor.module.scss";
 
-const MENTOR_APP_URL = "https://forms.gle/fwWJtsQ3GXQFGjS47";
+const MENTOR_APP_URL = "/mentor";
 
 export default function Mentor() {
 	const mentorHeader = (
