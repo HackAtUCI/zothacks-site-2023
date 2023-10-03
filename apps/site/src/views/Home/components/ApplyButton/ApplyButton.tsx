@@ -6,7 +6,7 @@ export default function ApplyButton() {
 	return (
 		<Button
 			className={styles.applyButton}
-			href="https://forms.gle/nxRU44y9Gd5mrmXUA"
+			href="/apply"
 			variant=""
 			target="_blank"
 		>
