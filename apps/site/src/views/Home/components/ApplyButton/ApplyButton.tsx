@@ -6,7 +6,7 @@ export default function ApplyButton() {
 	return (
 		<Button
 			className={styles.applyButton}
-			href="https://hack.ics.uci.edu/" // TODO: Change to application site link
+			href="https://forms.gle/nxRU44y9Gd5mrmXUA"
 			variant=""
 		>
 			<div>Apply</div>
