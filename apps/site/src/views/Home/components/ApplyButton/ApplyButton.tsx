@@ -8,6 +8,7 @@ export default function ApplyButton() {
 			className={styles.applyButton}
 			href="https://forms.gle/nxRU44y9Gd5mrmXUA"
 			variant=""
+			target="_blank"
 		>
 			<div>Apply</div>
 		</Button>
