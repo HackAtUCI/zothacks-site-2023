@@ -18,7 +18,7 @@ export default function FAQAccordion({ faq }: FAQAccordion) {
 				<Accordion.Item
 					key={_key}
 					className={styles["accordion-border"]}
-					eventKey={`${index}`}
+					eventKey={_key}
 				>
 					<Accordion.Header className={styles.body}>
 						{question}
