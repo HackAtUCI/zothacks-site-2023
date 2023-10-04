@@ -1,5 +1,4 @@
-import maintenanceImage from "@/assets/images/maintenance.png";
-import comingSoonImage from "@/assets/images/coming_soon.jpg";
+import maintenancePetr from "@/assets/images/UnderMaintenenceLight.png";
 import "./Schedule.module.scss";
 
 export default function Schedule() {
@@ -12,10 +11,10 @@ export default function Schedule() {
 			}}
 		>
 			<img
-				src={maintenanceImage.src}
+				src={maintenancePetr.src}
 				style={{
-					width: "100vw",
-					height: `100vw`,
+					width: "80vw",
+					height: "60vw",
 					mixBlendMode: "multiply",
 				}}
 			></img>
