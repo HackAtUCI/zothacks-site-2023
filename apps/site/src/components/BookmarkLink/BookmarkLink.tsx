@@ -6,11 +6,13 @@ import styles from "./BookmarkLink.module.scss";
 interface BookmarkLinkProps {
 	className?: string;
 	href: string;
+	target?: string;
 }
 
 export default function BookmarkLink({
 	className,
 	href,
+	target,
 	children,
 }: PropsWithChildren<BookmarkLinkProps>) {
 	return (
@@ -18,6 +20,7 @@ export default function BookmarkLink({
 			className={styles.bookmarkLink + " " + className}
 			variant=""
 			href={href}
+			target={target}
 		>
 			{children}
 		</Button>
