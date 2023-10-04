@@ -1,7 +1,7 @@
 @use "bootstrap-utils" as bootstrap;
 
 .intro {
-	@include bootstrap.padding(8rem 4rem);
+	@include bootstrap.padding(8rem 1rem);
 
 	background-image: url("~src/assets/images/index-card-mobile.svg");
 	background-size: cover;
@@ -23,6 +23,7 @@
 	}
 
 	@include bootstrap.media-breakpoint-up(sm) {
+		@include bootstrap.padding(8rem 4rem);
 		background-image: url("~@/assets/images/index-card.svg");
 		background-size: 100% 100%;
 		box-shadow: none;
