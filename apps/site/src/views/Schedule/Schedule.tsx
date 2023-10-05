@@ -1,23 +1,29 @@
+import Image from "next/image";
 import maintenancePetr from "@/assets/images/UnderMaintenenceLight.png";
-import "./Schedule.module.scss";
+import styles from "./Schedule.module.scss";
 
 export default function Schedule() {
 	return (
-		<div
-			style={{
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
-			<img
-				src={maintenancePetr.src}
+		<div className="container" style={{ width: "100vw", height: "80vh" }}>
+			<div
+				className={styles.maintenanceContainer}
 				style={{
-					width: "80vw",
-					height: "60vw",
-					mixBlendMode: "multiply",
+					position: "absolute",
+					top: "50%",
+					left: "50%",
+					transform: "translate(-50%, -50%)",
 				}}
-			></img>
+			>
+				<img
+					src={maintenancePetr.src}
+					alt="Anteaters working at a construction site."
+					style={{ width: "100%" }}
+				/>
+				<div className="text-center">
+					<h2>Page Under Maintenance</h2>
+					<p>Check back soon!</p>
+				</div>
+			</div>
 		</div>
 	);
 }
