@@ -11,7 +11,7 @@ const Questions = z.array(
 				_key: z.string(),
 				markDefs: z.array(z.object({
 					_type: z.string(),
-					href: z.string(),
+					href: z.optional(z.string()),
 					_key: z.string()
 				})),
 				children: z.array(z.object({
