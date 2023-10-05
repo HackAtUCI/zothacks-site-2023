@@ -7,6 +7,7 @@ function Landing() {
 	return (
 		<div className={styles.landing}>
 			<h1>ZotHacks 2023</h1>
+			<p>November 4&ndash;5</p>
 			<ApplyButton />
 		</div>
 	);
