@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "./BackendResources.module.scss";
 import { Backend_Group_Props } from "@/views/Resources/interfaces/interfaces";
-import Backend_Group from "../../components/BackendGroup/BackendGroup";
+import BackendGroup from "../../components/BackendGroup/BackendGroup";
 import BackendResourcesList from "./config";
 
 function BackendResources() {
@@ -24,7 +24,7 @@ function BackendResources() {
 				{/* Post-Its */}
 				{BackendResourcesList.map((resource: Backend_Group_Props) => (
 					<Col className={styles.column} key={resource.card}>
-						<Backend_Group
+						<BackendGroup
 							card={resource.card}
 							title={resource.title}
 							description={resource.description}
