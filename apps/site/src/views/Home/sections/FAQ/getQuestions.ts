@@ -30,7 +30,6 @@ const Questions = z.array(
 	})
 );
 
-export const revalidate = 60;
 
 export const getQuestions = cache(async () => {
 	return Questions.parse(
