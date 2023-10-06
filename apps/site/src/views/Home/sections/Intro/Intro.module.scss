@@ -1,7 +1,7 @@
 @use "bootstrap-utils" as bootstrap;
 
 .intro {
-	@include bootstrap.padding(8rem 1rem);
+	@include bootstrap.padding(10rem 0.5rem);
 
 	background-image: url("~src/assets/images/index-card-mobile.svg");
 	background-size: cover;
@@ -14,12 +14,7 @@
 		-1px -1px 8px 4px rgba(0, 0, 0, 0.2);
 
 	h2 {
-		margin-top: 20px;
-		margin-bottom: 50px;
-		@include bootstrap.media-breakpoint-up(sm) {
-			margin-top: 0px;
-			margin-bottom: 70px;
-		}
+		@include bootstrap.margin-bottom(3rem);
 	}
 
 	@include bootstrap.media-breakpoint-up(sm) {
