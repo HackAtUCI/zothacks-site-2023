@@ -7,7 +7,7 @@ import "@/lib/styles/bootstrap.scss";
 import "@/lib/styles/globals.scss";
 
 export const metadata: Metadata = {
-	title: "ZotHacks",
+	title: "ZotHacks 2023",
 	description: "Hack at UCI's premier hackathon for beginners at UCI",
 };
 
