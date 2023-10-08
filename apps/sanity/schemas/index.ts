@@ -1,4 +1,4 @@
 import faqs from "./faqs";
-import schedule from "./schedule"
+import event from "./event"
 
-export const schemaTypes = [faqs, schedule];
+export const schemaTypes = [faqs, event];
