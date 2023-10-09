@@ -16,7 +16,7 @@ export default function NavBar() {
 	const activeRoute = usePathname();
 
 	return (
-		<nav className={styles.nav}>
+		<div className={styles.nav}>
 			<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
 				<Container fluid>
 					<Navbar.Brand />
@@ -60,6 +60,6 @@ export default function NavBar() {
 					<Image src={ZotHacksLogo.src} alt="ZotHacks Logo" fill />
 				</div>
 			</Link>
-		</nav>
+		</div>
 	);
 }
