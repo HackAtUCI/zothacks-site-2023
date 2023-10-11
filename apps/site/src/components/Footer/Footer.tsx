@@ -6,7 +6,7 @@ import styles from "./Footer.module.scss";
 
 import Mail from "@/assets/icons/email.svg";
 import Facebook from "@/assets/icons/Facebook-Logo-Primary-min.svg";
-import Instagram from "@/assets/icons/instagram.svg";
+import Instagram from "@/assets/icons/instagram.png";
 import Hack from "@/assets/icons/hack-logo.svg";
 
 type Social = {
