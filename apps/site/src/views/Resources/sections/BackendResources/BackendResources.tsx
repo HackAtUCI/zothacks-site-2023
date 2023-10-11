@@ -16,8 +16,8 @@ function BackendResources() {
 						<h2 className={styles.title}>Backend Framework Resources</h2>
 						<p className={styles.text}>
 							Backend Frameworks are a variety of middleware services used to
-							connect to other API and database vendors to fit your project's
-							needs.
+							connect to other API and database vendors to fit your
+							project&apos;s needs.
 						</p>
 					</div>
 				</Col>

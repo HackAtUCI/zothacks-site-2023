@@ -20,7 +20,7 @@ function ApiResources() {
 						<p className={styles.text}>
 							Application Programming Interface (API) are interfaces or
 							communication protocol that simplifies implementation and
-							maintenance of software. In order to access most API's, many
+							maintenance of software. In order to access most API&apos;s, many
 							languages use HTTP protocol to communicate with the servers that
 							host the API and retrieve data.
 						</p>
