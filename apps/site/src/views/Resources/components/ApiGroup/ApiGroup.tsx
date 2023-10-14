@@ -6,7 +6,7 @@ export interface APIGroupProps {
 	stickerSrc: string;
 	tagSrc: string;
 	tagLink: string;
-	stickyNoteSrc: string;
+	stickyNoteColor: string;
 }
 
 export function ApiGroup({
@@ -15,18 +15,13 @@ export function ApiGroup({
 	stickerSrc,
 	tagSrc,
 	tagLink,
-	stickyNoteSrc,
+	stickyNoteColor,
 }: APIGroupProps) {
 	return (
 		<div
+			className={styles.group}
 			style={{
-				backgroundImage: `url(${stickyNoteSrc})`,
-				backgroundRepeat: "no-repeat",
-				backgroundSize: "cover",
-				backgroundPositionY: "25px",
-				width: "344px",
-				height: "500px",
-				position: "relative",
+				backgroundColor: `${stickyNoteColor}`,
 			}}
 		>
 			<div className={styles.container}>

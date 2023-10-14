@@ -1,9 +1,6 @@
 import google_cloud_sticker from "@/assets/icons/google-cloud-logo.png";
-import google_cloud_post_it from "@/assets/post_its/google-post-it.png";
 import twitter_sticker from "@/assets/icons/twitter-logo.png";
-import twitter_post_it from "@/assets/post_its/twitter-post-it.png";
 import spotify_sticker from "@/assets/icons/spotify-logo.png";
-import spotify_post_it from "@/assets/post_its/spotify-post-it.png";
 import api_tag from "@/assets/images/api-reference-tag.png";
 
 const ApiResourcesList = [
@@ -14,7 +11,7 @@ const ApiResourcesList = [
 		stickerSrc: google_cloud_sticker.src,
 		tagSrc: api_tag.src,
 		tagLink: "https://hack.ics.uci.edu/",
-		stickyNoteSrc: google_cloud_post_it.src,
+		stickyNoteColor: "#FFFFA9",
 	},
 	{
 		title: "Twitter API",
@@ -23,7 +20,7 @@ const ApiResourcesList = [
 		stickerSrc: twitter_sticker.src,
 		tagSrc: api_tag.src,
 		tagLink: "https://hack.ics.uci.edu/",
-		stickyNoteSrc: twitter_post_it.src,
+		stickyNoteColor: "#DFFFFD",
 	},
 	{
 		title: "Spotify API",
@@ -32,7 +29,7 @@ const ApiResourcesList = [
 		stickerSrc: spotify_sticker.src,
 		tagSrc: api_tag.src,
 		tagLink: "https://hack.ics.uci.edu/",
-		stickyNoteSrc: spotify_post_it.src,
+		stickyNoteColor: "#D8FFA6",
 	},
 ];
 

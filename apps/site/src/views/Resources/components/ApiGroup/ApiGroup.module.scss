@@ -1,9 +1,17 @@
+.group {
+	margin-top: 50px;
+	width: 344px;
+	height: 500px;
+	position: relative;
+	box-shadow: 0 6px 5px -2px rgba(gray, 0.5);
+}
+
 .tape {
 	background-image: url("~@/assets/images/tape.png");
 	width: 238px;
 	height: 60px;
 	position: absolute;
-	top: 0;
+	top: -5%;
 }
 
 .container {

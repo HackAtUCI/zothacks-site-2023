@@ -1,12 +1,10 @@
-import pink_sticky from "@/assets/post_its/pink-sticky.png";
-import yellow_sticky from "@/assets/post_its/yellow-sticky.png";
 import flask_tutorial_tag from "@/assets/images/flask_tutorial_button.png";
 import flask_documentation_tag from "@/assets/images/flask_documentation_button.png";
 import flask_project_tag from "@/assets/images/flask_project_button.png";
 
 const BackendResourcesList = [
 	{
-		card: pink_sticky.src,
+		stickyNoteColor: "#FFDAF7",
 		title: "Flask",
 		description:
 			"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
@@ -30,7 +28,7 @@ const BackendResourcesList = [
 		],
 	},
 	{
-		card: yellow_sticky.src,
+		stickyNoteColor: "#FFE7A9",
 		title: "Flask",
 		description:
 			"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",

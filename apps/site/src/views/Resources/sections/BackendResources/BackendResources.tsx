@@ -25,9 +25,9 @@ function BackendResources() {
 				</Col>
 				{/* Post-Its */}
 				{BackendResourcesList.map((resource: BackendGroupProps) => (
-					<Col className={styles.column} key={resource.card}>
+					<Col className={styles.column} key={resource.stickyNoteColor}>
 						<BackendGroup
-							card={resource.card}
+							stickyNoteColor={resource.stickyNoteColor}
 							title={resource.title}
 							description={resource.description}
 							tapeOrientation={resource.tapeOrientation}

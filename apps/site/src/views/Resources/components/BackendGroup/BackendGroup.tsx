@@ -12,7 +12,7 @@ export interface tag {
 }
 
 export interface BackendGroupProps {
-	card: string | undefined;
+	stickyNoteColor: string | undefined;
 	title: string | undefined;
 	description: string | undefined;
 	tags: tag[] | undefined;
@@ -21,7 +21,7 @@ export interface BackendGroupProps {
 }
 
 export function BackendGroup({
-	card,
+	stickyNoteColor,
 	title,
 	description,
 	tags,
@@ -47,10 +47,7 @@ export function BackendGroup({
 			{/* height hardcoded for 3 tags */}
 			<div
 				style={{
-					backgroundImage: `url(${card})`,
-					backgroundSize: "cover",
-					backgroundRepeat: "no-repeat",
-					backgroundPosition: "center",
+					backgroundColor: `${stickyNoteColor}`,
 					width: "495px",
 					height: "510px",
 					position: "relative",

@@ -26,14 +26,14 @@ function ApiResources() {
 				</Col>
 				{/* Post Its */}
 				{ApiResourcesList.map((resource: APIGroupProps) => (
-					<Col className={styles.column} key={resource.stickyNoteSrc}>
+					<Col className={styles.column} key={resource.stickyNoteColor}>
 						<ApiGroup
 							title={resource.title}
 							description={resource.description}
 							stickerSrc={resource.stickerSrc}
 							tagSrc={resource.tagSrc}
 							tagLink={resource.tagLink}
-							stickyNoteSrc={resource.stickyNoteSrc}
+							stickyNoteColor={resource.stickyNoteColor}
 						/>
 					</Col>
 				))}
