@@ -10,6 +10,7 @@ function Home() {
 	return (
 		<>
 			<div className={styles.home}>
+				<StickerLayout />
 				<Landing />
 				<Intro />
 				<Mentor />
