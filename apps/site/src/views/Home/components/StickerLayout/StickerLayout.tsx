@@ -2,7 +2,7 @@ import { HeartSticker } from "@/components/Sticker/Stickers";
 
 export default function StickerLayout() {
 	return (
-		<>
+		<div>
 			<HeartSticker
 				style={{
 					position: "absolute",

@@ -11,8 +11,8 @@ import styles from "./Home.module.scss";
 function Home() {
 	return (
 		<>
-			<StickerLayout />
 			<div className={styles.home}>
+				<StickerLayout />
 				<Landing />
 				<Intro />
 				<Mentor />

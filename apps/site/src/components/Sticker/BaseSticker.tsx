@@ -14,6 +14,7 @@ interface StickerProps {
 	// dragConstraints prop can be an object containing coordinates, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
 	animate?: object | undefined;
 	transition?: object | undefined;
+	style?: object | undefined;
 }
 
 export default function Sticker({
@@ -25,6 +26,7 @@ export default function Sticker({
 	dragConstraints = false,
 	animate = {},
 	transition = {},
+	style = {},
 }: StickerProps) {
 	// prevent next from throwing error involving DOM API
 	const pageRef = useRef(
