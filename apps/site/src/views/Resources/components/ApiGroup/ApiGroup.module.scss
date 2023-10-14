@@ -22,7 +22,8 @@
 	bottom: 5%;
 	transition:
 		filter 0.13s ease,
-		transform 0.13s ease;
+		transform 0.13s ease,
+		filter 0.13s ease;
 
 	&:hover {
 		transform: translateX(-5px);
