@@ -1,8 +1,8 @@
-import { HackSticker, HeartSticker } from "@/components/Sticker/Stickers";
+import { HeartSticker } from "@/components/Sticker/Stickers";
 
 export default function StickerLayout() {
 	return (
-		<div style={{ maxWidth: "100vw" }}>
+		<div>
 			<HeartSticker
 				style={{
 					position: "absolute",
