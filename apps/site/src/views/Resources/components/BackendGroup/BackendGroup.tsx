@@ -48,10 +48,6 @@ export function BackendGroup({
 			<div
 				style={{
 					backgroundColor: `${stickyNoteColor}`,
-					width: "495px",
-					height: "510px",
-					position: "relative",
-					marginTop: "50px",
 				}}
 				className={`${className} ${styles.wrapper}`}
 			>
