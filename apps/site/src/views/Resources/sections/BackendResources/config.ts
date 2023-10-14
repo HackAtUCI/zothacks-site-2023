@@ -11,7 +11,7 @@ const BackendResourcesList = [
 		description:
 			"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
 		tapeOrientation: "left",
-		tagList: [
+		tags: [
 			{
 				link: "https://hack.ics.uci.edu/",
 				src: flask_tutorial_tag.src,
@@ -35,7 +35,7 @@ const BackendResourcesList = [
 		description:
 			"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
 		tapeOrientation: "right",
-		tagList: [
+		tags: [
 			{
 				link: "https://hack.ics.uci.edu/",
 				src: flask_tutorial_tag.src,

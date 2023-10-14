@@ -14,7 +14,7 @@ const ApiResourcesList = [
 		stickerSrc: google_cloud_sticker.src,
 		tagSrc: api_tag.src,
 		tagLink: "https://hack.ics.uci.edu/",
-		postItSrc: google_cloud_post_it.src,
+		stickyNoteSrc: google_cloud_post_it.src,
 	},
 	{
 		title: "Twitter API",
@@ -23,7 +23,7 @@ const ApiResourcesList = [
 		stickerSrc: twitter_sticker.src,
 		tagSrc: api_tag.src,
 		tagLink: "https://hack.ics.uci.edu/",
-		postItSrc: twitter_post_it.src,
+		stickyNoteSrc: twitter_post_it.src,
 	},
 	{
 		title: "Spotify API",
@@ -32,7 +32,7 @@ const ApiResourcesList = [
 		stickerSrc: spotify_sticker.src,
 		tagSrc: api_tag.src,
 		tagLink: "https://hack.ics.uci.edu/",
-		postItSrc: spotify_post_it.src,
+		stickyNoteSrc: spotify_post_it.src,
 	},
 ];
 

@@ -2,8 +2,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "./BackendResources.module.scss";
-import { Backend_Group_Props } from "@/views/Resources/interfaces/interfaces";
-import BackendGroup from "../../components/BackendGroup/BackendGroup";
+import {
+	BackendGroup,
+	BackendGroupProps,
+} from "../../components/BackendGroup/BackendGroup";
 import BackendResourcesList from "./config";
 
 function BackendResources() {
@@ -22,14 +24,14 @@ function BackendResources() {
 					</div>
 				</Col>
 				{/* Post-Its */}
-				{BackendResourcesList.map((resource: Backend_Group_Props) => (
+				{BackendResourcesList.map((resource: BackendGroupProps) => (
 					<Col className={styles.column} key={resource.card}>
 						<BackendGroup
 							card={resource.card}
 							title={resource.title}
 							description={resource.description}
 							tapeOrientation={resource.tapeOrientation}
-							tagList={resource.tagList}
+							tags={resource.tags}
 							className={resource?.className}
 						/>
 					</Col>

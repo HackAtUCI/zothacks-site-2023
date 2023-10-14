@@ -4,10 +4,8 @@ import Col from "react-bootstrap/Col";
 
 import styles from "./ApiResources.module.scss";
 
-import API_group from "../../components/ApiGroup/ApiGroup";
+import { ApiGroup, APIGroupProps } from "../../components/ApiGroup/ApiGroup";
 import ApiResourcesList from "./config";
-
-import { API_Group_Props } from "../../interfaces/interfaces";
 
 function ApiResources() {
 	return (
@@ -27,15 +25,15 @@ function ApiResources() {
 					</div>
 				</Col>
 				{/* Post Its */}
-				{ApiResourcesList.map((resource: API_Group_Props) => (
-					<Col className={styles.column} key={resource.postItSrc}>
-						<API_group
+				{ApiResourcesList.map((resource: APIGroupProps) => (
+					<Col className={styles.column} key={resource.stickyNoteSrc}>
+						<ApiGroup
 							title={resource.title}
 							description={resource.description}
 							stickerSrc={resource.stickerSrc}
 							tagSrc={resource.tagSrc}
 							tagLink={resource.tagLink}
-							postItSrc={resource.postItSrc}
+							stickyNoteSrc={resource.stickyNoteSrc}
 						/>
 					</Col>
 				))}

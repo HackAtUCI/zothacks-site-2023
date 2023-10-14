@@ -26,7 +26,7 @@
 
 .title {
 	position: absolute;
-	top: 20%;
+	top: 10%;
 }
 
 .text {
@@ -40,6 +40,7 @@
 @include utils.media-breakpoint-down(lg) {
 	.title {
 		font-size: 28px;
+		top: 20%;
 	}
 
 	.text {
@@ -50,6 +51,7 @@
 @include utils.media-breakpoint-down(sm) {
 	.title {
 		font-size: 18px;
+		top: 20%;
 	}
 
 	.text {

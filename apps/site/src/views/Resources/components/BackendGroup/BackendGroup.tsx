@@ -1,18 +1,33 @@
 import Link from "next/link";
 
 import styles from "./BackendGroup.module.scss";
-import { Backend_Group_Props, tag } from "../../interfaces/interfaces";
 import Clear_Tape_Left from "@/assets/images/clear_tape_left.svg";
 import Clear_Tape_Right from "@/assets/images/clear_tape_right.svg";
 
-export default function Backend_Group({
+export interface tag {
+	link: string;
+	src: string;
+	alt: string;
+	className?: string;
+}
+
+export interface BackendGroupProps {
+	card: string | undefined;
+	title: string | undefined;
+	description: string | undefined;
+	tags: tag[] | undefined;
+	tapeOrientation: string | undefined;
+	className?: string | undefined;
+}
+
+export function BackendGroup({
 	card,
 	title,
 	description,
-	tagList,
+	tags,
 	tapeOrientation,
 	className,
-}: Backend_Group_Props) {
+}: BackendGroupProps) {
 	let tapePosition;
 	switch (tapeOrientation) {
 		case "left":
@@ -45,11 +60,11 @@ export default function Backend_Group({
 			>
 				{tapePosition}
 				<div className={styles.text_flexbox}>
-					<h2 className={styles.title}>{title}</h2>
+					<h3 className={styles.title}>{title}</h3>
 					<p className={styles.description}>{description}</p>
 				</div>
 				<div className={styles.tag_flexbox}>
-					{tagList?.map((tag) => (
+					{tags?.map((tag) => (
 						<Resource_Tag
 							key={tag.src}
 							link={tag.link}

@@ -1,17 +1,26 @@
 import styles from "./ApiGroup.module.scss";
-import { API_Group_Props } from "../../interfaces/interfaces";
-export default function API_group({
+
+export interface APIGroupProps {
+	title: string;
+	description: string;
+	stickerSrc: string;
+	tagSrc: string;
+	tagLink: string;
+	stickyNoteSrc: string;
+}
+
+export function ApiGroup({
 	title,
 	description,
 	stickerSrc,
 	tagSrc,
 	tagLink,
-	postItSrc,
-}: API_Group_Props) {
+	stickyNoteSrc,
+}: APIGroupProps) {
 	return (
 		<div
 			style={{
-				backgroundImage: `url(${postItSrc})`,
+				backgroundImage: `url(${stickyNoteSrc})`,
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
 				backgroundPositionY: "25px",
