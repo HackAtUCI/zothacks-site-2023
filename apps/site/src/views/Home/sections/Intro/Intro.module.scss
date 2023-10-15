@@ -1,17 +1,27 @@
 @use "bootstrap-utils" as bootstrap;
 
 .intro {
-	@include bootstrap.padding(8rem 4rem);
+	@include bootstrap.padding(10rem 0.5rem);
 
-	background-image: url("~src/assets/images/index-card.svg");
-	background-size: 100% 100%;
-	background-position: center;
+	background-image: url("~src/assets/images/index-card-mobile.svg");
+	background-size: cover;
+	background-position: top;
 	background-repeat: no-repeat;
 	position: relative;
 	text-align: center;
+	box-shadow:
+		4px 4px 5px 4px rgba(0, 0, 0, 0.2),
+		-1px -1px 8px 4px rgba(0, 0, 0, 0.2);
 
 	h2 {
-		margin-bottom: 70px;
+		@include bootstrap.margin-bottom(3rem);
+	}
+
+	@include bootstrap.media-breakpoint-up(sm) {
+		@include bootstrap.padding(8rem 4rem);
+		background-image: url("~@/assets/images/index-card.svg");
+		background-size: 100% 100%;
+		box-shadow: none;
 	}
 }
 

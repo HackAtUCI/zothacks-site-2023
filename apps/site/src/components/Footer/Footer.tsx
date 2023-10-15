@@ -5,10 +5,9 @@ import Image from "next/image";
 import styles from "./Footer.module.scss";
 
 import Mail from "@/assets/icons/email.svg";
-import Facebook from "@/assets/icons/facebook.png";
+import Facebook from "@/assets/icons/Facebook-Logo-Primary-min.svg";
 import Instagram from "@/assets/icons/instagram.svg";
 import Hack from "@/assets/icons/hack-logo.svg";
-import TikTok from "@/assets/icons/tiktok.png";
 
 type Social = {
 	icon: any;
@@ -36,11 +35,6 @@ const SOCIALS: Social[] = [
 		icon: Instagram,
 		link: "https://www.instagram.com/hackatuci/",
 		alt: "Instagram",
-	},
-	{
-		icon: TikTok,
-		link: "https://www.tiktok.com/@hackatuci",
-		alt: "TikTok",
 	},
 ];
 
