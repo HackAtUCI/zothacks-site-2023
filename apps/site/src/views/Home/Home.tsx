@@ -1,5 +1,3 @@
-"use client";
-
 import Landing from "./sections/Landing/Landing";
 import Intro from "./sections/Intro/Intro";
 import Mentor from "./sections/Mentor/Mentor";
@@ -18,7 +16,6 @@ function Home() {
 				<Landing />
 				<Intro />
 				<Mentor />
-				<Sponsors />
 				<FAQ />
 			</div>
 		</>

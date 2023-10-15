@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-
-import FontProvider from "@/lib/FontProvider";
+import { Fuzzy_Bubbles } from "next/font/google";
 
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
+import PageTransition from "@/components/PageTransition/PageTransition";
 import "@/lib/styles/bootstrap.scss";
 import "@/lib/styles/globals.scss";
 
 export const metadata: Metadata = {
-	title: "ZotHacks",
+	title: "ZotHacks 2023",
 	description: "Hack at UCI's premier hackathon for beginners at UCI",
 };
+
+const fuzzy = Fuzzy_Bubbles({
+	weight: ["400", "700"],
+	subsets: ["latin"],
+	variable: "--next-font-fuzzy-bubbles",
+});
 
 export default function RootLayout({
 	children,
@@ -18,11 +24,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<FontProvider />
+		<html lang="en" className={fuzzy.variable}>
 			<body className="background">
 				<NavBar />
-				<main>{children}</main>
+				<PageTransition>
+					<main>{children}</main>
+				</PageTransition>
 				<Footer />
 			</body>
 		</html>
