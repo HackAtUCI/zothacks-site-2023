@@ -32,10 +32,9 @@ const BaseSticker: React.FC<StickerProps> = ({
 	transition = {},
 }) => {
 	// prevent next from throwing error involving DOM API
-	const pageRef =
-		typeof document !== "undefined"
-			? useRef(document.documentElement)
-			: undefined;
+	const pageRef = useRef(
+		typeof document !== "undefined" ? document.documentElement : undefined,
+	);
 	let transitionProps = { ...transition };
 
 	let animateProps = {
@@ -52,15 +51,11 @@ const BaseSticker: React.FC<StickerProps> = ({
 		? {
 				whileTap: {
 					scale: 1.1,
-					filter: `drop-shadow(${0.08 * width}px ${0.1 * height}px ${
-						0.1 * height
-					}px rgba(0, 0, 0, 0.15))`,
+					filter: `drop-shadow(16px 20px 20px rgba(0, 0, 0, 0.15))`,
 				},
 				whileHover: {
 					scale: 1.025,
-					filter: `drop-shadow(${0.05 * width}px ${0.07 * height}px ${
-						0.05 * height
-					}px rgba(0, 0, 0, 0.2))`,
+					filter: `drop-shadow(10px 14px 10px rgba(0, 0, 0, 0.2))`,
 				},
 				drag: true,
 				initial: { x: -width / 2, y: -height / 2 },
