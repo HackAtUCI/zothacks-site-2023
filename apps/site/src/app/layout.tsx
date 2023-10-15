@@ -4,6 +4,7 @@ import FontProvider from "@/lib/FontProvider";
 
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
+import PageTransition from "@/components/PageTransition/PageTransition";
 import "@/lib/styles/bootstrap.scss";
 import "@/lib/styles/globals.scss";
 
@@ -22,7 +23,9 @@ export default function RootLayout({
 			<FontProvider />
 			<body className="background">
 				<NavBar />
-				<main>{children}</main>
+				<PageTransition>
+					<main>{children}</main>
+				</PageTransition>
 				<Footer />
 			</body>
 		</html>
