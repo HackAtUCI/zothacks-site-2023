@@ -30,7 +30,6 @@ const Questions = z.array(
 	})
 );
 
-
 export const getQuestions = cache(async () => {
 	return Questions.parse(
 		await client.fetch(
