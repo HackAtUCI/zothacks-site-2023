@@ -24,7 +24,7 @@ function ApiResources() {
 						</p>
 					</div>
 				</Col>
-				{/* Post Its */}
+				{/* Sticky Notes */}
 				{ApiResourcesList.map((resource: APIGroupProps) => (
 					<Col className={styles.column} key={resource.stickyNoteColor}>
 						<ApiGroup

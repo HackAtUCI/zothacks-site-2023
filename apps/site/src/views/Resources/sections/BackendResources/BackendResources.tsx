@@ -23,7 +23,7 @@ function BackendResources() {
 						</p>
 					</div>
 				</Col>
-				{/* Post-Its */}
+				{/* Sticky Notes */}
 				{BackendResourcesList.map((resource: BackendGroupProps) => (
 					<Col className={styles.column} key={resource.stickyNoteColor}>
 						<BackendGroup
