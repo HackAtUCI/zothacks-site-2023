@@ -20,7 +20,7 @@ export default function NavBar() {
 			<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
 				<Container fluid>
 					<Navbar.Brand />
-					{/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto text-center">
 							<Link
@@ -52,7 +52,7 @@ export default function NavBar() {
 								Schedule
 							</Link>
 						</Nav>
-					</Navbar.Collapse> */}
+					</Navbar.Collapse>
 				</Container>
 			</Navbar>
 			<Link href="/">
