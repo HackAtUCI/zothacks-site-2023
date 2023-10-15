@@ -12,9 +12,10 @@
 }
 
 .card {
-	background-image: url("~@/assets/index_cards/api-description-card.png");
+	background-image: url("~@/assets/index_cards/api-description-card.svg");
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: 100% 100%;
 	height: 343px;
 	width: 80vw;
 	position: relative;

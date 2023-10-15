@@ -13,10 +13,11 @@
 }
 
 .card {
-	background-image: url("~@/assets/index_cards/backend-description-card.png");
+	background-image: url("~@/assets/index_cards/backend-description-card.svg");
+	filter: drop-shadow(5px 5px 5px darkgray);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
+	background-size: 100% 100%;
 	width: 80vw;
 	height: 230px;
 	position: relative;
