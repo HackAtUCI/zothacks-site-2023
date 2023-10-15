@@ -12,11 +12,11 @@ export interface tag {
 }
 
 export interface BackendGroupProps {
-	stickyNoteColor: string | undefined;
-	title: string | undefined;
-	description: string | undefined;
-	tags: tag[] | undefined;
-	tapeOrientation: string | undefined;
+	stickyNoteColor: string;
+	title: string;
+	description: string;
+	tags: tag[];
+	tapeOrientation: string;
 	className?: string | undefined;
 }
 
