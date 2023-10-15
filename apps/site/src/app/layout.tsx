@@ -6,7 +6,6 @@ import Footer from "@/components/Footer/Footer";
 import PageTransition from "@/components/PageTransition/PageTransition";
 import "@/lib/styles/bootstrap.scss";
 import "@/lib/styles/globals.scss";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
 	title: "ZotHacks 2023",
@@ -28,14 +27,10 @@ export default function RootLayout({
 		<html lang="en" className={fuzzy.variable}>
 			<body className="background">
 				<NavBar />
-				<Suspense fallback={null}>
-					<PageTransition>
-						<Suspense fallback={null}>
-							<main>{children}</main>
-							<Footer />
-						</Suspense>
-					</PageTransition>
-				</Suspense>
+				<PageTransition>
+					<main>{children}</main>
+				</PageTransition>
+				<Footer />
 			</body>
 		</html>
 	);
