@@ -1,4 +1,5 @@
 import Button from "react-bootstrap/Button";
+import { HeartSticker } from "@/components/Sticker/Stickers";
 
 import styles from "./ApplyButton.module.scss";
 
