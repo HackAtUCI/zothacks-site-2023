@@ -12,7 +12,7 @@ function ApiResources() {
 		<Container>
 			<Row className={styles.row}>
 				{/* Card Component */}
-				<Col className={styles.column}>
+				<Col className={styles.column} xl={12}>
 					<div className={styles.card}>
 						<h2 className={styles.title}>API Resources</h2>
 						<p className={styles.text}>
