@@ -1,0 +1,21 @@
+@use "bootstrap-utils" as bootstrap;
+
+$container-padding: 6rem;
+
+.schedule {
+	h2 {
+		text-align: center;
+	}
+
+	:global {
+		section {
+			// responsive padding
+			@include bootstrap.padding-top($container-padding);
+			@include bootstrap.padding-bottom($container-padding);
+		}
+	}
+}
+
+.title {
+	padding-top: 15vh;
+}

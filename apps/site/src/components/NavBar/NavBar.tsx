@@ -29,89 +29,72 @@ export default function NavBar() {
 	return (
 		<>
 			<AnimatePresence mode="wait">
-				<motion.div>
-					{/* page transition animation */}
-					<motion.div
-						className={styles.slideIn}
-						variants={{
-							initial: { scaleY: 0 },
-							visible: { scaleY: 1 },
-							exit: { scaleY: 0 },
-						}}
-						initial="initial"
-						animate={controls}
-						exit="exit"
-						transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-					/>
-					{/* initial page animation */}
-					<motion.div
-						className={styles.slideIn}
-						variants={{
-							initial: { scaleY: 1 },
-							animate: { scaleY: 0 },
-							exit: { scaleY: 0 },
-						}}
-						initial="initial"
-						animate="animate"
-						exit="exit"
-						transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-					/>
-				</motion.div>
+				<motion.nav
+					className={`${styles.nav} ${styles.navbar}`}
+					initial="initial"
+					animate={controls}
+					exit="exit"
+					transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+					variants={{
+						initial: { height: "4vh" },
+						visible: { height: "100vh" },
+						exit: { height: "4vh" },
+					}}
+				>
+					<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
+						<Container fluid>
+							<Navbar.Brand />
+							<Navbar.Toggle aria-controls="basic-navbar-nav" />
+							<Navbar.Collapse id="basic-navbar-nav">
+								<Nav className="ms-auto text-center">
+									<Link
+										href="/"
+										className={
+											activeRoute === "/" ? styles.homeActive : styles.notActive
+										}
+										onClick={(e) => {
+											handleClick(e, "/");
+										}}
+									>
+										Home
+									</Link>
+									<Link
+										href="/resources"
+										className={
+											activeRoute === "/resources"
+												? styles.resourcesActive
+												: styles.notActive
+										}
+										onClick={(e) => {
+											handleClick(e, "/resources");
+										}}
+									>
+										Resources
+									</Link>
+									<Link
+										href="/schedule"
+										className={
+											activeRoute === "/schedule"
+												? styles.scheduleActive
+												: styles.notActive
+										}
+										onClick={(e) => {
+											handleClick(e, "/schedule");
+										}}
+									>
+										Schedule
+									</Link>
+								</Nav>
+							</Navbar.Collapse>
+						</Container>
+					</Navbar>
+					<Link href="/">
+						<div className={styles.logo}>
+							<Image src={ZotHacksLogo.src} alt="ZotHacks Logo" fill />
+						</div>
+					</Link>
+				</motion.nav>
 			</AnimatePresence>
-			<nav className={styles.nav}>
-				<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
-					<Container fluid>
-						<Navbar.Brand />
-						<Navbar.Toggle aria-controls="basic-navbar-nav" />
-						<Navbar.Collapse id="basic-navbar-nav">
-							<Nav className="ms-auto text-center">
-								<Link
-									href="/"
-									className={
-										activeRoute === "/" ? styles.homeActive : styles.notActive
-									}
-									onClick={(e) => {
-										handleClick(e, "/");
-									}}
-								>
-									Home
-								</Link>
-								<Link
-									href="/resources"
-									className={
-										activeRoute === "/resources"
-											? styles.resourcesActive
-											: styles.notActive
-									}
-									onClick={(e) => {
-										handleClick(e, "/resources");
-									}}
-								>
-									Resources
-								</Link>
-								<Link
-									href="/schedule"
-									className={
-										activeRoute === "/schedule"
-											? styles.scheduleActive
-											: styles.notActive
-									}
-									onClick={(e) => {
-										handleClick(e, "/schedule");
-									}}
-								>
-									Schedule
-								</Link>
-							</Nav>
-						</Navbar.Collapse>
-					</Container>
-				</Navbar>
-				<Link href="/">
-					<div className={styles.logo}>
-						<Image src={ZotHacksLogo.src} alt="ZotHacks Logo" fill />
-					</div>
-				</Link>
-			</nav>
 		</>
 	);
 }

@@ -1,5 +1,9 @@
-import "./Schedule.module.scss";
+import styles from "./Schedule.module.scss";
 
 export default function Schedule() {
-	return <h1>Schedule</h1>;
+	return (
+		<div className={styles.schedule}>
+			<h2 className={styles.title}>Schedule</h2>
+		</div>
+	);
 }
