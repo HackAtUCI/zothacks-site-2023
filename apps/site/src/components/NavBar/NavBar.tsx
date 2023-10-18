@@ -43,19 +43,6 @@ export default function NavBar() {
 						exit="exit"
 						transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
 					/>
-					{/* initial page animation */}
-					<motion.div
-						className={styles.slideIn}
-						variants={{
-							initial: { scaleY: 1 },
-							animate: { scaleY: 0 },
-							exit: { scaleY: 0 },
-						}}
-						initial="initial"
-						animate="animate"
-						exit="exit"
-						transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-					/>
 				</motion.div>
 			</AnimatePresence>
 			<nav className={styles.nav}>
@@ -113,6 +100,5 @@ export default function NavBar() {
 				</Link>
 			</nav>
 		</>
-
 	);
 }
