@@ -1,0 +1,62 @@
+@use "bootstrap-utils" as utils;
+
+.row {
+	margin-bottom: 50px;
+}
+
+.column {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	background-image: url("~@/assets/index_cards/api-description-card.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 343px;
+	width: 80vw;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.text {
+	font-size: 24px;
+	height: 60%;
+	width: 80%;
+	margin: auto;
+	position: relative;
+	top: 10%;
+}
+
+.title {
+	top: 8%;
+	position: absolute;
+}
+
+@include utils.media-breakpoint-down(xl) {
+	.text {
+		font-size: 22px;
+	}
+}
+
+@include utils.media-breakpoint-down(lg) {
+	.text {
+		font-size: 18px;
+	}
+}
+
+@include utils.media-breakpoint-down(md) {
+	.text {
+		font-size: 15px;
+	}
+}
+
+@include utils.media-breakpoint-down(sm) {
+	.text {
+		font-size: 13px;
+	}
+}

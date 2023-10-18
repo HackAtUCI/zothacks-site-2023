@@ -9,7 +9,7 @@ export default defineConfig({
 	name: "default",
 	title: "zothacks-site-2023",
 
-	projectId: "1smqaeyk",
+	projectId: "tz8iut6e",
 	dataset: "production",
 
 	plugins: [

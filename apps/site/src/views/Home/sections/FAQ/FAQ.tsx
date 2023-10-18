@@ -1,11 +1,31 @@
-import Container from "react-bootstrap/Container";
+import { getQuestions } from "./getQuestions";
+import FAQAccordion from "./FAQAccordion";
 
-function FAQ() {
+import Image from "next/image";
+import { PortableText } from "@portabletext/react";
+import styles from "./FAQ.module.scss";
+
+import star from "@/assets/images/star.png";
+import eraser from "@/assets/images/eraser.png";
+
+export default async function FAQ() {
+	const questions = await getQuestions();
+	const faq = questions[0]["faqs"].map(({ _key, question, answer }) => ({
+		_key: _key,
+		question: <strong>{question}</strong>,
+		answer: <PortableText value={answer} />,
+	}));
+
 	return (
-		<Container as="section">
-			<h2>FAQ</h2>
-		</Container>
+		<section className={styles.container}>
+			<div className={styles.faq}>
+				<div className={styles["vertical-line"]} />
+				<Image src={star} alt="star" className={styles["star-lg"]} />
+				<Image src={star} alt="star" className={styles["star-sm"]} />
+				<Image src={eraser} alt="eraser" className={styles["eraser"]} />
+				<h2 className={styles.title}>FAQ</h2>
+				<FAQAccordion faq={faq} />
+			</div>
+		</section>
 	);
 }
-
-export default FAQ;

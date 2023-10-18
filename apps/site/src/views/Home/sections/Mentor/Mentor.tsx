@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -7,7 +9,7 @@ import tape from "@/assets/images/tape.svg";
 
 import styles from "./Mentor.module.scss";
 
-const MENTOR_APP_URL = "https://hack.ics.uci.edu";
+const MENTOR_APP_URL = "/mentor";
 
 export default function Mentor() {
 	const mentorHeader = (
@@ -21,7 +23,7 @@ export default function Mentor() {
 		</p>
 	);
 	const applyLink = (
-		<BookmarkLink className="mb-4" href={MENTOR_APP_URL}>
+		<BookmarkLink className="mb-4" href={MENTOR_APP_URL} target="_blank">
 			Apply to Mentor!
 		</BookmarkLink>
 	);

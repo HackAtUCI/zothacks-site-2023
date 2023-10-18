@@ -1,0 +1,60 @@
+@use "bootstrap-utils" as utils;
+
+.row {
+	margin-bottom: 50px;
+}
+
+.column {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 20px;
+	gap: 60px;
+}
+
+.card {
+	background-image: url("~@/assets/index_cards/backend-description-card.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 80vw;
+	height: 230px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	position: absolute;
+	top: 10%;
+}
+
+.text {
+	position: absolute;
+	bottom: 10%;
+	width: 90%;
+	height: 40%;
+	font-size: 24px;
+}
+
+@include utils.media-breakpoint-down(lg) {
+	.title {
+		font-size: 28px;
+		top: 20%;
+	}
+
+	.text {
+		font-size: 20px;
+	}
+}
+
+@include utils.media-breakpoint-down(sm) {
+	.title {
+		font-size: 18px;
+		top: 20%;
+	}
+
+	.text {
+		font-size: 14px;
+	}
+}

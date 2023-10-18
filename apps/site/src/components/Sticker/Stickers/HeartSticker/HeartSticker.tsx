@@ -12,8 +12,8 @@ export default function HeartSticker({
 			<BaseSticker
 				imageSrc={HeartEmoji.src}
 				alt="heart emoji sticker"
-				height={150}
-				width={150}
+				height={200}
+				width={200}
 				{...fastShake}
 			/>
 		</div>
