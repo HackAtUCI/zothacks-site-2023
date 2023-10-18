@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "ZotHacks 2023",
 		images: "./zothacks_banner.png",
+		description: "Hack at UCI's premier hackathon for beginners at UCI",
 	},
 };
 
