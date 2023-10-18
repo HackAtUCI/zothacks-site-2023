@@ -5,8 +5,8 @@ export default function StickerLayout() {
 		<HeartSticker
 			style={{
 				position: "absolute",
-				top: "45%",
-				left: "60%",
+				top: "43%",
+				left: "55%",
 				zIndex: 100,
 			}}
 		/>
