@@ -51,6 +51,34 @@
 	color: theme.$navbar-red;
 }
 
+.slideIn {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../../assets/images/lined_paper.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	transform-origin: top;
+	z-index: 500;
+}
+
+// .slideOut {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100vw;
+// 	height: 100vh;
+// 	background-image: url("../../assets/images/lined_paper.png");
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+
+// 	transform-origin: bottom;
+// 	z-index: 500;
+// }
+
 @include utils.media-breakpoint-down(md) {
 	.logo {
 		left: 3vw;

@@ -21,32 +21,27 @@ function FrozenRouter(props: PropsWithChildren<{}>) {
 	);
 }
 
-export default function PageTransition({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function PageTransition() {
 	// const router = useRouter();
 	const pathname = usePathname();
 
 	return (
 		<AnimatePresence mode="wait" initial={false}>
 			<motion.div key={pathname}>
-				<FrozenRouter>{children}</FrozenRouter>
 				<motion.div
 					className={styles.slideIn}
 					initial={{ scaleY: 0 }}
 					animate={{ scaleY: 0 }}
 					exit={{ scaleY: 1 }}
 					transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-				></motion.div>
+				/>
 				<motion.div
 					className={styles.slideOut}
 					initial={{ scaleY: 1 }}
 					animate={{ scaleY: 0 }}
 					exit={{ scaleY: 0 }}
 					transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-				></motion.div>
+				/>
 			</motion.div>
 		</AnimatePresence>
 	);
