@@ -1,24 +1,10 @@
 import { motion, useInView, useAnimate, stagger } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-// const transition = {
-// 	pathLength: {
-// 		duration: 1.5,
-// 		ease: "easeInOut",
-// 	},
-// 	opacity: {
-// 		duration: 1,
-// 		ease: "easeInOut",
-// 	},
-// };
 const pathVariants = {
 	hidden: {
 		opacity: 0,
 		pathLength: 0,
-	},
-	visible: {
-		opacity: 1,
-		pathLength: 1,
 	},
 };
 export default function Title() {
@@ -28,7 +14,7 @@ export default function Title() {
 		animate(
 			"path",
 			{ opacity: 1 },
-			{ duration: 0.5, delay: stagger(0.1, { startDelay: 0.2 }) },
+			{ duration: 0.2, delay: stagger(0.1, { startDelay: 0.2 }) },
 		);
 		animate(
 			"path",
@@ -36,14 +22,12 @@ export default function Title() {
 				pathLength: 1,
 			},
 			{
-				duration: 0.5,
+				duration: 1,
 				delay: stagger(0.1, { startDelay: 0.2 }),
 			},
 		);
 	}, []);
 
-	const ref = useRef<SVGPathElement>(null);
-	const isInView = useInView(ref);
 	return (
 		<svg
 			ref={scope}
