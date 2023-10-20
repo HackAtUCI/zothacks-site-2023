@@ -18,7 +18,7 @@ export default function Title() {
 				strokeLinecap: "round",
 			},
 			{
-				duration: 0.75, // time of letter animation
+				duration: 0.45, // time of letter animation
 				delay: stagger(0.2, { startDelay: 0.25 }), // speed of triggering letter animations
 			},
 		);
