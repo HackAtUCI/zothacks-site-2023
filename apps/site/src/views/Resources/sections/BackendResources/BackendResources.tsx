@@ -11,18 +11,18 @@ import BackendResourcesList from "./config";
 function BackendResources() {
 	return (
 		<Container>
-			<Row className={styles.row}>
-				{/* Card Component */}
-				<Col className={styles.column}>
-					<div className={styles.card}>
-						<h2 className={styles.title}>Backend Framework Resources</h2>
-						<p className={styles.text}>
-							Backend Frameworks are a variety of middleware services used to
-							connect to other API and database vendors to fit your
-							project&apos;s needs.
-						</p>
-					</div>
-				</Col>
+			{/* Card Component */}
+			<div className={styles.column}>
+				<div className={styles.card}>
+					<h2 className={styles.title}>Backend Framework Resources</h2>
+					<p className={styles.text}>
+						Backend Frameworks are a variety of middleware services used to
+						connect to other API and database vendors to fit your project&apos;s
+						needs.
+					</p>
+				</div>
+			</div>
+			<Row className={styles["bottom-spacer"]}>
 				{/* Sticky Notes */}
 				{BackendResourcesList.map((resource: BackendGroupProps) => (
 					<Col className={styles.column} key={resource.stickyNoteColor}>
