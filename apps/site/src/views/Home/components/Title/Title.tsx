@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 const pathVariants = {
 	hidden: {
-		opacity: 0,
+		strokeLinecap: "butt",
 		pathLength: 0,
 	},
 };
@@ -13,17 +13,13 @@ export default function Title() {
 	useEffect(() => {
 		animate(
 			"path",
-			{ opacity: 1 },
-			{ duration: 0.2, delay: stagger(0.1, { startDelay: 0.2 }) },
-		);
-		animate(
-			"path",
 			{
 				pathLength: 1,
+				strokeLinecap: "round",
 			},
 			{
-				duration: 1,
-				delay: stagger(0.1, { startDelay: 0.2 }),
+				duration: 0.75, // time of letter animation
+				delay: stagger(0.2, { startDelay: 0.25 }), // speed of triggering letter animations
 			},
 		);
 	}, []);
@@ -37,8 +33,8 @@ export default function Title() {
 			viewBox="0 0 607 103"
 			fill="none"
 			strokeWidth="14"
-			strokeLinecap="round"
 			stroke="black"
+			strokeLinecap="butt"
 		>
 			<motion.path
 				d="M13.2626 24.6289C13.2626 24.6289 65.0386 15.3905 61.8594 21.7115C58.6801 28.0325 2.72028 74.2626 7.26204 82.0423C11.8038 89.8221 55.525 82.0423 55.525 82.0423"
