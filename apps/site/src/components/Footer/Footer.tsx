@@ -8,7 +8,7 @@ import Mail from "@/assets/icons/email.svg";
 import Facebook from "@/assets/icons/Facebook-Logo-Primary-min.svg";
 import Instagram from "@/assets/icons/instagram.png";
 import Hack from "@/assets/icons/hack-logo.svg";
-import TikTok from "@/assets/icons/tiktok.png";
+import TikTok from "@/assets/icons/TikTok-Social-Icon-Circle-White.svg";
 
 type Social = {
 	icon: any;
