@@ -1,5 +1,6 @@
 import { motion, useAnimate, stagger } from "framer-motion";
 import { useEffect } from "react";
+import styles from "./Title.module.scss";
 
 export default function Title() {
 	const [scope, animate] = useAnimate();
@@ -29,6 +30,7 @@ export default function Title() {
 			strokeWidth="14"
 			stroke="black"
 			strokeLinecap="butt"
+			className={styles.title}
 		>
 			<motion.path
 				d="M13.2626 24.6289C13.2626 24.6289 65.0386 15.3905 61.8594 21.7115C58.6801 28.0325 2.72028 74.2626 7.26204 82.0423C11.8038 89.8221 55.525 82.0423 55.525 82.0423"
