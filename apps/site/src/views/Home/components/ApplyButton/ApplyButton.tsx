@@ -5,12 +5,7 @@ import styles from "./ApplyButton.module.scss";
 
 export default function ApplyButton() {
 	return (
-		<div
-			style={{
-				display: "flex",
-				alignItems: "flex-end",
-			}}
-		>
+		<HeartSticker>
 			<Button
 				className={styles.applyButton}
 				href="/apply"
@@ -19,21 +14,6 @@ export default function ApplyButton() {
 			>
 				<div>Apply</div>
 			</Button>
-			<div
-				style={{
-					position: "relative",
-					width: 0,
-					height: 0,
-					transform: "translate(-75px, -75px);",
-				}}
-			>
-				<HeartSticker
-					style={{
-						position: "absolute",
-						zIndex: 100,
-					}}
-				/>
-			</div>
-		</div>
+		</HeartSticker>
 	);
 }

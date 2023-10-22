@@ -1,3 +1,16 @@
-.stickerContainer {
+.stickerPositionContainer {
+	position: relative;
+	display: flex;
+}
+
+.stickerParent {
+	position: "relative";
+	width: 0;
+	height: 0;
+}
+
+.sticker {
 	cursor: grab;
+	position: absolute;
+	z-index: 100;
 }
