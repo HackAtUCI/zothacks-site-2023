@@ -1,9 +1,11 @@
 import { defineType, defineField } from "sanity";
+import { Globe } from "lucide-react";
 
 export default defineType({
 	name: "resource",
 	title: "Resources",
 	type: "document",
+	icon: Globe,
 	fields: [
 		defineField({
 			name: "title",
@@ -39,8 +41,17 @@ export default defineType({
 		defineField({
 			name: "stickyNoteColor",
 			title: "Sticky Note Color",
+			description:
+				"Note that the color will be used as a background for black text, so please choose a color with enough contrast.",
 			type: "color",
 			validation: (Rule) => Rule.required(),
 		}),
 	],
+	preview: {
+		select: {
+			title: "title",
+			subtitle: "description",
+			media: "logo",
+		},
+	},
 });
