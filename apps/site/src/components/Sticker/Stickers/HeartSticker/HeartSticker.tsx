@@ -8,10 +8,7 @@ interface HeartStickerProps {
 	position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
 }
 
-const HeartSticker = React.forwardRef<
-	React.ElementRef<typeof BaseSticker>,
-	HeartStickerProps
->(({ ...props }, ref) => (
+const HeartSticker: React.FC<HeartStickerProps> = (props) => (
 	<BaseSticker
 		imageSrc={HeartEmoji.src}
 		alt="heart emoji sticker"
@@ -20,7 +17,6 @@ const HeartSticker = React.forwardRef<
 		{...fastShake}
 		{...props}
 	/>
-));
-HeartSticker.displayName = "HeartSticker";
+);
 
 export default HeartSticker;
