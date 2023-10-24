@@ -11,17 +11,15 @@ function ApiResources() {
 	return (
 		<Container>
 			{/* Card Component */}
-			<div className={styles.column}>
-				<div className={styles.card}>
-					<h2 className={styles.title}>API Resources</h2>
-					<p className={styles.text}>
-						Application Programming Interface (API) are interfaces or
-						communication protocol that simplifies implementation and
-						maintenance of software. In order to access most API&apos;s, many
-						languages use HTTP protocol to communicate with the servers that
-						host the API and retrieve data.
-					</p>
-				</div>
+			<div className={styles.card}>
+				<h2 className={styles.title}>API Resources</h2>
+				<p className={styles.text}>
+					Application Programming Interface (API) are interfaces or
+					communication protocol that simplifies implementation and maintenance
+					of software. In order to access most API&apos;s, many languages use
+					HTTP protocol to communicate with the servers that host the API and
+					retrieve data.
+				</p>
 			</div>
 			<Row className={styles["bottom-spacer"]}>
 				{/* Sticky Notes */}
