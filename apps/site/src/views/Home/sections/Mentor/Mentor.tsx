@@ -18,14 +18,9 @@ export default function Mentor() {
 	const mentorDescription = (
 		<p>
 			Have a knack for innovation? Interested in inspiring the next generation
-			of developers? Our mentors are vital to making ZotHacks 2023 successful
-			and enjoyable for our hackers. Apply to be a mentor today!
+			of developers? Mentor applications for ZotHacks 2023 have closed, but
+			please keep an eye out for future events!
 		</p>
-	);
-	const applyLink = (
-		<BookmarkLink className="mb-4" href={MENTOR_APP_URL} target="_blank">
-			Apply to Mentor!
-		</BookmarkLink>
 	);
 
 	return (
@@ -37,11 +32,9 @@ export default function Mentor() {
 						{mentorHeader}
 						{mentorDescription}
 					</div>
-					{applyLink}
 				</Col>
 				<Col className={styles.descSticky + " text-center"}>
 					{mentorDescription}
-					{applyLink}
 				</Col>
 			</div>
 		</Container>
