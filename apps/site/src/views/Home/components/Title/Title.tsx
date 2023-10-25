@@ -17,7 +17,7 @@ export default function Title() {
 				delay: stagger(0.2, { startDelay: 0.25 }), // speed of triggering letter animations
 			},
 		);
-	}, []);
+	}, [animate]);
 
 	return (
 		<svg
