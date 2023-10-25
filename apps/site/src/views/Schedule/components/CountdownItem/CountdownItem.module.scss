@@ -1,0 +1,10 @@
+@use "bootstrap-utils" as bootstrap;
+
+.countdownItem {
+	position: relative;
+	overflow: hidden;
+
+	h2 {
+		@include bootstrap.font-size(5rem);
+	}
+}
