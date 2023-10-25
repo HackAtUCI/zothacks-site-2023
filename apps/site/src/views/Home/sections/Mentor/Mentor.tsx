@@ -22,6 +22,16 @@ export default function Mentor() {
 			please keep an eye out for future events!
 		</p>
 	);
+	const applyLink = (
+		<BookmarkLink
+			className="mb-4"
+			href={MENTOR_APP_URL}
+			target="_blank"
+			disabled
+		>
+			Applications have closed.
+		</BookmarkLink>
+	);
 
 	return (
 		<Container as="section">
@@ -32,9 +42,11 @@ export default function Mentor() {
 						{mentorHeader}
 						{mentorDescription}
 					</div>
+					{applyLink}
 				</Col>
 				<Col className={styles.descSticky + " text-center"}>
 					{mentorDescription}
+					{applyLink}
 				</Col>
 			</div>
 		</Container>
