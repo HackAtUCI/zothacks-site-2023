@@ -15,8 +15,6 @@ const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
 export default function Countdown() {
-	const intervalRef = useRef<NodeJS.Timer | null>(null);
-
 	const [remaining, setRemaining] = useState({
 		days: 0,
 		hours: 0,
@@ -25,9 +23,9 @@ export default function Countdown() {
 	});
 
 	useEffect(() => {
-		intervalRef.current = setInterval(handleCountdown, 1000);
+		const timer = setInterval(handleCountdown, 1000);
 
-		return () => clearInterval(intervalRef.current || undefined);
+		return () => clearInterval(timer);
 	}, []);
 
 	const handleCountdown = () => {

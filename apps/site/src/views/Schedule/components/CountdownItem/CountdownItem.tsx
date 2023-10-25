@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-
 import styles from "./CountdownItem.module.scss";
 
 interface CountdownItemProps {
@@ -16,9 +15,8 @@ export default function CountdownItem({ num, text }: CountdownItemProps) {
 						key={num}
 						initial={{ y: "100%" }}
 						animate={{ y: "0%" }}
-						exit={{ y: "-100%" }}
+						exit={{ y: "-50%" }}
 						transition={{ ease: "backIn", duration: 0.75 }}
-						className="d-block"
 					>
 						{num}
 					</motion.h2>
