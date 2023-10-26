@@ -1,0 +1,96 @@
+@use "bootstrap-utils" as bootstrap;
+@use "zothacks-theme" as theme;
+
+.clipboard {
+	background-image: url("~src/assets/images/mobile_clipboard.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	text-align: center;
+	min-height: 100vh;
+	margin-bottom: 5rem;
+	@include bootstrap.margin-top(3rem);
+
+	@include bootstrap.media-breakpoint-up(sm) {
+		background-image: url("~src/assets/images/clipboard.svg");
+	}
+	@include bootstrap.media-breakpoint-up(md) {
+		min-height: 150vh;
+	}
+	@include bootstrap.media-breakpoint-up(lg) {
+		min-height: 200vh;
+		margin-top: 100px;
+	}
+}
+
+.timer {
+	text-align: center;
+	margin: 100px auto 0;
+	width: 75%;
+	@include bootstrap.media-breakpoint-up(md) {
+		margin: 200px auto 0;
+	}
+}
+
+.timerText {
+	width: 60%;
+	margin: 10px auto 0;
+	@include bootstrap.media-breakpoint-up(sm) {
+		width: 100%;
+	}
+}
+
+.accordion {
+	--bs-accordion-active-color: theme.$black;
+	--bs-accordion-bg: transparent;
+	--bs-accordion-active-bg: transparent;
+	--bs-accordion-border-color: transparent;
+	--bs-accordion-btn-focus-box-shadow: 0;
+	--bs-accordion-border-radius: 0;
+	--bs-accordion-btn-icon-width: 20px;
+	--bs-accordion-btn-icon: url("~@/assets/icons/clipboard-arrow.svg");
+	--bs-accordion-btn-active-icon: url("~@/assets/icons/clipboard-arrow.svg");
+	width: 70%;
+}
+
+.accordionBorder {
+	border-bottom: 2px solid theme.$light-blue;
+	border-top: 2px solid theme.$light-blue;
+}
+
+.day {
+	margin: 1rem;
+}
+
+.eventName {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.description {
+	padding-top: 0;
+	text-align: left;
+	font-size: 1rem;
+}
+
+.locationTime {
+	font-size: 1rem;
+	margin: 0;
+}
+
+.faq {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding-bottom: 1.875rem;
+	align-items: center;
+}
+
+.container {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	display: flex;
+	justify-content: center;
+}
