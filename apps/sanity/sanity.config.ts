@@ -1,6 +1,7 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
+import { colorInput } from "@sanity/color-input";
 import { media } from "sanity-plugin-media";
 import { schemaTypes } from "./schemas";
 import { BadgeHelp } from "lucide-react";
@@ -9,7 +10,7 @@ export default defineConfig({
 	name: "default",
 	title: "zothacks-site-2023",
 
-	projectId: "1smqaeyk",
+	projectId: "tz8iut6e",
 	dataset: "production",
 
 	plugins: [
@@ -31,6 +32,7 @@ export default defineConfig({
 					]),
 		}),
 		visionTool(),
+		colorInput(),
 		media(),
 	],
 
