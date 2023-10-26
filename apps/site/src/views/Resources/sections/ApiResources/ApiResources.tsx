@@ -10,20 +10,18 @@ import ApiResourcesList from "./config";
 function ApiResources() {
 	return (
 		<Container>
-			<Row className={styles.row}>
-				{/* Card Component */}
-				<Col className={styles.column}>
-					<div className={styles.card}>
-						<h2 className={styles.title}>API Resources</h2>
-						<p className={styles.text}>
-							Application Programming Interface (API) are interfaces or
-							communication protocol that simplifies implementation and
-							maintenance of software. In order to access most API&apos;s, many
-							languages use HTTP protocol to communicate with the servers that
-							host the API and retrieve data.
-						</p>
-					</div>
-				</Col>
+			{/* Card Component */}
+			<div className={styles.card}>
+				<h2 className={styles.title}>API Resources</h2>
+				<p className={styles.text}>
+					Application Programming Interface (API) are interfaces or
+					communication protocol that simplifies implementation and maintenance
+					of software. In order to access most API&apos;s, many languages use
+					HTTP protocol to communicate with the servers that host the API and
+					retrieve data.
+				</p>
+			</div>
+			<Row className={styles["bottom-spacer"]}>
 				{/* Sticky Notes */}
 				{ApiResourcesList.map((resource: APIGroupProps) => (
 					<Col className={styles.column} key={resource.stickyNoteColor}>

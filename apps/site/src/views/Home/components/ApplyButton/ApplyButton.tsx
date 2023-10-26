@@ -9,8 +9,9 @@ export default function ApplyButton() {
 			href="/apply"
 			variant=""
 			target="_blank"
+			disabled
 		>
-			<div>Apply</div>
+			<div>Applications have closed!</div>
 		</Button>
 	);
 }

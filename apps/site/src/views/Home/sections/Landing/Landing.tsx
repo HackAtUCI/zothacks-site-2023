@@ -1,5 +1,6 @@
 "use client";
 
+
 import ApplyButton from "@/views/Home/components/ApplyButton/ApplyButton";
 import Title from "@/views/Home/components/Title/Title";
 import styles from "./Landing.module.scss";
