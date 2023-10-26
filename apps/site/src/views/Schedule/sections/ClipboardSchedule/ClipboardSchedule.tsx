@@ -20,13 +20,13 @@ function ClipboardSchedule() {
 			<div className={styles.clip}>
 				<Image src={clip} alt="Clipboard clip" className={styles.clip} />
 			</div>
-			<h2>Schedule WIP</h2>
+			<h2 className="mb-5">Countdown Timer</h2>
 			<Accordion defaultActiveKey="0">
 				<Accordion.Item eventKey="0" className={styles.accordionItem}>
 					<Accordion.Header as="div" className={styles.accordionHeader}>
 						<Row className="w-100 justify-content-between align-items-center">
 							<Col sm="auto">
-								<h2 className="text-start">Event Name</h2>
+								<h3 className="text-start">Event Name</h3>
 							</Col>
 							<Col sm="auto" className="me-3">
 								<span>DBH 4011, 1-2pm</span>
@@ -39,7 +39,7 @@ function ClipboardSchedule() {
 					<Accordion.Header as="div" className={styles.accordionHeader}>
 						<Row className="w-100 justify-content-between align-items-center">
 							<Col sm="auto">
-								<h2 className="text-start">Event Name</h2>
+								<h3 className="text-start">Event Name</h3>
 							</Col>
 							<Col sm="auto" className="me-3">
 								<span>DBH 4011, 1-2pm</span>
@@ -52,7 +52,7 @@ function ClipboardSchedule() {
 					<Accordion.Header as="div" className={styles.accordionHeader}>
 						<Row className="w-100 justify-content-between align-items-center">
 							<Col sm="auto">
-								<h2 className="text-start">Event Name</h2>
+								<h3 className="text-start">Event Name</h3>
 							</Col>
 							<Col sm="auto" className="me-3">
 								<span>DBH 4011, 1-2pm</span>
@@ -65,7 +65,7 @@ function ClipboardSchedule() {
 					<Accordion.Header as="div" className={styles.accordionHeader}>
 						<Row className="w-100 justify-content-between align-items-center">
 							<Col sm="auto">
-								<h2 className="text-start">Event Name</h2>
+								<h3 className="text-start">Event Name</h3>
 							</Col>
 							<Col sm="auto" className="me-3">
 								<span>DBH 4011, 1-2pm</span>
