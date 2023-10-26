@@ -80,4 +80,3 @@ function ClipboardSchedule() {
 }
 
 export default ClipboardSchedule;
-export type { Event };
