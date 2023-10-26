@@ -1,4 +1,3 @@
-"use client";
 import ClipboardSchedule from "./sections/ClipboardSchedule/ClipboardSchedule";
 import styles from "./Schedule.module.scss";
 
