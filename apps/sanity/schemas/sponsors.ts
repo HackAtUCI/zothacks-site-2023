@@ -20,6 +20,7 @@ export default defineType({
 							name: "name",
 							title: "Name",
 							type: "string",
+							validation: (Rule) => Rule.required(),
 						}),
 						defineField({
 							name: "url",
@@ -27,9 +28,30 @@ export default defineType({
 							type: "url",
 						}),
 						defineField({
+							name: "tier",
+							title: "Tier",
+							type: "string",
+							options: {
+								list: [
+									{
+										title: "Bronze",
+										value: "bronze",
+									},
+									{
+										title: "Silver",
+										value: "silver",
+									},
+								],
+								layout: "radio",
+								direction: "vertical",
+							},
+							validation: (Rule) => Rule.required(),
+						}),
+						defineField({
 							name: "logo",
 							title: "Logo",
 							type: "image",
+							validation: (Rule) => Rule.required(),
 						}),
 					],
 				}),
