@@ -1,3 +1,5 @@
+import { getResources } from "./getApiResources";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -7,7 +9,9 @@ import styles from "./ApiResources.module.scss";
 import { ApiGroup, APIGroupProps } from "../../components/ApiGroup/ApiGroup";
 import ApiResourcesList from "./config";
 
-function ApiResources() {
+async function ApiResources() {
+	const resources = await getResources();
+	console.log(resources);
 	return (
 		<Container>
 			{/* Card Component */}
