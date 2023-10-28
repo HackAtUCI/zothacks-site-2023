@@ -44,7 +44,6 @@
 }
 
 .logos {
-	padding-left: 24px;
 	flex-grow: 1;
 	display: grid;
 	align-items: center;
@@ -54,6 +53,7 @@
 	gap: 32px;
 
 	@include utils.media-breakpoint-up(sm) {
+		padding-left: 24px;
 		grid-template-columns: repeat(auto-fill, 256px);
 		padding-left: 32px;
 	}
