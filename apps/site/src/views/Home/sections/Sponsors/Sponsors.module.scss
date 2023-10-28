@@ -55,7 +55,6 @@
 	@include utils.media-breakpoint-up(sm) {
 		padding-left: 24px;
 		grid-template-columns: repeat(auto-fill, 256px);
-		padding-left: 32px;
 	}
 
 	@include utils.media-breakpoint-up(md) {
