@@ -1,19 +1,38 @@
 import Button from "react-bootstrap/Button";
-import { HeartSticker } from "@/components/Sticker/Stickers";
+import StickerPosition from "@/components/Sticker/StickerPosition";
+import { HackSticker, HeartSticker } from "@/components/Sticker/Stickers";
 
 import styles from "./ApplyButton.module.scss";
 
 export default function ApplyButton() {
 	return (
-		<HeartSticker>
+		<StickerPosition
+			stickers={[
+				{
+					Node: HeartSticker,
+					positionX: "right",
+					positionY: "bottom",
+					offsetX: 50,
+					offsetY: 50,
+				},
+				{
+					Node: HackSticker,
+					positionX: "left",
+					positionY: "top",
+					offsetX: -50,
+					offsetY: -50,
+				},
+			]}
+		>
 			<Button
 				className={styles.applyButton}
 				href="/apply"
 				variant=""
 				target="_blank"
+				disabled
 			>
-				<div>Apply</div>
+				<span>Applications have closed!</span>
 			</Button>
-		</HeartSticker>
+		</StickerPosition>
 	);
 }

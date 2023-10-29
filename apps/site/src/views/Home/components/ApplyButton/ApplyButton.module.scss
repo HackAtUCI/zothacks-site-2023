@@ -16,10 +16,11 @@ $skew-amount: -30deg;
 
 	@include bootstrap.font-size(bootstrap.$h4-font-size);
 
-	max-width: 70%;
 	transform: skew($skew-amount);
 	// unskew children
 	> * {
+		width: max-content;
+		display: block;
 		transform: skew(-$skew-amount);
 	}
 

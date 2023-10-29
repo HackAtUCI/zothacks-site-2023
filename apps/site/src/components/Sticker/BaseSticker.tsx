@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import styles from "./BaseSticker.module.scss";
 
 interface StickerProps {
-	children?: React.ReactNode;
-	position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
 	imageSrc: string;
 	alt: string;
 	height?: number;
@@ -17,11 +15,11 @@ interface StickerProps {
 	// dragConstraints prop can be an object containing coordinates, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
 	animate?: object | undefined;
 	transition?: object | undefined;
+	offsetX?: number;
+	offsetY?: number;
 }
 
 const BaseSticker: React.FC<StickerProps> = ({
-	children,
-	position = "bottom-right",
 	imageSrc,
 	alt,
 	height = 100,
@@ -30,6 +28,8 @@ const BaseSticker: React.FC<StickerProps> = ({
 	dragConstraints = false,
 	animate = {},
 	transition = {},
+	offsetX = 0,
+	offsetY = 0,
 }) => {
 	// prevent next from throwing error involving DOM API
 	const pageRef = useRef(
@@ -58,7 +58,7 @@ const BaseSticker: React.FC<StickerProps> = ({
 					filter: `drop-shadow(10px 14px 10px rgba(0, 0, 0, 0.2))`,
 				},
 				drag: true,
-				initial: { x: -width / 2, y: -height / 2 },
+				initial: { x: -width / 2 + offsetX, y: -height / 2 + offsetY },
 				dragMomentum: false,
 				dragConstraints: dragConstraints ? dragConstraints : pageRef,
 				dragElastic: 0.2,
@@ -67,32 +67,15 @@ const BaseSticker: React.FC<StickerProps> = ({
 		: {};
 
 	return (
-		<div
-			className={styles.stickerPositionContainer}
-			style={{
-				flexDirection:
-					position === "top-left" || position === "bottom-left"
-						? "row-reverse"
-						: "row",
-				alignItems:
-					position === "bottom-left" || position === "bottom-right"
-						? "flex-end"
-						: "flex-start",
-			}}
-		>
-			{children}
-			<div className={styles.stickerParent}>
-				<motion.img
-					src={imageSrc}
-					alt={alt}
-					height={height}
-					width={width}
-					className={styles.sticker}
-					animate={animateProps}
-					{...drag}
-				/>
-			</div>
-		</div>
+		<motion.img
+			src={imageSrc}
+			alt={alt}
+			height={height}
+			width={width}
+			className={styles.sticker}
+			animate={animateProps}
+			{...drag}
+		/>
 	);
 };
 
