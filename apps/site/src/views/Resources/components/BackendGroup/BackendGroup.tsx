@@ -56,7 +56,9 @@ export function BackendGroup({
 					<div className={styles.description}>{description}</div>
 				</div>
 				<div className={styles.tag_flexbox}>
-					{tags?.map((tag) => <Resource_Tag link={tag.link} text={tag.text} />)}
+					{tags?.map((tag) => (
+						<Resource_Tag key={tag.text} link={tag.link} text={tag.text} />
+					))}
 				</div>
 			</div>
 		</>
