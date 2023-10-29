@@ -39,6 +39,7 @@ export default function ResourceCard({
 
 			{links.map(({ text, link }) => (
 				<a
+					key={link}
 					href={link}
 					target="_blank"
 					rel="noopener noreferrer"
