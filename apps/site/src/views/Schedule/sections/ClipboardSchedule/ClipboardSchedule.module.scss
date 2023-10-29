@@ -1,0 +1,36 @@
+@use "bootstrap-utils" as bootstrap;
+@use "zothacks-theme" as theme;
+
+.accordion {
+	--bs-accordion-btn-icon: url("~@/assets/icons/accordion-btn.svg");
+	--bs-accordion-btn-active-icon: url("~@/assets/icons/accordion-btn.svg");
+	--bs-accordion-btn-icon-width: 25px;
+
+	button::after {
+		margin-left: 1rem;
+	}
+}
+
+.clip {
+	position: absolute;
+	width: 75%;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -55%);
+
+	@include bootstrap.media-breakpoint-up(lg) {
+		width: 60%;
+	}
+}
+
+.clipboard {
+	@include bootstrap.rfs(7.5rem, border-radius);
+
+	background-color: white;
+	border: 1.25rem solid theme.$brown;
+}
+
+.accordionItem {
+	border-top: 2px solid theme.$light-blue;
+	border-bottom: 2px solid theme.$light-blue;
+}
