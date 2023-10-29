@@ -1,3 +1,7 @@
+@use "bootstrap-utils" as bootstrap;
+
+$container-padding: 8rem;
+
 .background {
 	background-image: url("~@/assets/background/anteater-head-tiling.gif");
 	background-size: 464px; // half size for 2x scaling
@@ -12,8 +16,10 @@
 	--bs-accordion-btn-focus-box-shadow: 0;
 	--bs-accordion-border-radius: 0;
 	--bs-accordion-btn-icon-width: 14px;
+}
 
-	--bs-accordion-btn-icon: url("~@/assets/icons/accordion-btn.svg");
-	--bs-accordion-btn-active-icon: url("~@/assets/icons/accordion-btn.svg");
-	--bs-accordion-btn-icon-width: 25px;
+section.container {
+	// responsive padding
+	@include bootstrap.padding-top($container-padding);
+	@include bootstrap.padding-bottom($container-padding);
 }

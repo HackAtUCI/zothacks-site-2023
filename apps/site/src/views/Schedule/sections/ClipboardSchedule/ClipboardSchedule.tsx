@@ -11,7 +11,18 @@ import clip from "@/assets/images/clip.svg";
 
 import styles from "./ClipboardSchedule.module.scss";
 
-function ClipboardSchedule() {
+interface ClipboardScheduleProps {
+	schedule: {
+		_key: string;
+		title: string;
+		description: string;
+		location: string;
+		startDate: Date;
+		endDate: Date;
+	}[];
+}
+
+function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 	return (
 		<Container
 			as="section"
@@ -21,59 +32,33 @@ function ClipboardSchedule() {
 				<Image src={clip} alt="Clipboard clip" className={styles.clip} />
 			</div>
 			<h2 className="mb-5">Countdown Timer</h2>
-			<Accordion defaultActiveKey="0">
-				<Accordion.Item eventKey="0" className={styles.accordionItem}>
-					<Accordion.Header as="div" className={styles.accordionHeader}>
-						<Row className="w-100 justify-content-between align-items-center">
-							<Col sm="auto">
-								<h3 className="text-start">Event Name</h3>
-							</Col>
-							<Col sm="auto" className="me-3">
-								<span>DBH 4011, 1-2pm</span>
-							</Col>
-						</Row>
-					</Accordion.Header>
-					<Accordion.Body>Placeholder text</Accordion.Body>
-				</Accordion.Item>
-				<Accordion.Item eventKey="1" className={styles.accordionItem}>
-					<Accordion.Header as="div" className={styles.accordionHeader}>
-						<Row className="w-100 justify-content-between align-items-center">
-							<Col sm="auto">
-								<h3 className="text-start">Event Name</h3>
-							</Col>
-							<Col sm="auto" className="me-3">
-								<span>DBH 4011, 1-2pm</span>
-							</Col>
-						</Row>
-					</Accordion.Header>
-					<Accordion.Body>Placeholder text</Accordion.Body>
-				</Accordion.Item>
-				<Accordion.Item eventKey="2" className={styles.accordionItem}>
-					<Accordion.Header as="div" className={styles.accordionHeader}>
-						<Row className="w-100 justify-content-between align-items-center">
-							<Col sm="auto">
-								<h3 className="text-start">Event Name</h3>
-							</Col>
-							<Col sm="auto" className="me-3">
-								<span>DBH 4011, 1-2pm</span>
-							</Col>
-						</Row>
-					</Accordion.Header>
-					<Accordion.Body>Placeholder text</Accordion.Body>
-				</Accordion.Item>
-				<Accordion.Item eventKey="3" className={styles.accordionItem}>
-					<Accordion.Header as="div" className={styles.accordionHeader}>
-						<Row className="w-100 justify-content-between align-items-center">
-							<Col sm="auto">
-								<h3 className="text-start">Event Name</h3>
-							</Col>
-							<Col sm="auto" className="me-3">
-								<span>DBH 4011, 1-2pm</span>
-							</Col>
-						</Row>
-					</Accordion.Header>
-					<Accordion.Body>Placeholder text</Accordion.Body>
-				</Accordion.Item>
+			<Accordion defaultActiveKey="0" className={styles.accordion}>
+				{schedule.map(
+					(
+						{ _key, title, description, location, startDate, endDate },
+						index,
+					) => (
+						<Accordion.Item
+							key={_key}
+							eventKey={`${index}`}
+							className={styles.accordionItem}
+						>
+							<Accordion.Header as="div" className={styles.accordionHeader}>
+								<Row className="w-100 justify-content-between align-items-center">
+									<Col sm="auto">
+										<h3 className="text-start">{title}</h3>
+									</Col>
+									<Col sm="auto" className="me-3">
+										<span>
+											{location}, {startDate.toString()}-{endDate.toString()}
+										</span>
+									</Col>
+								</Row>
+							</Accordion.Header>
+							<Accordion.Body>{description}</Accordion.Body>
+						</Accordion.Item>
+					),
+				)}
 			</Accordion>
 		</Container>
 	);

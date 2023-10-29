@@ -3,6 +3,11 @@
 $container-padding: 8rem;
 
 .schedule {
+	h1 {
+		text-align: center;
+		margin-bottom: 10rem;
+	}
+
 	margin: 10rem 1rem;
 
 	@include bootstrap.media-breakpoint-up(md) {
@@ -11,13 +16,5 @@ $container-padding: 8rem;
 
 	h2 {
 		text-align: center;
-	}
-
-	:global {
-		section.container {
-			// responsive padding
-			@include bootstrap.padding-top($container-padding);
-			@include bootstrap.padding-bottom($container-padding);
-		}
 	}
 }

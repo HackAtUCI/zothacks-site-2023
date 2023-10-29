@@ -5,7 +5,7 @@ export default function Schedule() {
 	return (
 		<div className={styles.schedule}>
 			<h1>Schedule</h1>
-			<ClipboardSchedule />
+			<ClipboardSchedule schedule={[]} />
 		</div>
 	);
 }
