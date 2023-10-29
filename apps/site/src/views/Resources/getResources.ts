@@ -8,14 +8,26 @@ const Resources = z.array(
 		description: z.array(
 			z.object({
 				_key: z.string(),
-				children: z.array(
+				markDefs: z.array(
 					z.object({
+						_type: z.string(),
+						href: z.optional(z.string()),
 						_key: z.string(),
-						text: z.string(),
 					}),
 				),
+				children: z.array(
+					z.object({
+						text: z.string(),
+						_key: z.string(),
+						_type: z.literal("span"),
+						marks: z.array(z.string()),
+					}),
+				),
+				_type: z.literal("block"),
+				style: z.literal("normal"),
 			}),
 		),
+		resourceType: z.string(),
 		link: z.string(),
 		logo: z.object({
 			_type: z.string(),
@@ -33,6 +45,10 @@ const Resources = z.array(
 	}),
 );
 
-export const getResources = cache(async () => {
-	return Resources.parse(await client.fetch("*[_type == 'resource']"));
+export const getResources = cache(async (resourceType: string) => {
+	return Resources.parse(
+		await client.fetch(
+			`*[_type == 'resource' && resourceType == '${resourceType}']`,
+		),
+	);
 });
