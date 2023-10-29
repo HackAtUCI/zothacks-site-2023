@@ -7,6 +7,7 @@ import {
 	BackendGroupProps,
 } from "../../components/BackendGroup/BackendGroup";
 import BackendResourcesList from "./config";
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
 
 function BackendResources() {
 	return (
@@ -22,15 +23,13 @@ function BackendResources() {
 			</div>
 			<Row className={styles["bottom-spacer"]}>
 				{/* Sticky Notes */}
-				{BackendResourcesList.map((resource: BackendGroupProps) => (
+				{BackendResourcesList.map((resource) => (
 					<Col className={styles.column} key={resource.stickyNoteColor}>
-						<BackendGroup
-							stickyNoteColor={resource.stickyNoteColor}
+						<ResourceCard
 							title={resource.title}
 							description={resource.description}
-							tapeOrientation={resource.tapeOrientation}
-							tags={resource.tags}
-							className={resource?.className}
+							stickyNoteColor={resource.stickyNoteColor}
+							links={resource.tags}
 						/>
 					</Col>
 				))}

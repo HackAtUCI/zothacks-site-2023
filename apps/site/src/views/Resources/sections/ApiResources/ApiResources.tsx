@@ -4,8 +4,8 @@ import Col from "react-bootstrap/Col";
 
 import styles from "./ApiResources.module.scss";
 
-import { ApiGroup, APIGroupProps } from "../../components/ApiGroup/ApiGroup";
 import ApiResourcesList from "./config";
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
 
 function ApiResources() {
 	return (
@@ -23,14 +23,13 @@ function ApiResources() {
 			</div>
 			<Row className={styles["bottom-spacer"]}>
 				{/* Sticky Notes */}
-				{ApiResourcesList.map((resource: APIGroupProps) => (
+				{ApiResourcesList.map((resource) => (
 					<Col className={styles.column} key={resource.stickyNoteColor}>
-						<ApiGroup
+						<ResourceCard
 							title={resource.title}
 							description={resource.description}
 							stickerSrc={resource.stickerSrc}
-							tagSrc={resource.tagSrc}
-							tagLink={resource.tagLink}
+							links={[{ text: "API Reference", link: resource.tagLink }]}
 							stickyNoteColor={resource.stickyNoteColor}
 						/>
 					</Col>
