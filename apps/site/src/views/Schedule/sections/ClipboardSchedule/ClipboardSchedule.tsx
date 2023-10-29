@@ -44,16 +44,12 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 							className={styles.accordionItem}
 						>
 							<Accordion.Header as="div" className={styles.accordionHeader}>
-								<Row className="w-100 justify-content-between align-items-center">
-									<Col sm="auto">
-										<h3 className="text-start">{title}</h3>
-									</Col>
-									<Col sm="auto" className="me-3">
-										<span>
-											{location}, {startDate.toString()}-{endDate.toString()}
-										</span>
-									</Col>
-								</Row>
+								<Col className="d-flex w-100 justify-content-between align-items-center">
+									<h3 className="text-start">{title}</h3>
+									<span>
+										{location}, {startDate.toString()}-{endDate.toString()}
+									</span>
+								</Col>
 							</Accordion.Header>
 							<Accordion.Body>{description}</Accordion.Body>
 						</Accordion.Item>

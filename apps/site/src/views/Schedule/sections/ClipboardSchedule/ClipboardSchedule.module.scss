@@ -20,9 +20,10 @@
 }
 
 .clipboard {
+	@include bootstrap.rfs(7.5rem, border-radius);
+
 	background-color: white;
 	border: 1.25rem solid theme.$brown;
-	border-radius: 100px;
 }
 
 .accordionItem {

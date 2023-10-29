@@ -5,7 +5,8 @@ $container-padding: 8rem;
 .schedule {
 	h1 {
 		text-align: center;
-		margin-bottom: 10rem;
+
+		@include bootstrap.rfs(8rem, margin-bottom);
 	}
 
 	margin: 10rem 1rem;
