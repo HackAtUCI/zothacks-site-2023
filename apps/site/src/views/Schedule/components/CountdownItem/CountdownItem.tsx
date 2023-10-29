@@ -11,15 +11,7 @@ export default function CountdownItem({ num, text }: CountdownItemProps) {
 		<>
 			<div className={styles.countdownItem}>
 				<AnimatePresence mode="popLayout">
-					<motion.h2
-						key={num}
-						initial={{ y: "100%" }}
-						animate={{ y: "0%" }}
-						exit={{ y: "-50%" }}
-						transition={{ ease: "backIn", duration: 0.75 }}
-					>
-						{num}
-					</motion.h2>
+					<motion.h2 key={num}>{num}</motion.h2>
 				</AnimatePresence>
 			</div>
 
