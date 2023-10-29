@@ -32,8 +32,16 @@ export default defineType({
 		}),
 		defineField({
 			name: "description",
-			title: "description",
-			type: "text"
-		})
+			title: "Description",
+			type: "array",
+			of: [
+				{
+					type: "block",
+					styles: [{ title: "Normal", value: "normal" }],
+					lists: [],
+				},
+			],
+			validation: (Rule) => Rule.required(),
+		}),
 	],
 });
