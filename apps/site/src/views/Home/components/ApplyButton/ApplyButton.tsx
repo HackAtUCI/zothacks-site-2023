@@ -15,13 +15,6 @@ export default function ApplyButton() {
 					offsetX: 50,
 					offsetY: 50,
 				},
-				{
-					Node: HackSticker,
-					positionX: "left",
-					positionY: "top",
-					offsetX: -50,
-					offsetY: -50,
-				},
 			]}
 		>
 			<Button
