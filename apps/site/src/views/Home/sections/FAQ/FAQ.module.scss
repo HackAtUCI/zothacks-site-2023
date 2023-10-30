@@ -38,14 +38,7 @@
 }
 
 .accordion {
-	--bs-accordion-active-color: theme.$black;
-	--bs-accordion-bg: transparent;
-	--bs-accordion-active-bg: transparent;
-	--bs-accordion-border-color: transparent;
-	--bs-accordion-btn-focus-box-shadow: 0;
-	--bs-accordion-border-radius: 0;
 	--bs-accordion-btn-icon-width: 14px;
-
 	--bs-accordion-btn-icon: url("~@/assets/icons/plus-lg.svg");
 	--bs-accordion-btn-active-icon: url("~@/assets/icons/dash-lg.svg");
 }
