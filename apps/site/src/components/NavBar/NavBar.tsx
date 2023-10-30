@@ -16,11 +16,11 @@ export default function NavBar() {
 	const activeRoute = usePathname();
 
 	return (
-		<nav className={styles.nav}>
+		<div className={styles.nav}>
 			<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
 				<Container fluid>
 					<Navbar.Brand />
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					{/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto text-center">
 							<Link
@@ -52,7 +52,7 @@ export default function NavBar() {
 								Schedule
 							</Link>
 						</Nav>
-					</Navbar.Collapse>
+					</Navbar.Collapse> */}
 				</Container>
 			</Navbar>
 			<Link href="/">
@@ -60,6 +60,6 @@ export default function NavBar() {
 					<Image src={ZotHacksLogo.src} alt="ZotHacks Logo" fill />
 				</div>
 			</Link>
-		</nav>
+		</div>
 	);
 }

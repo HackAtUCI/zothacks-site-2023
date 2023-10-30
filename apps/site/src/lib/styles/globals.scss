@@ -1,4 +1,23 @@
+@use "bootstrap-utils" as bootstrap;
+
+$container-padding: 8rem;
+
 .background {
 	background-image: url("~@/assets/background/anteater-head-tiling.gif");
 	background-size: 464px; // half size for 2x scaling
+}
+
+.accordion {
+	--bs-accordion-active-color: theme.$black;
+	--bs-accordion-bg: transparent;
+	--bs-accordion-active-bg: transparent;
+	--bs-accordion-border-color: transparent;
+	--bs-accordion-border-radius: 0;
+	--bs-accordion-btn-icon-width: 14px;
+}
+
+section.container {
+	// responsive padding
+	@include bootstrap.padding-top($container-padding);
+	@include bootstrap.padding-bottom($container-padding);
 }

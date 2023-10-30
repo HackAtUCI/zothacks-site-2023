@@ -14,13 +14,13 @@ interface FAQAccordion {
 export default function FAQAccordion({ faq }: FAQAccordion) {
 	return (
 		<Accordion className={styles.accordion} alwaysOpen>
-			{faq.map(({ _key, question, answer }, index) => (
+			{faq.map(({ _key, question, answer }) => (
 				<Accordion.Item
 					key={_key}
 					className={styles["accordion-border"]}
 					eventKey={_key}
 				>
-					<Accordion.Header className={styles.body}>
+					<Accordion.Header as="h3" className={styles.body}>
 						{question}
 					</Accordion.Header>
 					<Accordion.Body className={styles.body}>{answer}</Accordion.Body>

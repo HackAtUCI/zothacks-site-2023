@@ -1,5 +1,7 @@
 @use "bootstrap-utils" as bootstrap;
 
+$container-padding: 8rem;
+
 .maintenanceContainer {
 	position: absolute;
 	top: 50%;
@@ -9,5 +11,23 @@
 
 	@include bootstrap.media-breakpoint-up(md) {
 		width: 50%;
+	}
+}
+
+.schedule {
+	h1 {
+		text-align: center;
+
+		@include bootstrap.rfs(8rem, margin-bottom);
+	}
+
+	margin: 10rem 1rem;
+
+	@include bootstrap.media-breakpoint-up(md) {
+		margin: 10rem 7rem;
+	}
+
+	h2 {
+		text-align: center;
 	}
 }
