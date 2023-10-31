@@ -1,7 +1,3 @@
-import flask_tutorial_tag from "@/assets/images/flask_tutorial_button.png";
-import flask_documentation_tag from "@/assets/images/flask_documentation_button.png";
-import flask_project_tag from "@/assets/images/flask_project_button.png";
-
 const BackendResourcesList = [
 	{
 		stickyNoteColor: "#FFDAF7",
@@ -12,18 +8,15 @@ const BackendResourcesList = [
 		tags: [
 			{
 				link: "https://hack.ics.uci.edu/",
-				src: flask_tutorial_tag.src,
-				alt: "Flask Tutorial Tag Link",
+				text: "Flask Tutorial",
 			},
 			{
 				link: "https://hack.ics.uci.edu/",
-				src: flask_documentation_tag.src,
-				alt: "Flask Documentation Tag Link",
+				text: "Flask Documentation",
 			},
 			{
 				link: "https://hack.ics.uci.edu/",
-				src: flask_project_tag.src,
-				alt: "Flask Project Tag Link",
+				text: "Flask Project",
 			},
 		],
 	},
@@ -36,18 +29,15 @@ const BackendResourcesList = [
 		tags: [
 			{
 				link: "https://hack.ics.uci.edu/",
-				src: flask_tutorial_tag.src,
-				alt: "Flask Tutorial Tag Link",
+				text: "Flask Tutorial",
 			},
 			{
 				link: "https://hack.ics.uci.edu/",
-				src: flask_documentation_tag.src,
-				alt: "Flask Documentation Tag Link",
+				text: "Flask Documentation",
 			},
 			{
 				link: "https://hack.ics.uci.edu/",
-				src: flask_project_tag.src,
-				alt: "Flask Project Tag Link",
+				text: "Flask Project",
 			},
 		],
 	},

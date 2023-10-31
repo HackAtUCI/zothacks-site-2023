@@ -3,7 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 
 import styles from "./ApiResources.module.scss";
 
-import { ApiGroup } from "../../components/ApiGroup/ApiGroup";
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
 import { getResources } from "../../getResources";
 import { client } from "@/lib/sanity/client";
 
@@ -27,11 +27,11 @@ async function ApiResources() {
 				{resources.map(
 					({ _id, title, description, link, logo, stickyNoteColor }) => (
 						<div className={styles.column + " col"} key={_id}>
-							<ApiGroup
+							<ResourceCard
 								title={title}
 								description={<PortableText value={description} />}
 								stickerSrc={imageUrlBuilder(client).image(logo).url()}
-								tagLink={link}
+								links={[{ text: "API Reference", link: link }]}
 								stickyNoteColor={stickyNoteColor.hex}
 							/>
 						</div>
