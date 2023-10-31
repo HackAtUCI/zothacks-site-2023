@@ -6,15 +6,14 @@ import Clear_Tape_Right from "@/assets/images/clear_tape_right.svg";
 
 export interface tag {
 	link: string;
-	src: string;
-	alt: string;
+	text: string;
 	className?: string;
 }
 
 export interface BackendGroupProps {
 	stickyNoteColor: string;
 	title: string;
-	description: string;
+	description: JSX.Element;
 	tags: tag[];
 	tapeOrientation: string;
 	className?: string | undefined;
@@ -54,16 +53,11 @@ export function BackendGroup({
 				{tapePosition}
 				<div className={styles.text_flexbox}>
 					<h3 className={styles.title}>{title}</h3>
-					<p className={styles.description}>{description}</p>
+					<div className={styles.description}>{description}</div>
 				</div>
 				<div className={styles.tag_flexbox}>
 					{tags?.map((tag) => (
-						<Resource_Tag
-							key={tag.src}
-							link={tag.link}
-							src={tag.src}
-							alt={tag.alt}
-						/>
+						<Resource_Tag key={tag.text} link={tag.link} text={tag.text} />
 					))}
 				</div>
 			</div>
@@ -71,12 +65,10 @@ export function BackendGroup({
 	);
 }
 
-function Resource_Tag({ link, className, src, alt }: tag) {
+function Resource_Tag({ link, className, text }: tag) {
 	return (
-		<div className={`${className} ${styles.tag_wrapper}`}>
-			<Link href={link}>
-				<img src={src} className={styles.tag} alt={alt} />
-			</Link>
+		<div className={`${className} ${styles.tag}`}>
+			<Link href={link}>{text}</Link>
 		</div>
 	);
 }

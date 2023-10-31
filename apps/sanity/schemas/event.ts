@@ -1,4 +1,4 @@
-import { defineType, defineField} from "sanity";
+import { defineType, defineField } from "sanity";
 
 export default defineType({
 	name: "event",
@@ -7,33 +7,41 @@ export default defineType({
 	fields: [
 		defineField({
 			name: "title",
-			title: "title",
-			type: "string"
+			title: "Title",
+			type: "string",
 		}),
 		defineField({
 			name: "startTime",
-			title: "startTime",
-			type: "datetime"
+			title: "Start Time",
+			type: "datetime",
 		}),
 		defineField({
 			name: "endTime",
-			title: "endTime",
-			type: "datetime"
+			title: "End Time",
+			type: "datetime",
 		}),
 		defineField({
 			name: "category",
-			title: "category",
-			type: "string"
+			title: "Category",
+			type: "string",
 		}),
 		defineField({
 			name: "host",
-			title: "host",
-			type: "string"
+			title: "Host",
+			type: "string",
 		}),
 		defineField({
 			name: "description",
-			title: "description",
-			type: "text"
-		})
+			title: "Description",
+			type: "array",
+			of: [
+				{
+					type: "block",
+					styles: [{ title: "Normal", value: "normal" }],
+					lists: [],
+				},
+			],
+			validation: (Rule) => Rule.required(),
+		}),
 	],
 });
