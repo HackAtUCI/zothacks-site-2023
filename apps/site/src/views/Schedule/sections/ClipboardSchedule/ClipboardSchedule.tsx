@@ -4,8 +4,6 @@ import Image from "next/image";
 
 import Accordion from "react-bootstrap/Accordion";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 
 import clip from "@/assets/images/clip.svg";
 
@@ -13,14 +11,15 @@ import styles from "./ClipboardSchedule.module.scss";
 
 interface ClipboardScheduleProps {
 	schedule: {
-		host: string;
 		title: string;
+		location?: string | undefined;
+		virtual?: string | undefined;
+		startTime: Date;
+		endTime: Date;
+		organization?: string | undefined;
+		hosts?: string[] | undefined;
 		description: JSX.Element;
-		location: JSX.Element;
-		category: JSX.Element;
-		startTime: string;
-		endTime: string;
-	}[];
+	}[][];
 }
 
 function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
@@ -34,35 +33,28 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 			</div>
 			<h2 className="mb-5">Countdown Timer</h2>
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
-				{schedule.map(
-					(
-						{
-							title,
-							description,
-							location,
-							host,
-							category,
-							startTime,
-							endTime,
-						},
-						index,
-					) => (
-						<Accordion.Item
-							key={title}
-							eventKey={`${index}`}
-							className={styles.accordionItem}
-						>
-							<Accordion.Header className={styles.accordionHeader}>
-								<h3>{title}</h3>
-								<span>{host}</span>
-								{category}
-								<span className="text-end ms-auto">
-									{location}, {new Date(startTime).toLocaleDateString()} -{" "}
-									{new Date(endTime).toLocaleDateString()}
-								</span>
-							</Accordion.Header>
-							<Accordion.Body>{description}</Accordion.Body>
-						</Accordion.Item>
+				{schedule.map((day, i) =>
+					day.map(
+						(
+							{ title, description, location, hosts, startTime, endTime },
+							index,
+						) => (
+							<Accordion.Item
+								key={title}
+								eventKey={title}
+								className={styles.accordionItem}
+							>
+								<Accordion.Header className={styles.accordionHeader}>
+									<h3>{title}</h3>
+									<span>{hosts?.join()}</span>
+									<span className="text-end ms-auto">
+										{location}, {new Date(startTime).toLocaleDateString()} -{" "}
+										{new Date(endTime).toLocaleDateString()}
+									</span>
+								</Accordion.Header>
+								<Accordion.Body>{description}</Accordion.Body>
+							</Accordion.Item>
+						),
 					),
 				)}
 			</Accordion>
