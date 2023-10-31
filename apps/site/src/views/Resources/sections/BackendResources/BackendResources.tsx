@@ -1,17 +1,13 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import styles from "./BackendResources.module.scss";
-import {
-	BackendGroup,
-	BackendGroupProps,
-} from "../../components/BackendGroup/BackendGroup";
-import BackendResourcesList from "./config";
-import ResourceCard from "../../components/ResourceCard/ResourceCard";
 
-function BackendResources() {
+import { BackendGroup } from "../../components/BackendGroup/BackendGroup";
+import { getResources } from "../../getResources";
+import { PortableText } from "@portabletext/react";
+
+async function BackendResources() {
+	const resources = await getResources("backend");
 	return (
-		<Container>
+		<div className="container">
 			{/* Card Component */}
 			<div className={styles.card}>
 				<h2 className={styles.title}>Backend Framework Resources</h2>
@@ -21,20 +17,23 @@ function BackendResources() {
 					needs.
 				</p>
 			</div>
-			<Row className={styles["bottom-spacer"]}>
+			<div className={styles["bottom-spacer"] + " row"}>
 				{/* Sticky Notes */}
-				{BackendResourcesList.map((resource) => (
-					<Col className={styles.column} key={resource.stickyNoteColor}>
-						<ResourceCard
-							title={resource.title}
-							description={resource.description}
-							stickyNoteColor={resource.stickyNoteColor}
-							links={resource.tags}
-						/>
-					</Col>
-				))}
-			</Row>
-		</Container>
+				{resources.map(
+					({ _id, title, description, link, logo, stickyNoteColor }) => (
+						<div className={styles.column + " div"} key={_id}>
+							<BackendGroup
+								stickyNoteColor={stickyNoteColor.hex}
+								title={title}
+								description={<PortableText value={description} />}
+								tags={[]}
+								tapeOrientation="left"
+							/>
+						</div>
+					),
+				)}
+			</div>
+		</div>
 	);
 }
 
