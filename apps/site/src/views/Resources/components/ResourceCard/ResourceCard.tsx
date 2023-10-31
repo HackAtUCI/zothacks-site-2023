@@ -32,9 +32,7 @@ export default function ResourceCard({
 		>
 			<div className={styles.container + " text-center px-3"}>
 				<div className={styles.tape}></div>
-				{stickerSrc ? (
-					<img src={stickerSrc} alt="Resource logo" width="100" />
-				) : null}
+				{stickerSrc && <img src={stickerSrc} alt="Resource logo" width="100" />}
 				<h3>{title}</h3>
 				{description}
 			</div>
