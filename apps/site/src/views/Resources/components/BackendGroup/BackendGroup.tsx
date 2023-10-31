@@ -1,8 +1,6 @@
 import Link from "next/link";
 
 import styles from "./BackendGroup.module.scss";
-import Clear_Tape_Left from "@/assets/images/clear_tape_left.svg";
-import Clear_Tape_Right from "@/assets/images/clear_tape_right.svg";
 
 export interface tag {
 	link: string;
