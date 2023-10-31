@@ -10,7 +10,7 @@ type Tag = {
 
 interface ResourceCardProps {
 	title: string;
-	description: string;
+	description: JSX.Element;
 	stickerSrc?: string;
 	links: Tag[];
 	stickyNoteColor: string;
@@ -30,11 +30,13 @@ export default function ResourceCard({
 				backgroundColor: `${stickyNoteColor}`,
 			}}
 		>
-			<div className={styles.container}>
+			<div className={styles.container + " text-center px-3"}>
 				<div className={styles.tape}></div>
-				{stickerSrc ? <img src={stickerSrc} alt="Resource logo" /> : null}
+				{stickerSrc ? (
+					<img src={stickerSrc} alt="Resource logo" width="100" />
+				) : null}
 				<h3>{title}</h3>
-				<p className={styles.text}>{description}</p>
+				{description}
 			</div>
 
 			{links.map(({ text, link }) => (

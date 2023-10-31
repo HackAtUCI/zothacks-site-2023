@@ -1,15 +1,16 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { PortableText } from "@portabletext/react";
+import imageUrlBuilder from "@sanity/image-url";
 
 import styles from "./ApiResources.module.scss";
 
-import ApiResourcesList from "./config";
 import ResourceCard from "../../components/ResourceCard/ResourceCard";
+import { getResources } from "../../getResources";
+import { client } from "@/lib/sanity/client";
 
-function ApiResources() {
+async function ApiResources() {
+	const resources = await getResources("api");
 	return (
-		<Container>
+		<div className="container">
 			{/* Card Component */}
 			<div className={styles.card}>
 				<h2 className={styles.title}>API Resources</h2>
@@ -21,21 +22,23 @@ function ApiResources() {
 					retrieve data.
 				</p>
 			</div>
-			<Row className={styles["bottom-spacer"]}>
+			<div className={styles["bottom-spacer"] + " row"}>
 				{/* Sticky Notes */}
-				{ApiResourcesList.map((resource) => (
-					<Col className={styles.column} key={resource.stickyNoteColor}>
-						<ResourceCard
-							title={resource.title}
-							description={resource.description}
-							stickerSrc={resource.stickerSrc}
-							links={[{ text: "API Reference", link: resource.tagLink }]}
-							stickyNoteColor={resource.stickyNoteColor}
-						/>
-					</Col>
-				))}
-			</Row>
-		</Container>
+				{resources.map(
+					({ _id, title, description, link, logo, stickyNoteColor }) => (
+						<div className={styles.column + " col"} key={_id}>
+							<ResourceCard
+								title={title}
+								description={<PortableText value={description} />}
+								stickerSrc={imageUrlBuilder(client).image(logo).url()}
+								links={[{ text: "API Reference", link: link }]}
+								stickyNoteColor={stickyNoteColor.hex}
+							/>
+						</div>
+					),
+				)}
+			</div>
+		</div>
 	);
 }
 

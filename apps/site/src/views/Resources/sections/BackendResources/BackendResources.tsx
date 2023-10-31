@@ -1,17 +1,16 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import styles from "./BackendResources.module.scss";
-import {
-	BackendGroup,
-	BackendGroupProps,
-} from "../../components/BackendGroup/BackendGroup";
-import BackendResourcesList from "./config";
-import ResourceCard from "../../components/ResourceCard/ResourceCard";
+import { PortableText } from "@portabletext/react";
+import urlImageBuilder from "@sanity/image-url";
 
-function BackendResources() {
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
+import { getResources } from "../../getResources";
+import { client } from "@/lib/sanity/client";
+
+import styles from "./BackendResources.module.scss";
+
+async function BackendResources() {
+	const resources = await getResources("backend");
 	return (
-		<Container>
+		<div className="container">
 			{/* Card Component */}
 			<div className={styles.card}>
 				<h2 className={styles.title}>Backend Framework Resources</h2>
@@ -21,20 +20,23 @@ function BackendResources() {
 					needs.
 				</p>
 			</div>
-			<Row className={styles["bottom-spacer"]}>
+			<div className={styles["bottom-spacer"] + " row"}>
 				{/* Sticky Notes */}
-				{BackendResourcesList.map((resource) => (
-					<Col className={styles.column} key={resource.stickyNoteColor}>
-						<ResourceCard
-							title={resource.title}
-							description={resource.description}
-							stickyNoteColor={resource.stickyNoteColor}
-							links={resource.tags}
-						/>
-					</Col>
-				))}
-			</Row>
-		</Container>
+				{resources.map(
+					({ _id, title, description, link, logo, stickyNoteColor }) => (
+						<div className={styles.column + " div"} key={_id}>
+							<ResourceCard
+								title={title}
+								description={<PortableText value={description} />}
+								stickerSrc={urlImageBuilder(client).image(logo).url()}
+								stickyNoteColor={stickyNoteColor.hex}
+								links={[{ text: "Reference", link: link }]}
+							/>
+						</div>
+					),
+				)}
+			</div>
+		</div>
 	);
 }
 
