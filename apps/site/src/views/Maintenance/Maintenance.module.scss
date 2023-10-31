@@ -1,0 +1,11 @@
+@use "bootstrap-utils" as bootstrap;
+
+.maintenanceContainer {
+	text-align: center;
+
+	.imageContainer {
+		margin: auto;
+		min-height: 60vh;
+		position: relative;
+	}
+}
