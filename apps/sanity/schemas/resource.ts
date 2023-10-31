@@ -14,6 +14,20 @@ export default defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
+			name: "resourceType",
+			title: "Resource Type",
+			type: "string",
+			options: {
+				list: [
+					{ title: "API", value: "api" },
+					{ title: "Backend", value: "backend" },
+					{ title: "Frontend", value: "frontend" },
+					{ title: "Starter Pack", value: "starter-pack" },
+				],
+			},
+			validation: (Rule) => Rule.required(),
+		}),
+		defineField({
 			name: "description",
 			title: "Description",
 			type: "array",
