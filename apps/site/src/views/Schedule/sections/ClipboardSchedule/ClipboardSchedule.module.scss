@@ -42,3 +42,11 @@
 .eventTitle {
 	font-size: 24px;
 }
+
+.mobileLocation {
+	text-align: left;
+
+	@include bootstrap.media-breakpoint-up(lg) {
+		text-align: right;
+	}
+}
