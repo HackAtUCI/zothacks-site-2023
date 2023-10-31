@@ -13,12 +13,13 @@ import styles from "./ClipboardSchedule.module.scss";
 
 interface ClipboardScheduleProps {
 	schedule: {
-		_key: string;
+		host: string;
 		title: string;
-		description: string;
-		location: string;
-		startDate: Date;
-		endDate: Date;
+		description: JSX.Element;
+		location: JSX.Element;
+		category: JSX.Element;
+		startTime: string;
+		endTime: string;
 	}[];
 }
 
@@ -35,18 +36,29 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
 				{schedule.map(
 					(
-						{ _key, title, description, location, startDate, endDate },
+						{
+							title,
+							description,
+							location,
+							host,
+							category,
+							startTime,
+							endTime,
+						},
 						index,
 					) => (
 						<Accordion.Item
-							key={_key}
+							key={title}
 							eventKey={`${index}`}
 							className={styles.accordionItem}
 						>
 							<Accordion.Header className={styles.accordionHeader}>
 								<h3>{title}</h3>
+								<span>{host}</span>
+								{category}
 								<span className="text-end ms-auto">
-									{location}, {startDate.toString()} - {endDate.toString()}
+									{location}, {new Date(startTime).toLocaleDateString()} -{" "}
+									{new Date(endTime).toLocaleDateString()}
 								</span>
 							</Accordion.Header>
 							<Accordion.Body>{description}</Accordion.Body>

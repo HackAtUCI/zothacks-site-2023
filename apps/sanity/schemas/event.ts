@@ -11,6 +11,11 @@ export default defineType({
 			type: "string",
 		}),
 		defineField({
+			name: "location",
+			title: "Location",
+			type: "string",
+		}),
+		defineField({
 			name: "startTime",
 			title: "Start Time",
 			type: "datetime",
