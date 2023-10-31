@@ -11,7 +11,9 @@ export default function CountdownItem({ num, text }: CountdownItemProps) {
 		<>
 			<div className={styles.countdownItem}>
 				<AnimatePresence mode="popLayout">
-					<motion.h2 key={num}>{num}</motion.h2>
+					<motion.span key={num} className="h2">
+						{num}
+					</motion.span>
 				</AnimatePresence>
 			</div>
 
