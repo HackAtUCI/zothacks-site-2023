@@ -27,21 +27,32 @@ const dateTimeFormat = new Intl.DateTimeFormat("en", {
 	minute: "numeric",
 });
 
+const WEEKDAYS = [
+	"Sunday",
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+	"Saturday",
+];
+
 function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 	return (
 		<Container
 			as="section"
-			className={styles.clipboard + " px-0 position-relative"}
+			className={styles.clipboard + " px-0 pt-5 position-relative"}
 		>
 			<div className={styles.clip}>
 				<Image src={clip} alt="Clipboard clip" className={styles.clip} />
 			</div>
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
 				{schedule.map((day, i) => (
-					<div key={i}>
-						<h2 className={styles.date}>
+					<div className="mt-5" key={i}>
+						<h2>{WEEKDAYS[day[0].startTime.getDay()]}</h2>
+						<h3 className="text-center mb-5">
 							{day[0].startTime.toLocaleDateString()}
-						</h2>
+						</h3>
 						{day.map(
 							({ title, description, location, hosts, startTime, endTime }) => (
 								<Accordion.Item
