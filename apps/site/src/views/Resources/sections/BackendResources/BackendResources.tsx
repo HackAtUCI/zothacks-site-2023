@@ -1,7 +1,11 @@
-import styles from "./BackendResources.module.scss";
-import { BackendGroup } from "../../components/BackendGroup/BackendGroup";
-import { getResources } from "../../getResources";
 import { PortableText } from "@portabletext/react";
+import urlImageBuilder from "@sanity/image-url";
+
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
+import { getResources } from "../../getResources";
+import { client } from "@/lib/sanity/client";
+
+import styles from "./BackendResources.module.scss";
 
 async function BackendResources() {
 	const resources = await getResources("backend");
@@ -20,13 +24,13 @@ async function BackendResources() {
 				{/* Sticky Notes */}
 				{resources.map(
 					({ _id, title, description, link, logo, stickyNoteColor }) => (
-						<div className={styles.column + " div"} key={_id}>
-							<BackendGroup
-								stickyNoteColor={stickyNoteColor.hex}
+						<div className={styles.column + " col"} key={_id}>
+							<ResourceCard
 								title={title}
 								description={<PortableText value={description} />}
-								tags={[]}
-								tapeOrientation="left"
+								stickerSrc={urlImageBuilder(client).image(logo).url()}
+								stickyNoteColor={stickyNoteColor.hex}
+								links={[{ text: "Reference", link: link }]}
 							/>
 						</div>
 					),
