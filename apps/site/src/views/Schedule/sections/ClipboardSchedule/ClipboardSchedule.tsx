@@ -33,30 +33,30 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 			</div>
 			<h2 className="mb-5">Countdown Timer</h2>
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
-				{schedule.map((day, i) =>
-					day.map(
-						(
-							{ title, description, location, hosts, startTime, endTime },
-							index,
-						) => (
-							<Accordion.Item
-								key={title}
-								eventKey={title}
-								className={styles.accordionItem}
-							>
-								<Accordion.Header className={styles.accordionHeader}>
-									<h3>{title}</h3>
-									<span>{hosts?.join()}</span>
-									<span className="text-end ms-auto">
-										{location}, {new Date(startTime).toLocaleDateString()} -{" "}
-										{new Date(endTime).toLocaleDateString()}
-									</span>
-								</Accordion.Header>
-								<Accordion.Body>{description}</Accordion.Body>
-							</Accordion.Item>
-						),
-					),
-				)}
+				{schedule.map((day, i) => (
+					<div key={i}>
+						<h2>{day[0].startTime.toLocaleDateString()}</h2>
+						{day.map(
+							({ title, description, location, hosts, startTime, endTime }) => (
+								<Accordion.Item
+									key={title}
+									eventKey={title}
+									className={styles.accordionItem}
+								>
+									<Accordion.Header className={styles.accordionHeader}>
+										<h3>{title}</h3>
+										<span>{hosts?.join()}</span>
+										<span className="text-end ms-auto">
+											{location}, {new Date(startTime).toLocaleDateString()} -{" "}
+											{new Date(endTime).toLocaleDateString()}
+										</span>
+									</Accordion.Header>
+									<Accordion.Body>{description}</Accordion.Body>
+								</Accordion.Item>
+							),
+						)}
+					</div>
+				))}
 			</Accordion>
 		</Container>
 	);
