@@ -2,6 +2,7 @@ import { z } from "zod";
 import { cache } from "react";
 import { client } from "@/lib/sanity/client";
 import { SanityDocument } from "@/lib/sanity/types";
+import dayjs from "@/lib/day";
 
 const Events = z.array(
 	SanityDocument.extend({
@@ -49,10 +50,12 @@ export const getSchedule = cache(async () => {
 	const eventsByDay = new Map<string, z.infer<typeof Events>>();
 
 	events.forEach((event) => {
-		eventsByDay.set(event.startTime.toLocaleDateString(), [
-			...(eventsByDay.get(event.startTime.toLocaleDateString()) ?? []),
-			event,
-		]);
+		const date = dayjs
+			.utc(event.startTime)
+			.tz("America/Los_Angeles")
+			.format("YYYY-MM-DD");
+
+		eventsByDay.set(date, [...(eventsByDay.get(date) ?? []), event]);
 	});
 
 	return Array.from(eventsByDay.values());
