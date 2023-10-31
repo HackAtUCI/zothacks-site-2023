@@ -22,6 +22,11 @@ interface ClipboardScheduleProps {
 	}[][];
 }
 
+const dateTimeFormat = new Intl.DateTimeFormat("en", {
+	hour: "numeric",
+	minute: "numeric",
+});
+
 function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 	return (
 		<Container
@@ -31,11 +36,12 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 			<div className={styles.clip}>
 				<Image src={clip} alt="Clipboard clip" className={styles.clip} />
 			</div>
-			<h2 className="mb-5">Countdown Timer</h2>
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
 				{schedule.map((day, i) => (
 					<div key={i}>
-						<h2>{day[0].startTime.toLocaleDateString()}</h2>
+						<h2 className={styles.date}>
+							{day[0].startTime.toLocaleDateString()}
+						</h2>
 						{day.map(
 							({ title, description, location, hosts, startTime, endTime }) => (
 								<Accordion.Item
@@ -44,11 +50,11 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 									className={styles.accordionItem}
 								>
 									<Accordion.Header className={styles.accordionHeader}>
-										<h3>{title}</h3>
-										<span>{hosts?.join()}</span>
+										<h3 className={styles.eventTitle}>{title}</h3>
+										{/* <span>{hosts?.join()}</span> */}
 										<span className="text-end ms-auto">
-											{location}, {new Date(startTime).toLocaleDateString()} -{" "}
-											{new Date(endTime).toLocaleDateString()}
+											{location},{" "}
+											{dateTimeFormat.formatRange(startTime, endTime)}
 										</span>
 									</Accordion.Header>
 									<Accordion.Body>{description}</Accordion.Body>
