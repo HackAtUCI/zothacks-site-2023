@@ -29,21 +29,31 @@ const dateTimeFormat = new Intl.DateTimeFormat("en", {
 	minute: "numeric",
 });
 
+const monthDayFormat = new Intl.DateTimeFormat("en", {
+	month: "long",
+	day: "numeric",
+});
+
+const weekdayFormat = new Intl.DateTimeFormat("en", {
+	weekday: "long",
+});
+
 function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 	return (
 		<Container
 			as="section"
-			className={styles.clipboard + " px-0 position-relative"}
+			className={styles.clipboard + " px-0 pt-5 position-relative"}
 		>
 			<div className={styles.clip}>
 				<Image src={clip} alt="Clipboard clip" className={styles.clip} />
 			</div>
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
 				{schedule.map((day, i) => (
-					<div key={i}>
-						<h2 className={styles.date}>
-							{day[0].startTime.toLocaleDateString()}
-						</h2>
+					<div className="mt-5" key={i}>
+						<h2>{weekdayFormat.format(day[0].startTime)}</h2>
+						<p className="text-center mb-5 h3">
+							{monthDayFormat.format(day[0].startTime)}
+						</p>
 						{day.map(
 							({ title, description, location, hosts, startTime, endTime }) => (
 								<Accordion.Item
@@ -51,10 +61,12 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 									eventKey={title}
 									className={styles.accordionItem}
 								>
-									<Accordion.Header>
-										<Row className="w-100">
+									<Accordion.Header as="h3">
+										<Row className="w-100 align-items-center">
 											<Col lg>
-												<h3 className={styles.eventTitle}>{title}</h3>
+												<span className={styles.eventTitle + " h3 mb-0"}>
+													{title}
+												</span>
 											</Col>
 											{/* <span>{hosts?.join()}</span> */}
 
