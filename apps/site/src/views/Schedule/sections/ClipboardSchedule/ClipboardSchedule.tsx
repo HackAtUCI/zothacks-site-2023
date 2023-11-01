@@ -27,6 +27,11 @@ const dateTimeFormat = new Intl.DateTimeFormat("en", {
 	minute: "numeric",
 });
 
+const monthDayFormat = new Intl.DateTimeFormat("en", {
+	month: "long",
+	day: "numeric",
+});
+
 const weekdayFormat = new Intl.DateTimeFormat("en", {
 	weekday: "long",
 });
@@ -44,9 +49,9 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 				{schedule.map((day, i) => (
 					<div className="mt-5" key={i}>
 						<h2>{weekdayFormat.format(day[0].startTime)}</h2>
-						<h3 className="text-center mb-5">
-							{day[0].startTime.toLocaleDateString()}
-						</h3>
+						<p className="text-center mb-5 h3">
+							{monthDayFormat.format(day[0].startTime)}
+						</p>
 						{day.map(
 							({ title, description, location, hosts, startTime, endTime }) => (
 								<Accordion.Item
@@ -54,8 +59,10 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 									eventKey={title}
 									className={styles.accordionItem}
 								>
-									<Accordion.Header className={styles.accordionHeader}>
-										<h3 className={styles.eventTitle}>{title}</h3>
+									<Accordion.Header as="h3" className={styles.accordionHeader}>
+										<span className={styles.eventTitle + " h3 mb-0"}>
+											{title}
+										</span>
 										{/* <span>{hosts?.join()}</span> */}
 										<span className="text-end ms-auto">
 											{location},{" "}
