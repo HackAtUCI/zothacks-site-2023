@@ -31,7 +31,7 @@ export default function NavBar() {
 							>
 								Home
 							</Link>
-							{/* <Link
+							<Link
 								href="/resources"
 								className={
 									activeRoute === "/resources"
@@ -40,7 +40,7 @@ export default function NavBar() {
 								}
 							>
 								Resources
-							</Link> */}
+							</Link>
 							<Link
 								href="/schedule"
 								className={
