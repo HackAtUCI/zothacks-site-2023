@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import styles from "./BaseSticker.module.scss";
 import { MutableRefObject, useRef } from "react";
+import { motion } from "framer-motion";
+
+import styles from "./BaseSticker.module.scss";
 
 interface StickerProps {
 	imageSrc: string;
@@ -14,9 +15,11 @@ interface StickerProps {
 	// dragConstraints prop can be an object containing coordinates, a Falsy boolean, or a parent ref (https://www.framer.com/motion/gestures/#:~:text=%23-,dragConstraints%3A,-false%20%7C%20Partial%3CBoundingBox2D)
 	animate?: object | undefined;
 	transition?: object | undefined;
+	offsetX?: number;
+	offsetY?: number;
 }
 
-export default function Sticker({
+const BaseSticker: React.FC<StickerProps> = ({
 	imageSrc,
 	alt,
 	height = 100,
@@ -25,7 +28,9 @@ export default function Sticker({
 	dragConstraints = false,
 	animate = {},
 	transition = {},
-}: StickerProps) {
+	offsetX = 0,
+	offsetY = 0,
+}) => {
 	// prevent next from throwing error involving DOM API
 	const pageRef = useRef(
 		typeof document !== "undefined" ? document.documentElement : undefined,
@@ -53,6 +58,7 @@ export default function Sticker({
 					filter: `drop-shadow(10px 14px 10px rgba(0, 0, 0, 0.2))`,
 				},
 				drag: true,
+				initial: { x: -width / 2 + offsetX, y: -height / 2 + offsetY },
 				dragMomentum: false,
 				dragConstraints: dragConstraints ? dragConstraints : pageRef,
 				dragElastic: 0.2,
@@ -62,13 +68,15 @@ export default function Sticker({
 
 	return (
 		<motion.img
-			className={styles.stickerContainer}
-			animate={animateProps}
 			src={imageSrc}
 			alt={alt}
 			height={height}
 			width={width}
+			className={styles.sticker}
+			animate={animateProps}
 			{...drag}
 		/>
 	);
-}
+};
+
+export default BaseSticker;

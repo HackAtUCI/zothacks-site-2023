@@ -20,7 +20,7 @@ export default function NavBar() {
 			<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
 				<Container fluid>
 					<Navbar.Brand />
-					{/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto text-center">
 							<Link
@@ -31,7 +31,7 @@ export default function NavBar() {
 							>
 								Home
 							</Link>
-							<Link
+							{/* <Link
 								href="/resources"
 								className={
 									activeRoute === "/resources"
@@ -40,7 +40,7 @@ export default function NavBar() {
 								}
 							>
 								Resources
-							</Link>
+							</Link> */}
 							<Link
 								href="/schedule"
 								className={
@@ -52,7 +52,7 @@ export default function NavBar() {
 								Schedule
 							</Link>
 						</Nav>
-					</Navbar.Collapse> */}
+					</Navbar.Collapse>
 				</Container>
 			</Navbar>
 			<Link href="/">

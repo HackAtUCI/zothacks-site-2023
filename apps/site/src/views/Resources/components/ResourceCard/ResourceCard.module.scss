@@ -1,8 +1,10 @@
+@use "zothacks-theme" as theme;
+
 .group {
 	margin-top: 50px;
 	width: 344px;
-	height: 500px;
 	position: relative;
+	padding: 1rem 0;
 	box-shadow: 0 6px 5px -2px rgba(gray, 0.5);
 }
 
@@ -11,7 +13,7 @@
 	width: 238px;
 	height: 60px;
 	position: absolute;
-	top: -5%;
+	top: -12.5%;
 }
 
 .container {
@@ -25,16 +27,27 @@
 }
 
 .tag {
-	position: absolute;
-	left: -5%;
-	bottom: 5%;
+	background-image: url("~@/assets/images/resource-link.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: left;
+	display: inline-block;
+	padding: 1rem;
+	padding-right: 3rem;
+	margin-left: -6px;
+	margin-bottom: 0.5rem;
 	transition:
 		filter 0.13s ease,
 		transform 0.13s ease,
 		filter 0.13s ease;
 
-	&:hover {
-		transform: translateX(-5px);
+	color: theme.$black;
+	text-decoration: none;
+	font-weight: bold;
+
+	&:hover,
+	&:focus {
+		transform: translateX(-5px) translateZ(0);
 		filter: drop-shadow(1px 0px 0px black) drop-shadow(-2px 0px 0px black)
 			drop-shadow(0px 2px 0px black) drop-shadow(0px -2px 0px black);
 	}

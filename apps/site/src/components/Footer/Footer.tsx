@@ -8,6 +8,7 @@ import Mail from "@/assets/icons/email.svg";
 import Facebook from "@/assets/icons/Facebook-Logo-Primary-min.svg";
 import Instagram from "@/assets/icons/instagram.png";
 import Hack from "@/assets/icons/hack-logo.svg";
+import TikTok from "@/assets/icons/TikTok-Social-Icon-Circle-White.svg";
 
 type Social = {
 	icon: any;
@@ -19,22 +20,27 @@ const SOCIALS: Social[] = [
 	{
 		icon: Hack,
 		link: "https://hack.ics.uci.edu/",
-		alt: "Hack at UCI",
+		alt: "Hack at UCI logo that links to Hack at UCI's club website",
 	},
 	{
 		icon: Mail,
 		link: "mailto:hack@uci.edu",
-		alt: "Mail",
+		alt: "Mail icon that creates an email with Hack at UCI as sender",
 	},
 	{
 		icon: Facebook,
 		link: "https://www.facebook.com/UCI.Hack/",
-		alt: "Facebook",
+		alt: "Facebook logo that links to Hack at UCI's Facebook",
 	},
 	{
 		icon: Instagram,
 		link: "https://www.instagram.com/hackatuci/",
-		alt: "Instagram",
+		alt: "Instagram logo that links to Hack at UCI's Instagram",
+	},
+	{
+		icon: TikTok,
+		link: "https://www.tiktok.com/@hackatuci",
+		alt: "TikTok logo that links to Hack at UCI's TikTok",
 	},
 ];
 

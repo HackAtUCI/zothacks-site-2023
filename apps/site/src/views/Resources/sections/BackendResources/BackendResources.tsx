@@ -1,43 +1,42 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import styles from "./BackendResources.module.scss";
-import {
-	BackendGroup,
-	BackendGroupProps,
-} from "../../components/BackendGroup/BackendGroup";
-import BackendResourcesList from "./config";
+import { PortableText } from "@portabletext/react";
+import urlImageBuilder from "@sanity/image-url";
 
-function BackendResources() {
+import ResourceCard from "../../components/ResourceCard/ResourceCard";
+import { getResources } from "../../getResources";
+import { client } from "@/lib/sanity/client";
+
+import styles from "./BackendResources.module.scss";
+
+async function BackendResources() {
+	const resources = await getResources("backend");
 	return (
-		<Container>
-			<Row className={styles.row}>
-				{/* Card Component */}
-				<Col className={styles.column}>
-					<div className={styles.card}>
-						<h2 className={styles.title}>Backend Framework Resources</h2>
-						<p className={styles.text}>
-							Backend Frameworks are a variety of middleware services used to
-							connect to other API and database vendors to fit your
-							project&apos;s needs.
-						</p>
-					</div>
-				</Col>
+		<div className="container">
+			{/* Card Component */}
+			<div className={styles.card}>
+				<h2 className={styles.title}>Backend Framework Resources</h2>
+				<p className={styles.text}>
+					Backend Frameworks are a variety of middleware services used to
+					connect to other API and database vendors to fit your project&apos;s
+					needs.
+				</p>
+			</div>
+			<div className={styles["bottom-spacer"] + " row"}>
 				{/* Sticky Notes */}
-				{BackendResourcesList.map((resource: BackendGroupProps) => (
-					<Col className={styles.column} key={resource.stickyNoteColor}>
-						<BackendGroup
-							stickyNoteColor={resource.stickyNoteColor}
-							title={resource.title}
-							description={resource.description}
-							tapeOrientation={resource.tapeOrientation}
-							tags={resource.tags}
-							className={resource?.className}
-						/>
-					</Col>
-				))}
-			</Row>
-		</Container>
+				{resources.map(
+					({ _id, title, description, link, logo, stickyNoteColor }) => (
+						<div className={styles.column + " div"} key={_id}>
+							<ResourceCard
+								title={title}
+								description={<PortableText value={description} />}
+								stickerSrc={urlImageBuilder(client).image(logo).url()}
+								stickyNoteColor={stickyNoteColor.hex}
+								links={[{ text: "Reference", link: link }]}
+							/>
+						</div>
+					),
+				)}
+			</div>
+		</div>
 	);
 }
 

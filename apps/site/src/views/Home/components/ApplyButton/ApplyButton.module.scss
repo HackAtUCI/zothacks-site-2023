@@ -11,15 +11,16 @@ $skew-amount: -30deg;
 		$hover-border: theme.$black,
 		$active-border: theme.$black
 	);
-	@include bootstrap.rfs(6rem, --bs-btn-padding-x);
 	--bs-btn-font-weight: bold;
 	--bs-btn-border-width: 4px;
 
-	@include bootstrap.font-size(bootstrap.$h2-font-size);
+	@include bootstrap.font-size(bootstrap.$h4-font-size);
 
 	transform: skew($skew-amount);
 	// unskew children
 	> * {
+		width: max-content;
+		display: block;
 		transform: skew(-$skew-amount);
 	}
 
