@@ -3,6 +3,7 @@ import Landing from "./sections/Landing/Landing";
 import ApiResources from "./sections/ApiResources/ApiResources";
 import BackendResources from "./sections/BackendResources/BackendResources";
 import FrontendResources from "./sections/FrontendResources/FrontendResources";
+import StarterPacks from "./sections/StarterPacks/StarterPacks";
 
 export default function Resources() {
 	return (
@@ -11,6 +12,7 @@ export default function Resources() {
 			<ApiResources />
 			<BackendResources />
 			<FrontendResources />
+			<StarterPacks />
 		</div>
 	);
 }
