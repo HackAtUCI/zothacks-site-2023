@@ -3,7 +3,9 @@
 import Image from "next/image";
 
 import Accordion from "react-bootstrap/Accordion";
+import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 import clip from "@/assets/images/clip.svg";
 
@@ -59,15 +61,22 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 									eventKey={title}
 									className={styles.accordionItem}
 								>
-									<Accordion.Header as="h3" className={styles.accordionHeader}>
-										<span className={styles.eventTitle + " h3 mb-0"}>
-											{title}
-										</span>
-										{/* <span>{hosts?.join()}</span> */}
-										<span className="text-end ms-auto">
-											{location},{" "}
-											{dateTimeFormat.formatRange(startTime, endTime)}
-										</span>
+									<Accordion.Header as="h3">
+										<Row className="w-100 align-items-center">
+											<Col lg>
+												<span className={styles.eventTitle + " h3 mb-0"}>
+													{title}
+												</span>
+											</Col>
+											{/* <span>{hosts?.join()}</span> */}
+
+											<Col lg className={styles.mobileLocation}>
+												<span>
+													{location},{" "}
+													{dateTimeFormat.formatRange(startTime, endTime)}
+												</span>
+											</Col>
+										</Row>
 									</Accordion.Header>
 									<Accordion.Body>{description}</Accordion.Body>
 								</Accordion.Item>
