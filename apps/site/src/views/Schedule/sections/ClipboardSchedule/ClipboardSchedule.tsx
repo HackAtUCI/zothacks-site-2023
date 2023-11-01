@@ -27,15 +27,9 @@ const dateTimeFormat = new Intl.DateTimeFormat("en", {
 	minute: "numeric",
 });
 
-const WEEKDAYS = [
-	"Sunday",
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday",
-];
+const weekdayFormat = new Intl.DateTimeFormat("en", {
+	weekday: "long",
+});
 
 function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 	return (
@@ -49,7 +43,7 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 			<Accordion defaultActiveKey="0" className={styles.accordion}>
 				{schedule.map((day, i) => (
 					<div className="mt-5" key={i}>
-						<h2>{WEEKDAYS[day[0].startTime.getDay()]}</h2>
+						<h2>{weekdayFormat.format(day[0].startTime)}</h2>
 						<h3 className="text-center mb-5">
 							{day[0].startTime.toLocaleDateString()}
 						</h3>
