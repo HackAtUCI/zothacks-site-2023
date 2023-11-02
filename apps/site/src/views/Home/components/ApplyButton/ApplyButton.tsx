@@ -21,34 +21,6 @@ export default function ApplyButton() {
 					offsetX: 50,
 					offsetY: 50,
 				},
-				{
-					Node: PencilSticker,
-					positionX: "left",
-					positionY: "top",
-					offsetX: -100,
-					offsetY: -50,
-				},
-				{
-					Node: HeadphoneSticker,
-					positionX: "left",
-					positionY: "bottom",
-					offsetX: -50,
-					offsetY: 50,
-				},
-				{
-					Node: LaptopSticker,
-					positionX: "right",
-					positionY: "top",
-					offsetX: 100,
-					offsetY: -100,
-				},
-				{
-					Node: MagnifyingGlassSticker,
-					positionX: "right",
-					positionY: "bottom",
-					offsetX: 200,
-					offsetY: 100,
-				},
 			]}
 		>
 			<Button
