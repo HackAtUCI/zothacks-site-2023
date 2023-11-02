@@ -48,7 +48,7 @@ export default function Countdown() {
 	};
 
 	return (
-		<Container className="pb-5">
+		<Container className="pb-5" style={{ marginTop: "60px" }}>
 			<Row className="justify-content-center text-center mb-5">
 				{remaining.days !== 0 ? (
 					<Col>
