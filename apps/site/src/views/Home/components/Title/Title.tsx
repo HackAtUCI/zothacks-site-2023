@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import styles from "./Title.module.scss";
 
 export default function Title() {
-	const container = {
+	const container: Variants = {
 		hidden: { pathLength: 0, strokeOpacity: 0 },
 		show: {
 			pathLength: 1,
