@@ -8,8 +8,8 @@ const HackSticker: React.FC<StickerProps> = (props) => (
 	<BaseSticker
 		imageSrc={HackLogo.src}
 		alt="Hack at UCI sticker"
-		height={200}
-		width={200}
+		height={150}
+		width={150}
 		{...lightShake}
 		{...props}
 	/>
