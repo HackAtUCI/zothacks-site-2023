@@ -18,7 +18,7 @@ const variants: Variants = {
 	},
 };
 
-const BarLoader = () => {
+const Loader = () => {
 	return (
 		<motion.div
 			transition={{
@@ -37,4 +37,4 @@ const BarLoader = () => {
 	);
 };
 
-export default BarLoader;
+export default Loader;

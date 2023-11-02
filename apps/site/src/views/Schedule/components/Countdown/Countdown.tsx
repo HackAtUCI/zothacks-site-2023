@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 import CountdownItem from "../CountdownItem/CountdownItem";
-import BarLoader from "../Loader/Loader";
+import Loader from "../Loader/Loader";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -78,7 +78,7 @@ export default function Countdown() {
 				</>
 			) : (
 				<Row className="justify-content-center">
-					<BarLoader />
+					<Loader />
 				</Row>
 			)}
 		</Container>
