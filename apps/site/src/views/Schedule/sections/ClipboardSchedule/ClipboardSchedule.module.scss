@@ -2,10 +2,6 @@
 @use "zothacks-theme" as theme;
 
 .accordion {
-	padding-top: 50px;
-	padding-bottom: 100px;
-	@include bootstrap.rfs(7.5rem, border-radius);
-	border: 3px solid black;
 	--bs-accordion-btn-icon: url("~@/assets/icons/accordion-btn.svg");
 	--bs-accordion-btn-active-icon: url("~@/assets/icons/accordion-btn.svg");
 	--bs-accordion-btn-icon-width: 25px;
@@ -18,25 +14,20 @@
 .clip {
 	position: absolute;
 	width: 75%;
-	top: 1%;
+	top: 0;
 	left: 50%;
 	transform: translate(-50%, -55%);
-	z-index: 10;
 
 	@include bootstrap.media-breakpoint-up(lg) {
 		width: 60%;
 	}
 }
+
 .clipboard {
 	@include bootstrap.rfs(7.5rem, border-radius);
-	background-color: theme.$brown;
-	padding: 5px;
-	border: 1.25rem solid theme.$brown;
-}
 
-.clipboardPaper {
-	@include bootstrap.rfs(7.5rem, border-radius);
 	background-color: white;
+	border: 1.25rem solid theme.$brown;
 }
 
 .accordionItem {
