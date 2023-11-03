@@ -9,7 +9,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import ZotHacksLogo from "@/assets/icons/zothacks-logo.png";
-import openNewWindow from "@/assets/icons/open-new-window.svg";
 
 import styles from "./NavBar.module.scss";
 
@@ -18,7 +17,7 @@ export default function NavBar() {
 
 	return (
 		<div className={styles.nav}>
-			<Navbar expand="md" className={`bg-body-tertiary ${styles.navbar}`}>
+			<Navbar expand="lg" className={`bg-body-tertiary ${styles.navbar}`}>
 				<Container fluid>
 					<Navbar.Brand />
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -58,6 +57,13 @@ export default function NavBar() {
 								target="_blank"
 							>
 								Incident Form
+							</Link>
+							<Link
+								href="https://zothacks-2023.devpost.com/"
+								className={styles.notActive}
+								target="_blank"
+							>
+								Devpost
 							</Link>
 						</Nav>
 					</Navbar.Collapse>
