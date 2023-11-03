@@ -1,31 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { cubicBezier, motion, Variants } from "framer-motion";
-
 import Accordion from "react-bootstrap/Accordion";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import { cubicBezier, motion, Variants } from "framer-motion";
 import { utcToZonedTime } from "date-fns-tz";
 
 import clip from "@/assets/images/clip.svg";
 
 import styles from "./ClipboardSchedule.module.scss";
-import Countdown from "../../components/Countdown/Countdown";
-
-interface ClipboardScheduleProps {
-	schedule: {
-		title: string;
-		location?: string | undefined;
-		virtual?: string | undefined;
-		startTime: Date;
-		endTime: Date;
-		organization?: string | undefined;
-		hosts?: string[] | undefined;
-		description: JSX.Element;
-	}[][];
-}
+import Countdown from "./Countdown";
 
 const dateTimeFormat = new Intl.DateTimeFormat("en", {
 	hour: "numeric",
@@ -57,7 +43,20 @@ const variant: Variants = {
 	},
 };
 
-function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
+interface ClipboardScheduleProps {
+	schedule: {
+		title: string;
+		location?: string | undefined;
+		virtual?: string | undefined;
+		startTime: Date;
+		endTime: Date;
+		organization?: string | undefined;
+		hosts?: string[] | undefined;
+		description: JSX.Element;
+	}[][];
+}
+
+const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
 	return (
 		<Container as="section" className={" px-0 pt-0 position-relative"}>
 			<div className={styles.clip}>
@@ -139,6 +138,6 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 			</div>
 		</Container>
 	);
-}
+};
 
 export default ClipboardSchedule;

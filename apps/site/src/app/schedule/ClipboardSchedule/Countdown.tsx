@@ -8,7 +8,7 @@ import styles from "./Countdown.module.scss";
 // 10/4/23 10AM in UTC
 const hackingStarts = new Date(Date.UTC(2023, 10, 4, 17, 0, 0));
 
-export default function Countdown() {
+const Countdown = () => {
 	const [remainingSeconds, setRemainingSeconds] = useState<number>(NaN);
 
 	useEffect(() => {
@@ -50,4 +50,6 @@ export default function Countdown() {
 			<span className={styles.caption}>Until Hacking Begins</span>
 		</div>
 	);
-}
+};
+
+export default Countdown;
