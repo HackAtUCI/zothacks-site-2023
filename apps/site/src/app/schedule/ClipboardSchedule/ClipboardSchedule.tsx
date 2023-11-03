@@ -12,7 +12,7 @@ import { utcToZonedTime } from "date-fns-tz";
 import clip from "@/assets/images/clip.svg";
 
 import styles from "./ClipboardSchedule.module.scss";
-import Countdown from "../../components/Countdown/Countdown";
+import Countdown from "./Countdown";
 
 interface ClipboardScheduleProps {
 	schedule: {
