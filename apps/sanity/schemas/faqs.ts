@@ -26,11 +26,11 @@ export default defineType({
 							title: "Answer",
 							type: "array",
 							of: [
-								{
+								defineArrayMember({
 									type: "block",
 									styles: [{ title: "Normal", value: "normal" }],
 									lists: [],
-								},
+								}),
 							],
 						}),
 					],

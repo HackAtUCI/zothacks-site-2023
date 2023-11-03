@@ -1,4 +1,4 @@
-import { defineType, defineField } from "sanity";
+import { defineType, defineField, defineArrayMember } from "sanity";
 import { Globe } from "lucide-react";
 
 export default defineType({
@@ -32,11 +32,11 @@ export default defineType({
 			title: "Description",
 			type: "array",
 			of: [
-				{
+				defineArrayMember({
 					type: "block",
 					styles: [{ title: "Normal", value: "normal" }],
 					lists: [],
-				},
+				}),
 			],
 			validation: (Rule) => Rule.required(),
 		}),
