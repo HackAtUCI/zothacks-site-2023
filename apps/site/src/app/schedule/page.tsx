@@ -1,5 +1,5 @@
 import { PortableText } from "@portabletext/react";
-import ClipboardSchedule from "./ClipboardSchedule/ClipboardSchedule";
+import ClipboardSchedule from "./ClipboardSchedule";
 import { getSchedule } from "./getSchedule";
 
 export const revalidate = 60;
