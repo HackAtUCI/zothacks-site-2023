@@ -1,12 +1,14 @@
+export const revalidate = 60;
+
 import Landing from "./sections/Landing/Landing";
 import Intro from "./sections/Intro/Intro";
 import Mentor from "./sections/Mentor/Mentor";
 import Sponsors from "./sections/Sponsors/Sponsors";
 import FAQ from "./sections/FAQ/FAQ";
 
-import styles from "./Home.module.scss";
+import styles from "./page.module.scss";
 
-function Home() {
+const Home = () => {
 	return (
 		<>
 			<div className={styles.home}>
@@ -18,6 +20,6 @@ function Home() {
 			</div>
 		</>
 	);
-}
+};
 
 export default Home;

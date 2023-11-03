@@ -1,5 +1,6 @@
 "use client";
-import ApplyButton from "@/views/Home/components/ApplyButton/ApplyButton";
+
+import ApplyButton from "./ApplyButton";
 
 import styles from "./Landing.module.scss";
 
