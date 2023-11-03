@@ -7,11 +7,11 @@ import Accordion from "react-bootstrap/Accordion";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import { utcToZonedTime } from "date-fns-tz";
 
 import clip from "@/assets/images/clip.svg";
 
 import styles from "./ClipboardSchedule.module.scss";
+import Countdown from "../../components/Countdown/Countdown";
 
 interface ClipboardScheduleProps {
 	schedule: {
@@ -69,6 +69,7 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 					initial="initial"
 					animate="animate"
 				>
+					<Countdown />
 					<Accordion defaultActiveKey="0" className={styles.accordion}>
 						{schedule.map((day, i) => (
 							<div key={i}>
