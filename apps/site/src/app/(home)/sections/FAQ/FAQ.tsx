@@ -8,7 +8,7 @@ import styles from "./FAQ.module.scss";
 import star from "@/assets/images/star.png";
 import eraser from "@/assets/images/eraser.png";
 
-export default async function FAQ() {
+const FAQ = async () => {
 	const questions = await getQuestions();
 	const faq = questions[0]["faqs"].map(({ _key, question, answer }) => ({
 		_key: _key,
@@ -28,4 +28,6 @@ export default async function FAQ() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default FAQ;

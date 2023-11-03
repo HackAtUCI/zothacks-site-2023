@@ -1,9 +1,10 @@
 "use client";
-import ApplyButton from "@/views/Home/components/ApplyButton/ApplyButton";
+
+import ApplyButton from "./ApplyButton";
 
 import styles from "./Landing.module.scss";
 
-function Landing() {
+const Landing = () => {
 	return (
 		<div className={styles.landing}>
 			<h1>ZotHacks 2023</h1>
@@ -11,6 +12,6 @@ function Landing() {
 			<ApplyButton />
 		</div>
 	);
-}
+};
 
 export default Landing;

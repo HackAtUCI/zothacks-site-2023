@@ -11,7 +11,7 @@ interface FAQAccordion {
 	}[];
 }
 
-export default function FAQAccordion({ faq }: FAQAccordion) {
+const FAQAccordion: React.FC<FAQAccordion> = ({ faq }) => {
 	return (
 		<Accordion className={styles.accordion} alwaysOpen>
 			{faq.map(({ _key, question, answer }) => (
@@ -28,4 +28,6 @@ export default function FAQAccordion({ faq }: FAQAccordion) {
 			))}
 		</Accordion>
 	);
-}
+};
+
+export default FAQAccordion;
