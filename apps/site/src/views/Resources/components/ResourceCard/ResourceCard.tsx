@@ -54,14 +54,15 @@ export default function ResourceCard({
 						opacity: 0,
 						rotateX: 15,
 					}}
+					viewport={{ once: true }}
 					whileInView={{
 						scale: 1,
 						rotateX: 0,
 						opacity: 1,
 						transition: {
-							delay: 0.5,
-							duration: 0.5,
-							ease: cubicBezier(0.33, 1, 0.68, 1),
+							delay: 0.3,
+							duration: 0.8,
+							ease: cubicBezier(0.64, 0, 0.78, 0),
 						},
 					}}
 					className={styles.tape}
