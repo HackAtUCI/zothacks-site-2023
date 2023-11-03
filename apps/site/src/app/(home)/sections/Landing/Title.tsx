@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { cubicBezier, motion, Variants } from "framer-motion";
 import styles from "./Title.module.scss";
 
 export default function Title() {
@@ -12,6 +12,7 @@ export default function Title() {
 				staggerChildren: 0.2,
 				pathLength: {
 					duration: 0.6,
+					ease: cubicBezier(0.5, 1, 0.89, 1),
 				},
 				strokeOpacity: {
 					duration: 0.05,

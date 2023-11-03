@@ -1,6 +1,6 @@
 "use client";
 import ApplyButton from "./ApplyButton";
-import Title from "@/views/Home/components/Title/Title";
+import Title from "@/app/(home)/sections/Landing/Title";
 import styles from "./Landing.module.scss";
 
 const Landing = () => {
