@@ -2,7 +2,7 @@ import { z } from "zod";
 import { cache } from "react";
 import { client } from "@/lib/sanity/client";
 import { SanityDocument } from "@/lib/sanity/types";
-import dayjs from "@/lib/day";
+import { formatInTimeZone } from "date-fns-tz";
 
 const Events = z.array(
 	SanityDocument.extend({
@@ -52,12 +52,12 @@ export const getSchedule = cache(async () => {
 	const eventsByDay = new Map<string, z.infer<typeof Events>>();
 
 	events.forEach((event) => {
-		const date = dayjs
-			.utc(event.startTime)
-			.tz("America/Los_Angeles")
-			.format("YYYY-MM-DD");
-
-		eventsByDay.set(date, [...(eventsByDay.get(date) ?? []), event]);
+		const key = formatInTimeZone(
+			new Date(event.startTime),
+			"America/Los_Angeles",
+			"MM/dd/yyyy",
+		);
+		eventsByDay.set(key, [...(eventsByDay.get(key) ?? []), event]);
 	});
 
 	return Array.from(eventsByDay.values());

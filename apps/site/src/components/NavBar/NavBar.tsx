@@ -9,6 +9,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import ZotHacksLogo from "@/assets/icons/zothacks-logo.png";
+import openNewWindow from "@/assets/icons/open-new-window.svg";
 
 import styles from "./NavBar.module.scss";
 
@@ -50,6 +51,13 @@ export default function NavBar() {
 								}
 							>
 								Schedule
+							</Link>
+							<Link
+								href="https://forms.gle/6GUGYnVoFhAAxVkL8"
+								className={styles.notActive}
+								target="_blank"
+							>
+								Incident Form
 							</Link>
 						</Nav>
 					</Navbar.Collapse>

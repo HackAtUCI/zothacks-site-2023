@@ -10,7 +10,7 @@ import {
 
 import styles from "./ApplyButton.module.scss";
 
-export default function ApplyButton() {
+const ApplyButton = () => {
 	return (
 		<StickerPosition
 			stickers={[
@@ -34,4 +34,6 @@ export default function ApplyButton() {
 			</Button>
 		</StickerPosition>
 	);
-}
+};
+
+export default ApplyButton;
