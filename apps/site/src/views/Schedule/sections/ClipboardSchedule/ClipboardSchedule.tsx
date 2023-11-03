@@ -64,7 +64,9 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 					<Accordion defaultActiveKey="0" className={styles.accordion}>
 						{schedule.map((day, i) => (
 							<div key={i}>
-								<h2>{weekdayFormat.format(day[0].startTime)}</h2>
+								<h2 className="mt-5">
+									{weekdayFormat.format(day[0].startTime)}
+								</h2>
 								<p className="text-center mb-5 h3">
 									{monthDayFormat.format(day[0].startTime)}
 								</p>
