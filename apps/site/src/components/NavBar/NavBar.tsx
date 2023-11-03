@@ -58,11 +58,6 @@ export default function NavBar() {
 								target="_blank"
 							>
 								Incident Form
-								<Image
-									src={openNewWindow}
-									alt="Open new window icon"
-									className="ms-2"
-								/>
 							</Link>
 						</Nav>
 					</Navbar.Collapse>
