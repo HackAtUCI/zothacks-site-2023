@@ -2,8 +2,7 @@ import { z } from "zod";
 import { cache } from "react";
 import { client } from "@/lib/sanity/client";
 import { SanityDocument } from "@/lib/sanity/types";
-import { format } from "date-fns";
-import { utcToZonedTime } from "date-fns-tz";
+import { formatInTimeZone } from "date-fns-tz";
 
 const Events = z.array(
 	SanityDocument.extend({
@@ -14,15 +13,11 @@ const Events = z.array(
 		startTime: z
 			.string()
 			.datetime()
-			.transform((time) =>
-				utcToZonedTime(new Date(time), "America/Los_Angeles"),
-			),
+			.transform((time) => new Date(time)),
 		endTime: z
 			.string()
 			.datetime()
-			.transform((time) =>
-				utcToZonedTime(new Date(time), "America/Los_Angeles"),
-			),
+			.transform((time) => new Date(time)),
 		organization: z.string().optional(),
 		hosts: z.array(z.string()).optional(),
 		description: z.array(
@@ -57,10 +52,12 @@ export const getSchedule = cache(async () => {
 	const eventsByDay = new Map<string, z.infer<typeof Events>>();
 
 	events.forEach((event) => {
-		eventsByDay.set(format(event.startTime, "MM/dd/yyyy"), [
-			...(eventsByDay.get(format(event.startTime, "MM/dd/yyyy")) ?? []),
-			event,
-		]);
+		const key = formatInTimeZone(
+			new Date(event.startTime),
+			"America/Los_Angeles",
+			"MM/dd/yyyy",
+		);
+		eventsByDay.set(key, [...(eventsByDay.get(key) ?? []), event]);
 	});
 
 	return Array.from(eventsByDay.values());
