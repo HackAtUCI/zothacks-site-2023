@@ -1,12 +1,6 @@
 import Button from "react-bootstrap/Button";
 import StickerPosition from "@/components/Sticker/StickerPosition";
-import {
-	PencilSticker,
-	HeartSticker,
-	HeadphoneSticker,
-	LaptopSticker,
-	MagnifyingGlassSticker,
-} from "@/components/Sticker/Stickers";
+import { HeartSticker } from "@/components/Sticker/Stickers";
 
 import styles from "./ApplyButton.module.scss";
 
