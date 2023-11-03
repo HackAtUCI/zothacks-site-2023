@@ -21,3 +21,11 @@ section.container {
 	@include bootstrap.padding-top($container-padding);
 	@include bootstrap.padding-bottom($container-padding);
 }
+
+html,
+body {
+	overflow-x: hidden;
+}
+body {
+	position: relative;
+}
