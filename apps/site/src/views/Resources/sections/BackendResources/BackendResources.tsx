@@ -24,7 +24,7 @@ async function BackendResources() {
 				{/* Sticky Notes */}
 				{resources.map(
 					({ _id, title, description, link, logo, stickyNoteColor }) => (
-						<div className={styles.column + " div"} key={_id}>
+						<div className={styles.column + " col"} key={_id}>
 							<ResourceCard
 								title={title}
 								description={<PortableText value={description} />}
