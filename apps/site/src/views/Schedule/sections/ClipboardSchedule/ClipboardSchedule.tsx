@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import { cubicBezier, motion, Variants } from "framer-motion";
 
 import Accordion from "react-bootstrap/Accordion";
 import Col from "react-bootstrap/Col";
@@ -43,9 +43,16 @@ const weekdayFormat = new Intl.DateTimeFormat("en", {
 const variant: Variants = {
 	initial: {
 		y: 200,
+		transformOrigin: "top center",
+		rotateX: 20,
 	},
 	animate: {
 		y: 0,
+		rotateX: 0,
+		transition: {
+			duration: 0.7,
+			ease: cubicBezier(0.85, 0, 0.15, 1),
+		},
 	},
 };
 
