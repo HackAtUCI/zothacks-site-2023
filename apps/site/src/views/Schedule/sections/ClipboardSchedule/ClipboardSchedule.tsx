@@ -74,10 +74,14 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 						{schedule.map((day, i) => (
 							<div key={i}>
 								<h2 className="mt-5">
-									{weekdayFormat.format(day[0].startTime)}
+									{weekdayFormat.format(
+										utcToZonedTime(day[0].startTime, "America/Los_Angeles"),
+									)}
 								</h2>
 								<p className="text-center mb-5 h3">
-									{monthDayFormat.format(day[0].startTime)}
+									{monthDayFormat.format(
+										utcToZonedTime(day[0].startTime, "America/Los_Angeles"),
+									)}
 								</p>
 								{day.map(
 									({
@@ -87,32 +91,45 @@ function ClipboardSchedule({ schedule }: ClipboardScheduleProps) {
 										hosts,
 										startTime,
 										endTime,
-									}) => (
-										<Accordion.Item
-											key={title}
-											eventKey={title}
-											className={styles.accordionItem}
-										>
-											<Accordion.Header as="h3">
-												<Row className="w-100 align-items-center">
-													<Col lg>
-														<span className={styles.eventTitle + " h3 mb-0"}>
-															{title}
-														</span>
-													</Col>
-													{/* <span>{hosts?.join()}</span> */}
+									}) => {
+										const startTimeZoned = utcToZonedTime(
+												startTime,
+												"America/Los_Angeles",
+											),
+											endTimeZoned = utcToZonedTime(
+												endTime,
+												"America/Los_Angeles",
+											);
+										return (
+											<Accordion.Item
+												key={title}
+												eventKey={title}
+												className={styles.accordionItem}
+											>
+												<Accordion.Header as="h3">
+													<Row className="w-100 align-items-center">
+														<Col lg>
+															<span className={styles.eventTitle + " h3 mb-0"}>
+																{title}
+															</span>
+														</Col>
+														{/* <span>{hosts?.join()}</span> */}
 
-													<Col lg className={styles.mobileLocation}>
-														<span>
-															{location},{" "}
-															{dateTimeFormat.formatRange(startTime, endTime)}
-														</span>
-													</Col>
-												</Row>
-											</Accordion.Header>
-											<Accordion.Body>{description}</Accordion.Body>
-										</Accordion.Item>
-									),
+														<Col lg className={styles.mobileLocation}>
+															<span>
+																{location},{" "}
+																{dateTimeFormat.formatRange(
+																	startTimeZoned,
+																	endTimeZoned,
+																)}
+															</span>
+														</Col>
+													</Row>
+												</Accordion.Header>
+												<Accordion.Body>{description}</Accordion.Body>
+											</Accordion.Item>
+										);
+									},
 								)}
 							</div>
 						))}
