@@ -2,7 +2,6 @@
 @use "zothacks-theme" as theme;
 
 .accordion {
-	padding-top: 50px;
 	padding-bottom: 120px;
 	--bs-accordion-btn-icon: url("~@/assets/icons/accordion-btn.svg");
 	--bs-accordion-btn-active-icon: url("~@/assets/icons/accordion-btn.svg");
@@ -26,6 +25,7 @@
 	}
 }
 .clipboard {
+	padding-top: 50px;
 	@include bootstrap.rfs(8.5rem, border-radius);
 	background-color: theme.$brown;
 	padding: 5px;
