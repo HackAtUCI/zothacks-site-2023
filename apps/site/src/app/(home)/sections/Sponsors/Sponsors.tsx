@@ -7,7 +7,7 @@ import clip from "./clip.svg";
 
 const builder = imageUrlBuilder(client);
 
-export default async function Sponsors() {
+const Sponsors = async () => {
 	const sponsors = await getSponsors();
 
 	return (
@@ -29,4 +29,6 @@ export default async function Sponsors() {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Sponsors;

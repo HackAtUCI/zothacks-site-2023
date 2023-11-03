@@ -8,7 +8,7 @@ import hackDoodle from "@/assets/images/hack-doodle.png";
 
 import styles from "./Intro.module.scss";
 
-export default function Intro() {
+const Intro = () => {
 	return (
 		<Container as="section">
 			<div className={styles.intro}>
@@ -37,4 +37,6 @@ export default function Intro() {
 			</div>
 		</Container>
 	);
-}
+};
+
+export default Intro;

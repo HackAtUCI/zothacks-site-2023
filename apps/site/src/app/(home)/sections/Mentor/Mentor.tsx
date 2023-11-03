@@ -11,7 +11,7 @@ import styles from "./Mentor.module.scss";
 
 const MENTOR_APP_URL = "/mentor";
 
-export default function Mentor() {
+const Mentor = () => {
 	const mentorHeader = (
 		<h2 className="mb-3 text-start">Interested in becoming a mentor?</h2>
 	);
@@ -51,4 +51,6 @@ export default function Mentor() {
 			</div>
 		</Container>
 	);
-}
+};
+
+export default Mentor;
