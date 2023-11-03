@@ -51,11 +51,11 @@ export default defineType({
 			title: "Description",
 			type: "array",
 			of: [
-				{
+				defineArrayMember({
 					type: "block",
 					styles: [{ title: "Normal", value: "normal" }],
 					lists: [],
-				},
+				}),
 			],
 			validation: (Rule) => Rule.required(),
 		}),
