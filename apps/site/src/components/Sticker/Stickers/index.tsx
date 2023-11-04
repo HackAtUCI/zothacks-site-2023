@@ -6,6 +6,8 @@ import MagnifyingGlass from "@/assets/images/magnifying_glass.png";
 import Laptop from "@/assets/images/laptop.png";
 import Pencil from "@/assets/images/pencil.png";
 import Headphone from "@/assets/images/headphones.png";
+import star from "@/assets/images/star.png";
+import eraser from "@/assets/images/eraser.png";
 import BaseSticker from "../BaseSticker";
 
 import { lightShake, reverseLightShake } from "@/components/animation";
@@ -74,6 +76,28 @@ export const HeadphoneSticker: React.FC<StickerProps> = (props) => (
 		height={200}
 		width={200}
 		{...reverseLightShake}
+		{...props}
+	/>
+);
+
+export const StarSticker: React.FC<StickerProps> = (props) => (
+	<BaseSticker
+		imageSrc={star.src}
+		alt="star sticker"
+		height={200}
+		width={200}
+		{...reverseLightShake}
+		{...props}
+	/>
+);
+
+export const EraserSticker: React.FC<StickerProps> = (props) => (
+	<BaseSticker
+		imageSrc={eraser.src}
+		alt="eraser sticker"
+		height={200}
+		width={200}
+		{...lightShake}
 		{...props}
 	/>
 );
