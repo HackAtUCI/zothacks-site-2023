@@ -18,9 +18,7 @@ export const HackSticker: React.FC<StickerProps> = (props) => {
 			height={200}
 			width={200}
 			{...props}
-			animate={{
-				rotate: 15,
-			}}
+			{...lightShake}
 		/>
 	);
 };
