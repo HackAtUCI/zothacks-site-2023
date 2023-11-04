@@ -19,10 +19,7 @@ const Countdown: React.FC<CountdownProps> = ({
 	useEffect(() => {
 		setRemainingSeconds((countdownTo.valueOf() - new Date().valueOf()) / 1000);
 		const interval = setInterval(() => {
-			setRemainingSeconds((r) => {
-				console.log(r);
-				return r > 0 && r < 1 ? r : r - 1;
-			});
+			setRemainingSeconds((r) => (r > 0 && r < 1 ? r : r - 1));
 		}, 1000);
 
 		return () => clearInterval(interval);
