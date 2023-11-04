@@ -60,8 +60,8 @@ export default function ResourceCard({
 						rotateX: 0,
 						opacity: 1,
 						transition: {
-							delay: 0.3,
-							duration: 0.8,
+							delay: 0.1,
+							duration: 0.65,
 							ease: cubicBezier(0.64, 0, 0.78, 0),
 						},
 					}}
