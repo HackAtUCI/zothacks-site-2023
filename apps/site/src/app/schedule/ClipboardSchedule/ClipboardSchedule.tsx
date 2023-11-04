@@ -60,7 +60,7 @@ interface ClipboardScheduleProps {
 
 // 10/4/23 10AM in UTC
 const hackingStarts = new Date(Date.UTC(2023, 10, 4, 17, 0, 0));
-const hackingEnds = new Date(Date.UTC(2023, 10, 5, 3, 0, 0));
+const hackingEnds = new Date(Date.UTC(2023, 10, 5, 5, 0, 0));
 
 const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
 	const [currDate, setCurrDate] = useState(new Date());
