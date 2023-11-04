@@ -1,4 +1,4 @@
-// TODO add ease functions to light shake
+// TODO add cubic bezier ease functions
 
 export const lightShake = {
 	animate: { rotate: [-20, 20] },

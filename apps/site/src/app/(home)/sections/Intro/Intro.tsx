@@ -18,7 +18,8 @@ const Intro = () => {
 						Node: HackSticker,
 						positionX: "right",
 						positionY: "bottom",
-						offsetX: -50,
+						offsetX: -170,
+						offsetY: -20,
 					},
 				]}
 			>

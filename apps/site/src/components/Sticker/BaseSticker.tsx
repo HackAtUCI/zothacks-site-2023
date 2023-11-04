@@ -17,6 +17,7 @@ interface StickerProps {
 	transition?: object | undefined;
 	offsetX?: number;
 	offsetY?: number;
+	[key: string]: any;
 }
 
 const BaseSticker: React.FC<StickerProps> = ({
@@ -76,11 +77,11 @@ const BaseSticker: React.FC<StickerProps> = ({
 				position: "absolute",
 				left: -width / 2 + offsetX,
 				top: -height / 2 + offsetY,
+				...props,
 			}}
 			className={styles.sticker}
 			animate={animateProps}
 			{...drag}
-			{...props}
 		/>
 	);
 };

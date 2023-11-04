@@ -7,22 +7,20 @@ import Laptop from "@/assets/images/laptop.png";
 import Pencil from "@/assets/images/pencil.png";
 import Headphone from "@/assets/images/headphones.png";
 import BaseSticker from "../BaseSticker";
-import {
-	fastShake,
-	lightShake,
-	reverseFastShake,
-	reverseLightShake,
-} from "@/components/animation";
+
+import { lightShake, reverseLightShake } from "@/components/animation";
 
 export const HackSticker: React.FC<StickerProps> = (props) => {
 	return (
 		<BaseSticker
 			imageSrc={HackLogo.src}
 			alt="Hack at UCI sticker"
-			height={150}
-			width={150}
-			{...lightShake}
+			height={200}
+			width={200}
 			{...props}
+			animate={{
+				rotate: 15,
+			}}
 		/>
 	);
 };
