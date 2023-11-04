@@ -70,8 +70,7 @@ const BaseSticker: React.FC<StickerProps> = ({
 		<motion.img
 			src={imageSrc}
 			alt={alt}
-			height={height}
-			width={width}
+			style={{ height, width }}
 			className={styles.sticker}
 			animate={animateProps}
 			{...drag}

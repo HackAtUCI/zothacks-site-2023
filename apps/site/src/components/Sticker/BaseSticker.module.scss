@@ -1,5 +1,10 @@
-.sticker {
+.sticker[style] {
 	cursor: grab;
 	position: absolute;
 	z-index: 100;
+
+	@media screen and (max-width: 600px) {
+		height: 100px !important;
+		width: 100px !important;
+	}
 }
