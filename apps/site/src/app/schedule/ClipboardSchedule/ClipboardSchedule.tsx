@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import Accordion from "react-bootstrap/Accordion";
 import Col from "react-bootstrap/Col";
@@ -56,7 +58,18 @@ interface ClipboardScheduleProps {
 	}[][];
 }
 
+// 10/4/23 10AM in UTC
+const hackingStarts = new Date(Date.UTC(2023, 10, 4, 17, 0, 0));
+const hackingEnds = new Date(Date.UTC(2023, 10, 5, 5, 0, 0));
+
 const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
+	const [currDate, setCurrDate] = useState(new Date());
+
+	useEffect(() => {
+		const timeUpdater = setInterval(() => setCurrDate(new Date()), 1000);
+		return () => clearInterval(timeUpdater || undefined);
+	}, []);
+
 	return (
 		<Container as="section" className={" px-0 pt-0 position-relative"}>
 			<div className={styles.clip}>
@@ -69,7 +82,11 @@ const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
 					initial="initial"
 					animate="animate"
 				>
-					<Countdown />
+					{currDate.getTime() < hackingStarts.getTime() ? (
+						<Countdown countdownTo={hackingStarts} isHackingStarted={false} />
+					) : (
+						<Countdown countdownTo={hackingEnds} isHackingStarted={true} />
+					)}
 					<Accordion defaultActiveKey="0" className={styles.accordion}>
 						{schedule.map((day, i) => (
 							<div key={i}>
@@ -93,9 +110,9 @@ const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
 										endTime,
 									}) => {
 										const startTimeZoned = utcToZonedTime(
-												startTime,
-												"America/Los_Angeles",
-											),
+											startTime,
+											"America/Los_Angeles",
+										),
 											endTimeZoned = utcToZonedTime(
 												endTime,
 												"America/Los_Angeles",

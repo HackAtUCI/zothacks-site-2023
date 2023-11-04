@@ -1,26 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import clsx from "clsx";
 import styles from "./Countdown.module.scss";
 
-// 10/4/23 10AM in UTC
-const hackingStarts = new Date(Date.UTC(2023, 10, 4, 17, 0, 0));
+interface CountdownProps {
+	countdownTo: Date;
+	isHackingStarted: boolean;
+}
 
-const Countdown = () => {
+const Countdown: React.FC<CountdownProps> = ({
+	countdownTo,
+	isHackingStarted,
+}) => {
 	const [remainingSeconds, setRemainingSeconds] = useState<number>(NaN);
 
 	useEffect(() => {
-		setRemainingSeconds(
-			(hackingStarts.valueOf() - new Date().valueOf()) / 1000,
-		);
+		setRemainingSeconds((countdownTo.valueOf() - new Date().valueOf()) / 1000);
 		const interval = setInterval(() => {
-			setRemainingSeconds((r) => r - 1);
+			setRemainingSeconds((r) => (r > 0 && r < 1 ? r : r - 1));
 		}, 1000);
 
 		return () => clearInterval(interval);
-	}, []);
+	}, [countdownTo]);
 
 	return (
 		<div
@@ -47,7 +50,11 @@ const Countdown = () => {
 						.padStart(2, "0")}
 				</span>
 			</span>
-			<span className={styles.caption}>Until Hacking Begins</span>
+			<span className={styles.caption}>
+				{isHackingStarted && !isNaN(remainingSeconds)
+					? "Until Hacking Ends"
+					: "Until Hacking Begins"}
+			</span>
 		</div>
 	);
 };
