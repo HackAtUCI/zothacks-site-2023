@@ -17,6 +17,7 @@ interface StickerProps {
 	transition?: object | undefined;
 	offsetX?: number;
 	offsetY?: number;
+	[key: string]: any;
 }
 
 const BaseSticker: React.FC<StickerProps> = ({
@@ -30,6 +31,7 @@ const BaseSticker: React.FC<StickerProps> = ({
 	transition = {},
 	offsetX = 0,
 	offsetY = 0,
+	...props
 }) => {
 	// prevent next from throwing error involving DOM API
 	const pageRef = useRef(
@@ -58,7 +60,6 @@ const BaseSticker: React.FC<StickerProps> = ({
 					filter: `drop-shadow(10px 14px 10px rgba(0, 0, 0, 0.2))`,
 				},
 				drag: true,
-				initial: { x: -width / 2 + offsetX, y: -height / 2 + offsetY },
 				dragMomentum: false,
 				dragConstraints: dragConstraints ? dragConstraints : pageRef,
 				dragElastic: 0.2,
@@ -70,8 +71,14 @@ const BaseSticker: React.FC<StickerProps> = ({
 		<motion.img
 			src={imageSrc}
 			alt={alt}
-			height={height}
-			width={width}
+			style={{
+				height,
+				width,
+				position: "absolute",
+				left: -width / 2 + offsetX,
+				top: -height / 2 + offsetY,
+				...props,
+			}}
 			className={styles.sticker}
 			animate={animateProps}
 			{...drag}
