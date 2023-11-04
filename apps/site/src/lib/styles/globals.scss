@@ -5,6 +5,8 @@ $container-padding: 8rem;
 .background {
 	background-image: url("~@/assets/background/anteater-head-tiling.gif");
 	background-size: 464px; // half size for 2x scaling
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 .accordion {

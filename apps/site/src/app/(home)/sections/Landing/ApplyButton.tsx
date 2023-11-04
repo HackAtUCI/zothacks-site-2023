@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import StickerPosition from "@/components/Sticker/StickerPosition";
-import { HackSticker, HeartSticker } from "@/components/Sticker/Stickers";
+import { HeartSticker } from "@/components/Sticker/Stickers";
 
 import styles from "./ApplyButton.module.scss";
 

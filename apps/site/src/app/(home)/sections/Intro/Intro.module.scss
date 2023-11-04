@@ -2,6 +2,8 @@
 
 .intro {
 	@include bootstrap.padding(10rem 0.5rem);
+	margin-left: 10px;
+	margin-right: 10px;
 
 	background-image: url("~src/assets/images/index-card-mobile.svg");
 	background-size: cover;
@@ -27,10 +29,19 @@
 
 .pin {
 	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translate(-75%, -50%);
+	top: -12%;
+	left: 45%;
 	width: auto;
+
+	@include bootstrap.media-breakpoint-down(xl) {
+		left: 45%;
+	}
+	@include bootstrap.media-breakpoint-down(lg) {
+		left: 40%;
+	}
+	@include bootstrap.media-breakpoint-down(md) {
+		left: 35%;
+	}
 }
 
 .hackDoodle {
