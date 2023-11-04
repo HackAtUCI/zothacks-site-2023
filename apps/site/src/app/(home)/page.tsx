@@ -1,7 +1,5 @@
 export const revalidate = 60;
 
-import StickerLayout from "@/components/Sticker/StickerLayout";
-
 import Landing from "./sections/Landing";
 import Intro from "./sections/Intro";
 import Mentor from "./sections/Mentor";
