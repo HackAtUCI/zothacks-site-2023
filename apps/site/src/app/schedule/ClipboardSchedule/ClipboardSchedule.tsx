@@ -93,9 +93,9 @@ const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
 										endTime,
 									}) => {
 										const startTimeZoned = utcToZonedTime(
-												startTime,
-												"America/Los_Angeles",
-											),
+											startTime,
+											"America/Los_Angeles",
+										),
 											endTimeZoned = utcToZonedTime(
 												endTime,
 												"America/Los_Angeles",
@@ -118,10 +118,12 @@ const ClipboardSchedule: React.FC<ClipboardScheduleProps> = ({ schedule }) => {
 														<Col lg className={styles.mobileLocation}>
 															<span>
 																{location},{" "}
-																{dateTimeFormat.formatRange(
-																	startTimeZoned,
-																	endTimeZoned,
-																)}
+																{startTimeZoned === endTimeZoned
+																	? dateTimeFormat.format(startTimeZoned)
+																	: dateTimeFormat.formatRange(
+																		startTimeZoned,
+																		endTimeZoned,
+																	)}
 															</span>
 														</Col>
 													</Row>
