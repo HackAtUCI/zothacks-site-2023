@@ -17,9 +17,11 @@ const Countdown: React.FC<CountdownProps> = ({
 	const [remainingSeconds, setRemainingSeconds] = useState<number>(NaN);
 
 	useEffect(() => {
-		setRemainingSeconds((countdownTo.valueOf() - new Date().valueOf()) / 1000);
+		setRemainingSeconds(
+			Math.max(0, (countdownTo.valueOf() - new Date().valueOf()) / 1000),
+		);
 		const interval = setInterval(() => {
-			setRemainingSeconds((r) => (r > 0 && r < 1 ? r : r - 1));
+			setRemainingSeconds((r) => Math.max(0, r - 1));
 		}, 1000);
 
 		return () => clearInterval(interval);
